@@ -1,0 +1,1 @@
+export type OnKeyPress = React.KeyboardEvent<HTMLInputElement>

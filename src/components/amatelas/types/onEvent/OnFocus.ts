@@ -1,0 +1,1 @@
+export type OnFocus = React.FocusEvent<HTMLInputElement>

@@ -1,0 +1,1 @@
+{"version":3,"file":"TelasProps.d.ts","sourceRoot":"","sources":["../../../../../src/components/amatelas/types/property/TelasProps.ts"],"names":[],"mappings":"AAAA,OAAO,EAAE,YAAY,EAAE,MAAM,oBAAoB,CAAC;AAClD,OAAO,EAAE,GAAG,EAAE,SAAS,EAAE,MAAM,OAAO,CAAC;AAGvC,MAAM,WAAW,UAAU;IACzB,YAAY,CAAC,EAAE,YAAY,CAAC;IAC5B,GAAG,CAAC,EAAE,GAAG,CAAC;IAEV,SAAS,CAAC,EAAE,SAAS,CAAC;CACvB"}
