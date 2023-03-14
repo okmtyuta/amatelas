@@ -1,18 +1,15 @@
 import { useState } from "react";
-import { AmatelasAccordionMenu } from "./components/amatelas/amatelas/AmatelasAccordionMenu";
 import { AmatelasAlert } from "./components/amatelas/amatelas/AmatelasAlert";
-import { AmatelasSlideMenu } from "./components/amatelas/amatelas/AmatelasSlideMenu";
 import { AmatelasToggleMnuItem } from "./components/amatelas/amatelas/AmatelasToggleMenuItem";
 import { AmatelasGithubCard } from "./components/amatelas/amatelas/design/AmatelasGithubCard";
 import colors from "./components/amatelas/configs/color";
 import { TelasBox } from "./components/amatelas/telas/TelasBox";
 import { TelasHeading } from "./components/amatelas/telas/TelasHeading";
 import { TelasParagraph } from "./components/amatelas/telas/TelasParagraph";
-import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
-import { TelasList } from "./components/amatelas/telas/TelasList";
-import { TelasListItem } from "./components/amatelas/telas/TelasListItem";
-import { fontFamilies } from "./components/amatelas/configs/font";
 import { AmatelasHighlightSpan } from "./components/amatelas/amatelas/AmatelasHighlightSpan";
+import { Header } from "./components/parts/Header";
+import { AmatelasSyntaxHighlightCode } from "./components/amatelas/amatelas/design/AmatelasSyntaxHighlightCode";
+import { AmatelasMathBlock } from "./components/amatelas/amatelas/functional/AmatelasMathBlock";
 
 const menuItems1 = [
   {
@@ -55,7 +52,7 @@ const menuItems2 = [
 
 function App() {
   const [isActive, setIsActive] = useState<boolean>(true);
-  const [isShow, setIsShow] = useState<boolean>(false);
+
   return (
     <TelasBox
       ama={{
@@ -69,77 +66,10 @@ function App() {
         },
       }}
     >
-      <TelasBox>
-        <TelasBox ama={{ display: "flex", alignItems: "center", gap: "12px" }}>
-          <MenuOutlinedIcon
-            onClick={() => {
-              setIsShow(true);
-            }}
-          />
-          <TelasBox
-            ama={{
-              color: colors.themeColor,
-              fontFamily: fontFamilies.anton,
-            }}
-          >
-            AmUI
-          </TelasBox>
-        </TelasBox>
-      </TelasBox>
-      <AmatelasSlideMenu setIsShow={setIsShow} isShow={isShow}>
-        <TelasBox
-          ama={{
-            margin: "12px",
-
-            color: colors.themeColor,
-          }}
-        >
-          <TelasBox
-            ama={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <TelasHeading ama={{ fontFamily: fontFamilies.anton }} as="h3">
-              Amatelas UI
-            </TelasHeading>
-          </TelasBox>
-          <TelasList>
-            <TelasListItem
-              ama={{
-                padding: "12px 6px",
-                borderBottom: `solid 1px ${colors.lineGray}`,
-                color: colors.charColor,
-              }}
-            >
-              Overview
-            </TelasListItem>
-            <TelasListItem
-              ama={{
-                padding: "12px 6px",
-                borderBottom: `solid 1px ${colors.lineGray}`,
-                color: colors.charColor,
-              }}
-            >
-              Installation
-            </TelasListItem>
-            <TelasListItem
-              ama={{
-                padding: "12px 6px",
-                borderBottom: `solid 1px ${colors.lineGray}`,
-                color: colors.charColor,
-              }}
-            >
-              Usage
-            </TelasListItem>
-          </TelasList>
-        </TelasBox>
-      </AmatelasSlideMenu>
-
+      <Header />
       <TelasHeading
         ama={{
-          padding: "0 0 6px 0",
+          padding: "6px 0",
           borderBottom: `solid 1px ${colors.lineGray}`,
         }}
         as="h2"
@@ -180,7 +110,50 @@ function App() {
         UIはエンジニアのフロントエンド開発の労力を大きく削減できると期待しています。Amatelasの開発は以下のリポジトリで行われています。
       </TelasParagraph>
 
-      <AmatelasGithubCard />
+      <AmatelasGithubCard
+        repository="okmtyuta/AmatelasUI"
+        url="https://github.com/okmtyuta/amatelas"
+        description="Amatelas UI Library: A flexible components for React.js projects."
+        ama={{
+          margin: "6px 0",
+        }}
+      />
+
+      <AmatelasSyntaxHighlightCode>
+        console.log("aaa")
+      </AmatelasSyntaxHighlightCode>
+
+      <TelasHeading
+        ama={{
+          padding: "6px 0",
+          borderBottom: `solid 1px ${colors.lineGray}`,
+        }}
+        as="h2"
+      >
+        Reusable Styling
+      </TelasHeading>
+
+      <TelasParagraph>
+        <AmatelasHighlightSpan>Amatelas UI</AmatelasHighlightSpan>{" "}
+        では一度定義したスタイリングを再利用することが可能です。例えば，上記見出しは次のようなスタイリングが施されています。
+      </TelasParagraph>
+
+      <AmatelasSyntaxHighlightCode>
+        {String.raw`ama={{
+  padding: "6px 0",
+  borderBottom: \`solid 1px \${colors.lineGray}\`,
+}}`}
+      </AmatelasSyntaxHighlightCode>
+
+      <TelasParagraph>
+        この<AmatelasHighlightSpan>ama</AmatelasHighlightSpan>
+        を再利用することで，スタイリングを使い回すことが可能です。
+      </TelasParagraph>
+
+      <TelasParagraph>
+        Amatelas UIは<AmatelasHighlightSpan>LaTex</AmatelasHighlightSpan>記法の数式をサポートします。次のように数式の表示が可能です。
+      </TelasParagraph>
+      <AmatelasMathBlock mathString="写像$f: U\to V$が線型写像であるとは，任意の$x, y \in U$に対して$f(x+y)=f(x) + f(y)$などが成り立つことをいう。" />
     </TelasBox>
   );
 }

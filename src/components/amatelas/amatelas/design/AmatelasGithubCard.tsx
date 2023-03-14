@@ -12,6 +12,9 @@ import { PseudoAma } from "../../types/property/Ama";
 
 interface AmatelasGithubCardProps extends AmatelasDesignComponentProps {
   children?: ReactNode;
+  repository: string;
+  url: string;
+  description: string;
 }
 
 export const AmatelasGithubCard = (props: AmatelasGithubCardProps) => {
@@ -29,7 +32,7 @@ export const AmatelasGithubCard = (props: AmatelasGithubCardProps) => {
     ...props.pseudoAma,
   };
   return (
-    <TelasLink href="https://github.com/coder-ka/vite-ts-lib-starter">
+    <TelasLink href={props.url}>
       <TelasBox ama={ama} pseudoAma={pseudoAma}>
         <TelasBox ama={{ display: "flex", alignItems: "center", gap: "12px" }}>
           <TelasBox ama={{ width: "24px", display: "flex" }}>
@@ -39,11 +42,11 @@ export const AmatelasGithubCard = (props: AmatelasGithubCardProps) => {
             as="h4"
             ama={{ fontWeight: "bold", color: colors.themeColor }}
           >
-            okmtyuta/AmatelasUI
+            {props.repository}
           </TelasHeading>
         </TelasBox>
         <TelasParagraph ama={{ color: colors.lightCharColor }}>
-          Amatelas UI Library: A flexible components for React.js projects.
+          {props.description}
         </TelasParagraph>
       </TelasBox>
     </TelasLink>

@@ -23,7 +23,7 @@ export const AmatelasSlideMenu = (props: AmatelasSlideMenuProps) => {
           },
           overflowX: "hidden",
           transition: "transform 0.7s",
-          height: "100%",
+          height: "100vh",
           width: {
             pc: "60%",
             sp: "80%",

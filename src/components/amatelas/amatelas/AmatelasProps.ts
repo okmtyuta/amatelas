@@ -1,8 +1,3 @@
-import { Ama } from "../types/property";
-import { PseudoAma } from "../types/property/Ama";
+import { TelasProps } from "../types/property";
 
-
-export interface AmatelasProps {
-  ama?: Ama;
-  pseudoAma?: PseudoAma;
-}
+export interface AmatelasProps extends TelasProps {}
