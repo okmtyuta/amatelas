@@ -56,6 +56,7 @@ const overline = {
 export const fontFamilies = {
   sansSerifEn: "'Noto Sans', sans-serif",
   sansSerifJa: "'Noto Sans JP', sans-serif",
+  default: "'Noto Sans JP', sans-serif",
   code: "'Inconsolata', monospace",
   anton: "'Anton', sans-serif",
 };
@@ -86,5 +87,3 @@ export type FontSizeType =
   | "button"
   | "caption"
   | "overline";
-
-

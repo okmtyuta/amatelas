@@ -9,9 +9,9 @@ import {
   CursorProperty,
   PositionProperty,
   AnimationProperty,
+  OverflowProperty,
 } from "./CssProperty";
 import { ConfigurablePseudoProperty } from "./ConfigurablePseudoProperty";
-import { FlattenSimpleInterpolation, Keyframes } from "styled-components";
 
 export interface Ama {
   display?: MediaQueryable<DisplayProperty>;
@@ -57,8 +57,8 @@ export interface Ama {
   bottom?: MediaQueryable<string>;
   left?: MediaQueryable<string>;
   zIndex?: MediaQueryable<string>;
-  overflowX?: MediaQueryable<string>;
-  overflowY?: MediaQueryable<string>;
+  overflowX?: MediaQueryable<OverflowProperty>;
+  overflowY?: MediaQueryable<OverflowProperty>;
   transform?: MediaQueryable<string>;
   visibility?: MediaQueryable<string>;
   opacity?: MediaQueryable<string>;

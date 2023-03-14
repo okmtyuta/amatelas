@@ -10,6 +10,7 @@ import { AmatelasHighlightSpan } from "./components/amatelas/amatelas/AmatelasHi
 import { Header } from "./components/parts/Header";
 import { AmatelasSyntaxHighlightCode } from "./components/amatelas/amatelas/design/AmatelasSyntaxHighlightCode";
 import { AmatelasMathBlock } from "./components/amatelas/amatelas/functional/AmatelasMathBlock";
+import { Footer } from "./components/parts/Footer";
 
 const menuItems1 = [
   {
@@ -100,7 +101,9 @@ function App() {
       </TelasParagraph>
       <AmatelasAlert alertType="error">これはErrorブロックです。</AmatelasAlert>
 
-      <AmatelasAlert alertType="info">これはInfoブロックです。</AmatelasAlert>
+      <AmatelasAlert alertType="success">
+        これはSuccessブロックです。
+      </AmatelasAlert>
 
       <TelasParagraph ama={{ textAlign: "justify" }}>
         現状では，
@@ -119,10 +122,6 @@ function App() {
         }}
       />
 
-      <AmatelasSyntaxHighlightCode>
-        console.log("aaa")
-      </AmatelasSyntaxHighlightCode>
-
       <TelasHeading
         ama={{
           padding: "6px 0",
@@ -139,7 +138,7 @@ function App() {
       </TelasParagraph>
 
       <AmatelasSyntaxHighlightCode>
-        {String.raw`ama={{
+        {String.raw`ama = {{
   padding: "6px 0",
   borderBottom: \`solid 1px \${colors.lineGray}\`,
 }}`}
@@ -150,10 +149,37 @@ function App() {
         を再利用することで，スタイリングを使い回すことが可能です。
       </TelasParagraph>
 
+      <TelasHeading
+        ama={{
+          padding: "6px 0",
+          borderBottom: `solid 1px ${colors.lineGray}`,
+        }}
+        as="h2"
+      >
+        Equations
+      </TelasHeading>
+
       <TelasParagraph>
-        Amatelas UIは<AmatelasHighlightSpan>LaTex</AmatelasHighlightSpan>記法の数式をサポートします。次のように数式の表示が可能です。
+        Amatelas UIは<AmatelasHighlightSpan>LaTex</AmatelasHighlightSpan>
+        記法の数式をサポートします。次のように数式の表示が可能です。
       </TelasParagraph>
-      <AmatelasMathBlock mathString="写像$f: U\to V$が線型写像であるとは，任意の$x, y \in U$に対して$f(x+y)=f(x) + f(y)$などが成り立つことをいう。" />
+      <AmatelasMathBlock mathString="写像$f: U\to V$が線型写像であるとは，任意の$x, y \in U$に対して$f(x+y)=f(x) + f(y)$などが成り立つことをいう。次の公式は有名である。\begin{align}S_n = \sum_{k=1}^n k = \frac{1}{2}n(n+1)\end{align}" />
+
+      <TelasHeading
+        ama={{
+          padding: "6px 0",
+          borderBottom: `solid 1px ${colors.lineGray}`,
+        }}
+        as="h2"
+      >
+        Next Actions
+      </TelasHeading>
+
+      <TelasParagraph>
+        今後の開発では，シンタックスハイライト可能なコードブロックの実装が計画されています。
+      </TelasParagraph>
+
+      <Footer />
     </TelasBox>
   );
 }

@@ -69,6 +69,7 @@ console.log("This is code parser");`;
         color: "white",
         padding: "12px 24px",
         borderRadius: "6px",
+        overflowX: "scroll",
       }}
     >
       <TelasCode>{props.children}</TelasCode>

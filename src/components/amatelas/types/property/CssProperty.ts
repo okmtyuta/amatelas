@@ -37,6 +37,7 @@ export type CursorProperty =
   | "zoom-in"
   | "grab";
 export type PositionProperty = "relative" | "absolute" | "fixed";
+export type OverflowProperty = "scroll" | "hidden" | "visible" | "auto";
 export type AnimationProperty = {
   keyframes: Keyframes;
   duration: string;

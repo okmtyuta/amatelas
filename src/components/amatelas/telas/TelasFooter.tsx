@@ -1,15 +1,14 @@
 import styled from "styled-components";
 import { composeTelas } from "./factory/composeTelas";
 import { TelasProps } from "../types/property/TelasProps";
-import colors from "../configs/color";
 import { fontFamilies } from "../configs/font";
 
-interface TelasListItemProps extends TelasProps {}
+interface TelasFooterProps extends TelasProps {}
 
-export const TelasListItem = styled.li<TelasListItemProps>`
+export const TelasFooter = styled.footer<TelasFooterProps>`
+  text-decoration: none;
   color: inherit;
-  list-style: none;
   font-family: ${fontFamilies.default};
-  
-  ${composeTelas()}
+
+  ${composeTelas()};
 `;
