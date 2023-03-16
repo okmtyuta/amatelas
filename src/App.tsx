@@ -56,7 +56,6 @@ const radioButtons = [
   { label: "first", checked: true },
   { label: "second", checked: false },
   { label: "third", checked: false },
-  { label: "fourth", checked: false },
 ];
 
 function App() {
@@ -85,7 +84,7 @@ function App() {
       >
         Amatelas UI - Overview
       </TelasHeading>
-      <AmatelasRadioButtonGroup radioButtons={radioButtons} />
+      <AmatelasRadioButtonGroup type="multiple" radioButtons={radioButtons} />
       <TelasParagraph ama={{ textAlign: "justify" }}>
         Amatelas
         UIはよりフレキシブルなスタイリングを可能にするコンポーネントライブラリで，より簡単にインラインスタイルを描くことのできる
@@ -108,10 +107,15 @@ function App() {
         の一つである<AmatelasHighlightSpan>AmatelasAlert</AmatelasHighlightSpan>
         は，次のようなAlertブロックを生成します。
       </TelasParagraph>
-      <AmatelasAlert alertType="error">これはErrorブロックです。</AmatelasAlert>
+
+      <AmatelasAlert alertType="warning">これはWarningブロックです。</AmatelasAlert>
 
       <AmatelasAlert alertType="success">
         これはSuccessブロックです。
+      </AmatelasAlert>
+
+      <AmatelasAlert alertType="danger">
+        これはDangerブロックです。
       </AmatelasAlert>
 
       <TelasParagraph ama={{ textAlign: "justify" }}>

@@ -5,9 +5,10 @@ import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctiona
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
+import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
 import colors from "../configs/color";
 
-type AlertType = "error" | "warning" | "info" | "success";
+type AlertType = "error" | "warning" | "info" | "success" | "danger";
 
 type Alert = {
   [type in AlertType]: {
@@ -37,6 +38,11 @@ const alert: Alert = {
     icon: <CheckOutlinedIcon htmlColor={colors.successIconColor} />,
     color: colors.successColor,
     backgroundColor: colors.successBackgroundColor,
+  },
+  danger: {
+    icon: <LocalFireDepartmentIcon htmlColor={colors.dangerIconColor} />,
+    color: colors.dangerColor,
+    backgroundColor: colors.dangerBackgroundColor,
   },
 };
 

@@ -27,6 +27,10 @@ const colors = {
   successColor: "#1E4620",
   successBackgroundColor: "#EDF7ED",
 
+  dangerIconColor: "#D32F2F",
+  dangerColor: "#5F2120",
+  dangerBackgroundColor: "#FEEDED",
+
   code: {
     operator: pallet.yamabuki,
     string: pallet.kompeki,
