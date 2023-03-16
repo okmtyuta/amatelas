@@ -51,6 +51,8 @@ export const configurableProperty = {
   backdropFilter: "backdrop-filter",
   boxShadow: "box-shadow",
   animation: "animation",
+  content: "content",
+  boxSizing: "box-sizing",
 } as const;
 
 export type ConfigurableProperty = keyof typeof configurableProperty;

@@ -50,7 +50,8 @@ export const mapPropertyValue = (
 
   if (isAnimationProperty(propertyValue)) {
     return css`
-      ${property}: ${propertyValue.keyframes} ${propertyValue.duration} ${propertyValue.count};
+      ${property}: ${propertyValue.keyframes || ""} ${propertyValue.duration ||
+      ""} ${propertyValue.count || ""} ${propertyValue.fillMode || ""};
     `;
   }
 };

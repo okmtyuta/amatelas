@@ -4,6 +4,8 @@ export const configurablePseudoProperties = [
   "active",
   "checked",
   "focus",
+  "before",
+  "after",
 ] as const;
 
 export type ConfigurablePseudoProperty =

@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { TelasCode } from "../../telas/TelasCode";
-import { TelasPreformatted } from "../../telas/TelasPreformatted";
-import { AmatelasDesignComponentProps } from "./AmatelasDesignComponentProps";
+import { TelasCode } from "../telas/TelasCode";
+import { TelasPreformatted } from "../telas/TelasPreformatted";
+import { AmatelasProps } from "./AmatelasProps";
 
 interface ParsedCode {
   codeSegment: string;
@@ -37,7 +37,7 @@ class CodeSegments {
 const TOKEN = /^[A-Za-z_$][0-9A-Za-z_$]*/;
 
 interface AmatelasSyntaxHighlightCodeProps
-  extends AmatelasDesignComponentProps {
+  extends AmatelasProps {
   children?: ReactNode;
 }
 

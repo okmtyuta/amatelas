@@ -1,16 +1,18 @@
 import { useState } from "react";
 import { AmatelasAlert } from "./components/amatelas/amatelas/AmatelasAlert";
 import { AmatelasToggleMnuItem } from "./components/amatelas/amatelas/AmatelasToggleMenuItem";
-import { AmatelasGithubCard } from "./components/amatelas/amatelas/design/AmatelasGithubCard";
+import { AmatelasGithubCard } from "./components/amatelas/amatelas/AmatelasGithubCard";
 import colors from "./components/amatelas/configs/color";
 import { TelasBox } from "./components/amatelas/telas/TelasBox";
 import { TelasHeading } from "./components/amatelas/telas/TelasHeading";
 import { TelasParagraph } from "./components/amatelas/telas/TelasParagraph";
 import { AmatelasHighlightSpan } from "./components/amatelas/amatelas/AmatelasHighlightSpan";
 import { Header } from "./components/parts/Header";
-import { AmatelasSyntaxHighlightCode } from "./components/amatelas/amatelas/design/AmatelasSyntaxHighlightCode";
-import { AmatelasMathBlock } from "./components/amatelas/amatelas/functional/AmatelasMathBlock";
+import { AmatelasSyntaxHighlightCode } from "./components/amatelas/amatelas/AmatelasSyntaxHighlightCode";
+import { AmatelasMathBlock } from "./components/amatelas/amatelas/AmatelasMathBlock";
 import { Footer } from "./components/parts/Footer";
+import { AmatelasRadioButton } from "./components/amatelas/amatelas/AmatelasRadioButton";
+import { AmatelasRadioButtonGroup } from "./components/amatelas/amatelas/AmatelasRadioButtonGroup";
 
 const menuItems1 = [
   {
@@ -50,9 +52,15 @@ const menuItems2 = [
     ),
   },
 ];
+const radioButtons = [
+  { label: "first", checked: true },
+  { label: "second", checked: false },
+  { label: "third", checked: false },
+  { label: "fourth", checked: false },
+];
 
 function App() {
-  const [isActive, setIsActive] = useState<boolean>(true);
+  const [isChecked, setIsChecked] = useState<boolean>(false);
 
   return (
     <TelasBox
@@ -77,6 +85,7 @@ function App() {
       >
         Amatelas UI - Overview
       </TelasHeading>
+      <AmatelasRadioButtonGroup radioButtons={radioButtons} />
       <TelasParagraph ama={{ textAlign: "justify" }}>
         Amatelas
         UIはよりフレキシブルなスタイリングを可能にするコンポーネントライブラリで，より簡単にインラインスタイルを描くことのできる

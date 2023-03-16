@@ -10,6 +10,7 @@ import {
   PositionProperty,
   AnimationProperty,
   OverflowProperty,
+  BoxSizingProperty,
 } from "./CssProperty";
 import { ConfigurablePseudoProperty } from "./ConfigurablePseudoProperty";
 
@@ -66,6 +67,8 @@ export interface Ama {
   backdropFilter?: MediaQueryable<string>;
   boxShadow?: MediaQueryable<string>;
   animation?: MediaQueryable<AnimationProperty>;
+  content?: MediaQueryable<string>;
+  boxSizing?: MediaQueryable<BoxSizingProperty>;
 }
 
 export type PseudoAma = {

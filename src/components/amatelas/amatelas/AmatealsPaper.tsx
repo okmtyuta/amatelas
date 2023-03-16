@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
-import { TelasBox } from "../../telas/TelasBox";
-import { Ama } from "../../types/property";
-import { AmatelasDesignComponentProps } from "./AmatelasDesignComponentProps";
+import { TelasBox } from "../telas/TelasBox";
+import { Ama } from "../types/property";
+import { AmatelasProps } from "./AmatelasProps";
 
-interface AmatelasPaperProps extends AmatelasDesignComponentProps {
+interface AmatelasPaperProps extends AmatelasProps {
   children?: ReactNode;
 }
 

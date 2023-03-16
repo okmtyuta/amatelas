@@ -9,7 +9,7 @@ import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctiona
 interface AmatelasToggleMnuItemProps extends AmatelasFunctionalComponentProps {
   children?: ReactNode;
   isActive?: boolean;
-  onClick?: OnClick;
+  onClick?: OnClick<HTMLLIElement>;
 }
 
 export const AmatelasToggleMnuItem = (props: AmatelasToggleMnuItemProps) => {

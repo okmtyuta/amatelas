@@ -1,16 +1,16 @@
 import { ReactNode } from "react";
-import colors from "../../configs/color";
-import { TelasBox } from "../../telas/TelasBox";
-import { TelasHeading } from "../../telas/TelasHeading";
-import { TelasImage } from "../../telas/TelasImage";
-import { Ama } from "../../types/property";
-import { AmatelasDesignComponentProps } from "./AmatelasDesignComponentProps";
-import { logoImages } from "../static/logo";
-import { TelasParagraph } from "../../telas/TelasParagraph";
-import { TelasLink } from "../../telas/TelasLink";
-import { PseudoAma } from "../../types/property/Ama";
+import colors from "../configs/color";
+import { TelasBox } from "../telas/TelasBox";
+import { TelasHeading } from "../telas/TelasHeading";
+import { TelasImage } from "../telas/TelasImage";
+import { Ama } from "../types/property";
+import { logoImages } from "./static/logo";
+import { TelasParagraph } from "../telas/TelasParagraph";
+import { TelasLink } from "../telas/TelasLink";
+import { PseudoAma } from "../types/property/Ama";
+import { AmatelasProps } from "./AmatelasProps";
 
-interface AmatelasGithubCardProps extends AmatelasDesignComponentProps {
+interface AmatelasGithubCardProps extends AmatelasProps {
   children?: ReactNode;
   repository: string;
   url: string;

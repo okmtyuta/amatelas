@@ -1,10 +1,10 @@
 import { useEffect, useRef } from "react";
 import katex from "katex";
 import "katex/dist/katex.css";
-import "../../style/math.css"
-import colors from "../../configs/color";
-import { AmatelasFunctionalComponentProps } from "./AmatelasFunctionalComponentProps";
-import { TelasBox } from "../../telas/TelasBox";
+import "../style/math.css";
+import colors from "../configs/color";
+import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
+import { TelasBox } from "../telas/TelasBox";
 
 const DISPLAY_ENVIRONMENTS = ["align", "equation"];
 const BEGIN_AND_END_MATCHER: RegExp = /(\\begin\{\w+\}[\s\S]*?\\end\{\w+\})/g;

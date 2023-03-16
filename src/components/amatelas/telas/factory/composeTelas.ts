@@ -39,7 +39,7 @@ const mapEveryPseudoPropertyValue = (pseudoAma: PseudoAma) => {
       }
 
       return css`
-        :${pseudo} {
+        &:${pseudo} {
           ${mapEveryPropertyValue(ama)}
         }
       `;
