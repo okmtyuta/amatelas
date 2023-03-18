@@ -1,1 +1,1 @@
-{"version":3,"file":"TelasBox.d.ts","sourceRoot":"","sources":["../../../../src/components/amatelas/telas/TelasBox.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,UAAU,EAAE,MAAM,8BAA8B,CAAC;AAG1D,UAAU,aAAc,SAAQ,UAAU;CAAG;AAE7C,eAAO,MAAM,QAAQ,+EAIpB,CAAC"}
+{"version":3,"file":"TelasBox.d.ts","sourceRoot":"","sources":["../../../../src/components/amatelas/telas/TelasBox.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,UAAU,EAAE,MAAM,8BAA8B,CAAC;AAI1D,UAAU,aAAc,SAAQ,UAAU;CAAG;AAE7C,eAAO,MAAM,QAAQ,+EAKpB,CAAC"}

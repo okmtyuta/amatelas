@@ -1,6 +1,6 @@
 import { ReactNode } from "react";
-import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
-interface AmatelasWarningBoxProps extends AmatelasFunctionalComponentProps {
+import { AmatelasProps } from "./AmatelasProps";
+interface AmatelasWarningBoxProps extends AmatelasProps {
     children?: ReactNode;
     type?: "marker" | "underline";
 }

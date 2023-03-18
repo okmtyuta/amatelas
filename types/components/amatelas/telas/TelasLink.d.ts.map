@@ -1,1 +1,1 @@
-{"version":3,"file":"TelasLink.d.ts","sourceRoot":"","sources":["../../../../src/components/amatelas/telas/TelasLink.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,UAAU,EAAE,MAAM,8BAA8B,CAAC;AAG1D,UAAU,cAAe,SAAQ,UAAU;CAAG;AAE9C,eAAO,MAAM,SAAS,8EAKrB,CAAC"}
+{"version":3,"file":"TelasLink.d.ts","sourceRoot":"","sources":["../../../../src/components/amatelas/telas/TelasLink.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,UAAU,EAAE,MAAM,8BAA8B,CAAC;AAI1D,UAAU,cAAe,SAAQ,UAAU;CAAG;AAE9C,eAAO,MAAM,SAAS,8EAMrB,CAAC"}

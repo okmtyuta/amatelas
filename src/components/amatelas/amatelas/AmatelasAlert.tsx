@@ -35,8 +35,8 @@ const alert: Alert = {
   },
   success: {
     icon: <CheckOutlinedIcon htmlColor={alertColor.success.icon} />,
-    color: alertColor.info.color,
-    backgroundColor: alertColor.info.backgroundColor,
+    color: alertColor.success.color,
+    backgroundColor: alertColor.success.backgroundColor,
   },
   danger: {
     icon: <LocalFireDepartmentIcon htmlColor={alertColor.danger.icon} />,

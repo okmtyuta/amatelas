@@ -1,1 +1,1 @@
-{"version":3,"file":"TelasImage.d.ts","sourceRoot":"","sources":["../../../../src/components/amatelas/telas/TelasImage.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,UAAU,EAAE,MAAM,8BAA8B,CAAC;AAG1D,UAAU,eAAgB,SAAQ,UAAU;CAAG;AAE/C,eAAO,MAAM,UAAU,iFAEtB,CAAC"}
+{"version":3,"file":"TelasImage.d.ts","sourceRoot":"","sources":["../../../../src/components/amatelas/telas/TelasImage.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,UAAU,EAAE,MAAM,8BAA8B,CAAC;AAI1D,UAAU,eAAgB,SAAQ,UAAU;CAAG;AAE/C,eAAO,MAAM,UAAU,iFAGtB,CAAC"}

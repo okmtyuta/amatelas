@@ -1,1 +1,1 @@
-{"version":3,"file":"composeTelas.d.ts","sourceRoot":"","sources":["../../../../../src/components/amatelas/telas/factory/composeTelas.ts"],"names":[],"mappings":"AAQA,OAAO,EAAE,UAAU,EAAE,MAAM,iCAAiC,CAAC;AA2C7D;;;GAGG;AACH,eAAO,MAAM,YAAY,wHAgCxB,CAAC"}
+{"version":3,"file":"composeTelas.d.ts","sourceRoot":"","sources":["../../../../../src/components/amatelas/telas/factory/composeTelas.ts"],"names":[],"mappings":"AAAA,OAAO,EAAO,iBAAiB,EAAE,MAAM,mBAAmB,CAAC;AAQ3D,OAAO,EAAE,UAAU,EAAE,MAAM,iCAAiC,CAAC;AAqG7D;;;GAGG;AACH,eAAO,MAAM,YAAY,UAAW,kBAAkB,UAAU,EAAE,GAAG,CAAC,yFAUrE,CAAC"}

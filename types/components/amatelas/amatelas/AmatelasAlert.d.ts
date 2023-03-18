@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
-type AlertType = "error" | "warning" | "info" | "success";
-interface AmatelasAlertProps extends AmatelasFunctionalComponentProps {
+import { AlertType } from "../types/property/components/Alert";
+import { AmatelasProps } from "./AmatelasProps";
+interface AmatelasAlertProps extends AmatelasProps {
     children?: ReactNode;
     alertType?: AlertType;
 }

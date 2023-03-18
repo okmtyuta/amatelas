@@ -1,11 +1,11 @@
 /// <reference types="react" />
-import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
+import { AmatelasProps } from "./AmatelasProps";
 interface MenuItem {
     content: JSX.Element;
     isActive: boolean;
     key: string;
 }
-interface AmatelasAccordionMenuProps extends AmatelasFunctionalComponentProps {
+interface AmatelasAccordionMenuProps extends AmatelasProps {
     content: string;
     menuItems: MenuItem[];
 }

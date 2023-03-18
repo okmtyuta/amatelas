@@ -51,6 +51,8 @@ export declare const configurableProperty: {
     readonly backdropFilter: "backdrop-filter";
     readonly boxShadow: "box-shadow";
     readonly animation: "animation";
+    readonly content: "content";
+    readonly boxSizing: "box-sizing";
 };
 export type ConfigurableProperty = keyof typeof configurableProperty;
 //# sourceMappingURL=ConfigurableProperty.d.ts.map

@@ -104,4 +104,6 @@ export declare const opacitySuffix: {
 };
 export type OpacitySuffix = Valueof<typeof opacitySuffix>;
 export type OpacityRate = keyof typeof opacitySuffix;
+export declare const opacitize: (colorCode: string, opacityRate: OpacityRate) => string;
+export declare const theming: (colorCode: string, series: "primary" | "secondary" | "tertiary") => string;
 //# sourceMappingURL=opacity.d.ts.map

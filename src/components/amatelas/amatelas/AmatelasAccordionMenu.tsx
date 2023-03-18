@@ -4,8 +4,8 @@ import { TelasList } from "../telas/TelasList";
 import { Ama } from "../types/property";
 import { AmatelasToggleMnuItem } from "./AmatelasToggleMenuItem";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
-import colors from "../configs/color";
-import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
+import { themeColor } from "../configs/color";
+import { AmatelasProps } from "./AmatelasProps";
 
 interface MenuItem {
   content: JSX.Element;
@@ -13,7 +13,7 @@ interface MenuItem {
   key: string;
 }
 
-interface AmatelasAccordionMenuProps extends AmatelasFunctionalComponentProps {
+interface AmatelasAccordionMenuProps extends AmatelasProps {
   content: string;
   menuItems: MenuItem[];
 }

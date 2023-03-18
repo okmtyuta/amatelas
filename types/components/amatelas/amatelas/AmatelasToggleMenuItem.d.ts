@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 import { OnClick } from "../types/onEvent";
-import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
-interface AmatelasToggleMnuItemProps extends AmatelasFunctionalComponentProps {
+import { AmatelasProps } from "./AmatelasProps";
+interface AmatelasToggleMnuItemProps extends AmatelasProps {
     children?: ReactNode;
     isActive?: boolean;
-    onClick?: OnClick;
+    onClick?: OnClick<HTMLLIElement>;
 }
 export declare const AmatelasToggleMnuItem: (props: AmatelasToggleMnuItemProps) => JSX.Element;
 export {};

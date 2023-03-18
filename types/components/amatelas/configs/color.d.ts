@@ -1,3 +1,17 @@
+import { AlertType } from "../types/property/components/Alert";
+type AlertColor = {
+    [alertType in AlertType]: {
+        icon: string;
+        color: string;
+        backgroundColor: string;
+    };
+};
+export declare const alertColor: AlertColor;
+export declare const themeColor: {
+    primary: string;
+    secondary: string;
+    tertiary: string;
+};
 declare const colors: {
     themeColor: string;
     charColor: string;
@@ -7,18 +21,6 @@ declare const colors: {
     lineGray: string;
     white: string;
     black: string;
-    errorIconColor: string;
-    errorColor: string;
-    errorBackgroundColor: string;
-    warningIconColor: string;
-    warningColor: string;
-    warningBackgroundColor: string;
-    infoIconColor: string;
-    infoColor: string;
-    infoBackgroundColor: string;
-    successIconColor: string;
-    successColor: string;
-    successBackgroundColor: string;
     code: {
         operator: string;
         string: string;

@@ -1,1 +1,1 @@
-{"version":3,"file":"TelasParagraph.d.ts","sourceRoot":"","sources":["../../../../src/components/amatelas/telas/TelasParagraph.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,UAAU,EAAE,MAAM,8BAA8B,CAAC;AAG1D,UAAU,mBAAoB,SAAQ,UAAU;CAAG;AAEnD,eAAO,MAAM,cAAc,mFAM1B,CAAC"}
+{"version":3,"file":"TelasParagraph.d.ts","sourceRoot":"","sources":["../../../../src/components/amatelas/telas/TelasParagraph.tsx"],"names":[],"mappings":"AAEA,OAAO,EAAE,UAAU,EAAE,MAAM,8BAA8B,CAAC;AAI1D,UAAU,mBAAoB,SAAQ,UAAU;CAAG;AAEnD,eAAO,MAAM,cAAc,mFAO1B,CAAC"}

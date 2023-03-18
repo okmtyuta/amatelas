@@ -1,5 +1,5 @@
 import { MediaQueryable } from "./MediaQueryable";
-import { DisplayProperty, FlexDirectionProperty, GridAutoFlowProperty, AlignContentProperty, JustifyContentProperty, AlignItemsProperty, CursorProperty, PositionProperty, AnimationProperty } from "./CssProperty";
+import { DisplayProperty, FlexDirectionProperty, GridAutoFlowProperty, AlignContentProperty, JustifyContentProperty, AlignItemsProperty, CursorProperty, PositionProperty, AnimationProperty, OverflowProperty, BoxSizingProperty } from "./CssProperty";
 import { ConfigurablePseudoProperty } from "./ConfigurablePseudoProperty";
 export interface Ama {
     display?: MediaQueryable<DisplayProperty>;
@@ -45,8 +45,8 @@ export interface Ama {
     bottom?: MediaQueryable<string>;
     left?: MediaQueryable<string>;
     zIndex?: MediaQueryable<string>;
-    overflowX?: MediaQueryable<string>;
-    overflowY?: MediaQueryable<string>;
+    overflowX?: MediaQueryable<OverflowProperty>;
+    overflowY?: MediaQueryable<OverflowProperty>;
     transform?: MediaQueryable<string>;
     visibility?: MediaQueryable<string>;
     opacity?: MediaQueryable<string>;
@@ -54,8 +54,13 @@ export interface Ama {
     backdropFilter?: MediaQueryable<string>;
     boxShadow?: MediaQueryable<string>;
     animation?: MediaQueryable<AnimationProperty>;
+    content?: MediaQueryable<string>;
+    boxSizing?: MediaQueryable<BoxSizingProperty>;
 }
 export type PseudoAma = {
     [key in ConfigurablePseudoProperty]?: Ama;
+};
+export type ChildAma = {
+    [key in string]?: Ama;
 };
 //# sourceMappingURL=Ama.d.ts.map

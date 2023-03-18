@@ -1,7 +1,4 @@
-import { Ama } from "../types/property";
-import { PseudoAma } from "../types/property/Ama";
-export interface AmatelasProps {
-    ama?: Ama;
-    pseudoAma?: PseudoAma;
+import { TelasProps } from "../types/property";
+export interface AmatelasProps extends TelasProps {
 }
 //# sourceMappingURL=AmatelasProps.d.ts.map
