@@ -1,9 +1,9 @@
-import { css } from "styled-components";
+import { css, ThemedStyledProps } from "styled-components";
 import { mediaQueriedFontSize } from "../../function/style/mediaQueryableFontSize";
 import { mq } from "../../function/style/mq";
 import { isMediaQuery } from "../../types/guards";
 import { Ama, MediaQueryType } from "../../types/property";
-import { PseudoAma } from "../../types/property/Ama";
+import { ChildAma, PseudoAma } from "../../types/property/Ama";
 import { ConfigurableProperty } from "../../types/property/ConfigurableProperty";
 import { ConfigurablePseudoProperty } from "../../types/property/ConfigurablePseudoProperty";
 import { TelasProps } from "../../types/property/TelasProps";
@@ -39,7 +39,7 @@ const mapEveryPseudoPropertyValue = (pseudoAma: PseudoAma) => {
       }
 
       return css`
-        &:${pseudo} {
+        &: ${pseudo} {
           ${mapEveryPropertyValue(ama)}
         }
       `;
@@ -49,40 +49,76 @@ const mapEveryPseudoPropertyValue = (pseudoAma: PseudoAma) => {
   return mapped;
 };
 
+const mapEveryChildPropertyValue = (childAma: ChildAma) => {
+  const mapped = (Object.keys(childAma) as string[]).map((child) => {
+    const ama = childAma[child];
+    if (!ama) {
+      return "";
+    }
+
+    return css`
+      ${child} {
+        ${mapEveryPropertyValue(ama)}
+      }
+    `;
+  });
+
+  return mapped;
+};
+
+const mapAma = (props: ThemedStyledProps<TelasProps, any>) => {
+  const ama = props.ama;
+  if (!ama) {
+    return "";
+  }
+
+  return css`
+    ${mapEveryPropertyValue(ama)}
+  `;
+};
+
+const mapPseudoAma = (props: ThemedStyledProps<TelasProps, any>) => {
+  const pseudoAma = props.pseudoAma;
+  if (!pseudoAma) {
+    return "";
+  }
+
+  return css`
+    ${mapEveryPseudoPropertyValue(pseudoAma)}
+  `;
+};
+
+const mapChildAma = (props: ThemedStyledProps<TelasProps, any>) => {
+  const childAma = props.childAma;
+  if (!childAma) {
+    return "";
+  }
+
+  return css`
+    ${mapEveryChildPropertyValue(childAma)}
+  `;
+};
+
+const mapFontSizeType = (props: ThemedStyledProps<TelasProps, any>) => {
+  if (props.fontSizeType) {
+    return css`
+      ${mediaQueriedFontSize(props.fontSizeType)}
+    `;
+  }
+};
+
 /**
  * デフォルトのスタイリングを展開する
  * @returns
  */
-export const composeTelas = () => {
+export const composeTelas = (props: ThemedStyledProps<TelasProps, any>) => {
   return css<TelasProps>`
-    ${(props) => {
-      const ama = props.ama;
-      if (!ama) {
-        return "";
-      }
+    ${mapAma(props)}
 
-      return css`
-        ${mapEveryPropertyValue(ama)}
-      `;
-    }}
+    ${mapPseudoAma(props)}
 
-    ${(props) => {
-      const pseudoAma = props.pseudoAma;
-      if (!pseudoAma) {
-        return "";
-      }
+    ${mapChildAma(props)}
 
-      return css`
-        ${mapEveryPseudoPropertyValue(pseudoAma)}
-      `;
-    }}
-
-    ${(props) => {
-      if (props.fontSizeType) {
-        return css`
-          ${mediaQueriedFontSize(props.fontSizeType)}
-        `;
-      }
-    }}
+    ${mapFontSizeType(props)}
   `;
 };

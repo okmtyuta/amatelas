@@ -1,8 +1,8 @@
 import { ReactNode } from "react";
 import { TelasBox } from "../telas/TelasBox";
-import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
+import { AmatelasProps } from "./AmatelasProps";
 
-interface AmatelasSlideMenuProps extends AmatelasFunctionalComponentProps {
+interface AmatelasSlideMenuProps extends AmatelasProps {
   isShow: boolean;
   setIsShow: React.Dispatch<React.SetStateAction<boolean>>;
   children?: ReactNode;

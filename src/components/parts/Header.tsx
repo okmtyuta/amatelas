@@ -1,12 +1,12 @@
 import { useState } from "react";
 import { AmatelasSlideMenu } from "../amatelas/amatelas/AmatelasSlideMenu";
-import colors from "../amatelas/configs/color";
+import colors, { themeColor } from "../amatelas/configs/color";
 import { TelasBox } from "../amatelas/telas/TelasBox";
 import { TelasHeading } from "../amatelas/telas/TelasHeading";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import { TelasList } from "../amatelas/telas/TelasList";
 import { TelasListItem } from "../amatelas/telas/TelasListItem";
-import { fontFamilies } from "../amatelas/configs/font";
+import { fontFamily } from "../amatelas/configs/font";
 
 export const Header = () => {
   const [isShow, setIsShow] = useState<boolean>(false);
@@ -20,8 +20,8 @@ export const Header = () => {
         />
         <TelasBox
           ama={{
-            color: colors.themeColor,
-            fontFamily: fontFamilies.anton,
+            color: themeColor.primary,
+            fontFamily: fontFamily.anton,
           }}
         >
           AmUI
@@ -32,7 +32,7 @@ export const Header = () => {
           ama={{
             margin: "12px",
 
-            color: colors.themeColor,
+            color: themeColor.primary,
           }}
         >
           <TelasBox
@@ -42,7 +42,7 @@ export const Header = () => {
               justifyContent: "center",
             }}
           >
-            <TelasHeading ama={{ fontFamily: fontFamilies.anton }} as="h3">
+            <TelasHeading ama={{ fontFamily: fontFamily.anton }} as="h3">
               Amatelas UI
             </TelasHeading>
           </TelasBox>

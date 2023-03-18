@@ -2,7 +2,7 @@ import { useState } from "react";
 import { AmatelasAlert } from "./components/amatelas/amatelas/AmatelasAlert";
 import { AmatelasToggleMnuItem } from "./components/amatelas/amatelas/AmatelasToggleMenuItem";
 import { AmatelasGithubCard } from "./components/amatelas/amatelas/AmatelasGithubCard";
-import colors from "./components/amatelas/configs/color";
+import colors, { themeColor } from "./components/amatelas/configs/color";
 import { TelasBox } from "./components/amatelas/telas/TelasBox";
 import { TelasHeading } from "./components/amatelas/telas/TelasHeading";
 import { TelasParagraph } from "./components/amatelas/telas/TelasParagraph";
@@ -11,56 +11,17 @@ import { Header } from "./components/parts/Header";
 import { AmatelasSyntaxHighlightCode } from "./components/amatelas/amatelas/AmatelasSyntaxHighlightCode";
 import { AmatelasMathBlock } from "./components/amatelas/amatelas/AmatelasMathBlock";
 import { Footer } from "./components/parts/Footer";
-import { AmatelasRadioButton } from "./components/amatelas/amatelas/AmatelasRadioButton";
 import { AmatelasRadioButtonGroup } from "./components/amatelas/amatelas/AmatelasRadioButtonGroup";
+import { fontFamily } from "./components/amatelas/configs/font";
+import { AmatelasSwitch } from "./components/amatelas/amatelas/AmatelasSwitch";
 
-const menuItems1 = [
-  {
-    content: <div>TypeScriptに対応</div>,
-    isActive: true,
-    key: "fjalfjalfjkla",
-  },
-  {
-    content: <div>world</div>,
-    isActive: false,
-    key: "fjalfjfaldkfjkaalfjkla",
-  },
-  {
-    content: <div>and</div>,
-    isActive: false,
-    key: "fjalfalffjalfjkla",
-  },
-];
-const menuItems2 = [
-  {
-    element: (
-      <AmatelasToggleMnuItem key="fjaklfj;kaj">Item 2-1</AmatelasToggleMnuItem>
-    ),
-  },
-  {
-    element: (
-      <AmatelasToggleMnuItem key="fjakld; jdakfjakl ">
-        Item 2-2
-      </AmatelasToggleMnuItem>
-    ),
-  },
-  {
-    element: (
-      <AmatelasToggleMnuItem key="fjakaej ljfka">
-        Item 2-3
-      </AmatelasToggleMnuItem>
-    ),
-  },
-];
 const radioButtons = [
-  { label: "first", checked: true },
-  { label: "second", checked: false },
-  { label: "third", checked: false },
+  { key: "first", active: true },
+  { key: "second", active: false },
+  { key: "third", active: false },
 ];
 
 function App() {
-  const [isChecked, setIsChecked] = useState<boolean>(false);
-
   return (
     <TelasBox
       ama={{
@@ -72,9 +33,17 @@ function App() {
         maxWidth: {
           pc: "800px",
         },
+        fontFamily: fontFamily.sansSerifJa,
       }}
     >
       <Header />
+      <AmatelasSwitch
+        onClick={() => {
+          console.log("clidk");
+        }}
+        active={true}
+        color={themeColor.tertiary}
+      />
       <TelasHeading
         ama={{
           padding: "6px 0",
@@ -84,14 +53,23 @@ function App() {
       >
         Amatelas UI - Overview
       </TelasHeading>
-      <AmatelasRadioButtonGroup type="multiple" radioButtons={radioButtons} />
+
+      <AmatelasRadioButtonGroup
+        color={themeColor.secondary}
+        multiple={false}
+        radioButtons={radioButtons}
+      />
       <TelasParagraph ama={{ textAlign: "justify" }}>
-        Amatelas
-        UIはよりフレキシブルなスタイリングを可能にするコンポーネントライブラリで，より簡単にインラインスタイルを描くことのできる
-        <AmatelasHighlightSpan>Telasコンポーネント</AmatelasHighlightSpan>
-        と，Telasコンポーネントを拡張してさまざまな機能をもたせた
-        <AmatelasHighlightSpan>Amatelasコンポーネント</AmatelasHighlightSpan>
-        から構成されます。
+        <AmatelasHighlightSpan>Amatelas UI</AmatelasHighlightSpan> is a
+        component library for React projects, which enables you to style your
+        web pages with more flexible ways. The Amatelas UI has two types of
+        component,
+        <AmatelasHighlightSpan>Telas Component</AmatelasHighlightSpan> and
+        <AmatelasHighlightSpan>Amatelas Component</AmatelasHighlightSpan>.
+        Former components help your writing inline-style css, and with
+        <AmatelasHighlightSpan>Telas Component</AmatelasHighlightSpan>, you may
+        never write .css file because you can write almost all of styling
+        property on react props.
         <AmatelasHighlightSpan>Telasコンポーネント</AmatelasHighlightSpan>
         ではプロパティにAmaオブジェクトを追加することでCSSファイルを生成することなくコンポーネントへのスタイルの適用が可能になります。例えば，TelasBoxにama=
         {`{margin: "12px"}`}
@@ -108,7 +86,9 @@ function App() {
         は，次のようなAlertブロックを生成します。
       </TelasParagraph>
 
-      <AmatelasAlert alertType="warning">これはWarningブロックです。</AmatelasAlert>
+      <AmatelasAlert alertType="warning">
+        これはWarningブロックです。
+      </AmatelasAlert>
 
       <AmatelasAlert alertType="success">
         これはSuccessブロックです。

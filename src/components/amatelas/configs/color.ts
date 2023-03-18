@@ -1,4 +1,47 @@
+import { AlertType } from "../types/property/components/Alert";
 import { pallet } from "./pallet";
+
+type AlertColor = {
+  [alertType in AlertType]: {
+    icon: string;
+    color: string;
+    backgroundColor: string;
+  };
+};
+
+export const alertColor: AlertColor = {
+  warning: {
+    icon: "#D32F2F",
+    color: "#5F2120",
+    backgroundColor: "#FEEDED",
+  },
+  error: {
+    icon: "#ED6C02",
+    color: "#663C00",
+    backgroundColor: "#FFF4E5",
+  },
+  info: {
+    icon: "#0288D1",
+    color: "#014361",
+    backgroundColor: "#E5F6FD",
+  },
+  success: {
+    icon: "#2E7D32",
+    color: "#1E4620",
+    backgroundColor: "#EDF7ED",
+  },
+  danger: {
+    icon: "#D32F2F",
+    color: "#5F2120",
+    backgroundColor: "#FEEDED",
+  },
+};
+
+export const themeColor = {
+  primary: pallet.suo,
+  secondary: pallet.kompeki,
+  tertiary: pallet.moegi,
+};
 
 const colors = {
   themeColor: pallet.suo,
@@ -10,26 +53,6 @@ const colors = {
 
   white: pallet.shiro,
   black: pallet.kuro,
-
-  errorIconColor: "#D32F2F",
-  errorColor: "#5F2120",
-  errorBackgroundColor: "#FEEDED",
-
-  warningIconColor: "#ED6C02",
-  warningColor: "#663C00",
-  warningBackgroundColor: "#FFF4E5",
-
-  infoIconColor: "#0288D1",
-  infoColor: "#014361",
-  infoBackgroundColor: "#E5F6FD",
-
-  successIconColor: "#2E7D32",
-  successColor: "#1E4620",
-  successBackgroundColor: "#EDF7ED",
-
-  dangerIconColor: "#D32F2F",
-  dangerColor: "#5F2120",
-  dangerBackgroundColor: "#FEEDED",
 
   code: {
     operator: pallet.yamabuki,

@@ -1,4 +1,4 @@
-import colors from "../amatelas/configs/color";
+import colors, { themeColor } from "../amatelas/configs/color";
 import { TelasFooter } from "../amatelas/telas/TelasFooter";
 import ThumbUpAltIcon from "@mui/icons-material/ThumbUpAlt";
 import ThumbDownAltIcon from "@mui/icons-material/ThumbDownAlt";
@@ -27,7 +27,7 @@ export const Footer = () => {
       </TelasBox>
       <TelasBox
         ama={{
-          color: review === "good" ? colors.themeColor : colors.lightCharColor,
+          color: review === "good" ? themeColor.primary : colors.lightCharColor,
           transition: "color 0.3s",
         }}
       >
@@ -40,7 +40,7 @@ export const Footer = () => {
 
       <TelasBox
         ama={{
-          color: review === "bad" ? colors.themeColor : colors.lightCharColor,
+          color: review === "bad" ? themeColor.primary : colors.lightCharColor,
           transition: "color 0.3s",
         }}
       >

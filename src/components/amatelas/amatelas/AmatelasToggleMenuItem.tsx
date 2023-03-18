@@ -1,12 +1,12 @@
 import { ReactNode } from "react";
-import colors from "../configs/color";
+import colors, { themeColor } from "../configs/color";
 import { TelasListItem } from "../telas/TelasListItem";
 import { OnClick } from "../types/onEvent";
 import { Ama } from "../types/property";
 import { PseudoAma } from "../types/property/Ama";
-import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
+import { AmatelasProps } from "./AmatelasProps";
 
-interface AmatelasToggleMnuItemProps extends AmatelasFunctionalComponentProps {
+interface AmatelasToggleMnuItemProps extends AmatelasProps {
   children?: ReactNode;
   isActive?: boolean;
   onClick?: OnClick<HTMLLIElement>;
@@ -16,8 +16,8 @@ export const AmatelasToggleMnuItem = (props: AmatelasToggleMnuItemProps) => {
   const isActive = props.isActive || false;
   const ama: Ama = isActive
     ? {
-        backgroundColor: colors.themeColor + "1F",
-        color: colors.themeColor,
+        backgroundColor: themeColor.primary + "1F",
+        color: themeColor.primary,
         transition: "0.5s",
         ...props.ama,
       }

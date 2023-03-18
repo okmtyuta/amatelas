@@ -1,19 +1,44 @@
 import { useState } from "react";
-import colors from "../configs/color";
+import colors, { themeColor } from "../configs/color";
 import { TelasBox } from "../telas/TelasBox";
 import { TelasList } from "../telas/TelasList";
 import { TelasListItem } from "../telas/TelasListItem";
 import { AmatelasProps } from "./AmatelasProps";
 import { AmatelasRadioButton } from "./AmatelasRadioButton";
 
-interface RadioButton {
-  label: string;
-  checked: boolean;
+interface RequiredToggleItem {
+  key: string;
+  active: boolean;
 }
+
+interface RadioButton extends RequiredToggleItem {}
+
+const updateToggleItem = <ToggleItem extends RequiredToggleItem>(
+  currentToggleItem: ToggleItem,
+  toggleItems: ToggleItem[],
+  acceptMultipleTrue: boolean
+) => {
+  return toggleItems.map((toggleItem) => {
+    if (currentToggleItem.key === toggleItem.key) {
+      return {
+        ...toggleItem,
+        key: toggleItem.key,
+        active: !toggleItem.active,
+      };
+    }
+
+    return {
+      ...toggleItem,
+      key: toggleItem.key,
+      active: acceptMultipleTrue ? toggleItem.active : false,
+    };
+  });
+};
 
 interface AmatelasRadioButtonGroupProps extends AmatelasProps {
   radioButtons: RadioButton[];
-  type?: "multiple" | "single";
+  multiple: boolean;
+  color?: string;
 }
 
 export const AmatelasRadioButtonGroup = (
@@ -22,7 +47,7 @@ export const AmatelasRadioButtonGroup = (
   const [radioButtons, setRadioButtons] = useState<RadioButton[]>(
     props.radioButtons
   );
-  const type = props.type || "single";
+  const color = props.color || themeColor.primary;
   return (
     <TelasList
       ama={{
@@ -35,37 +60,30 @@ export const AmatelasRadioButtonGroup = (
             ama={{
               display: "flex",
               alignItems: "center",
-              color: currentRadioButton.checked
-                ? colors.themeColor
+              color: currentRadioButton.active
+                ? color
                 : colors.charColor,
               gap: "4px",
+              cursor: "pointer",
             }}
-            key={currentRadioButton.label}
+            onClick={() => {
+              setRadioButtons(
+                updateToggleItem<RadioButton>(
+                  currentRadioButton,
+                  radioButtons,
+                  props.multiple
+                )
+              );
+            }}
+            key={currentRadioButton.key}
           >
             <AmatelasRadioButton
-              isChecked={currentRadioButton.checked}
-              onClick={() => {
-                setRadioButtons(
-                  radioButtons.map((radioButton) => {
-                    if (currentRadioButton.label === radioButton.label) {
-                      console.log(radioButton);
-                      return {
-                        label: radioButton.label,
-                        checked: !radioButton.checked,
-                      };
-                    }
-
-                    return {
-                      label: radioButton.label,
-                      checked: type === "single" ? false : radioButton.checked,
-                    };
-                  })
-                );
-              }}
+              color={color}
+              active={currentRadioButton.active}
             >
-              {currentRadioButton.label}
+              {currentRadioButton.key}
             </AmatelasRadioButton>
-            <TelasBox>{currentRadioButton.label}</TelasBox>
+            <TelasBox>{currentRadioButton.key}</TelasBox>
           </TelasListItem>
         );
       })}

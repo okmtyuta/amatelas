@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import colors from "../configs/color";
+import colors, { themeColor } from "../configs/color";
 import { TelasBox } from "../telas/TelasBox";
 import { TelasHeading } from "../telas/TelasHeading";
 import { TelasImage } from "../telas/TelasImage";
@@ -27,7 +27,7 @@ export const AmatelasGithubCard = (props: AmatelasGithubCardProps) => {
   };
   const pseudoAma: PseudoAma = {
     hover: {
-      backgroundColor: colors.themeColor + "10",
+      backgroundColor: themeColor.primary + "10",
     },
     ...props.pseudoAma,
   };
@@ -40,7 +40,7 @@ export const AmatelasGithubCard = (props: AmatelasGithubCardProps) => {
           </TelasBox>
           <TelasHeading
             as="h4"
-            ama={{ fontWeight: "bold", color: colors.themeColor }}
+            ama={{ fontWeight: "bold", color: themeColor.primary }}
           >
             {props.repository}
           </TelasHeading>

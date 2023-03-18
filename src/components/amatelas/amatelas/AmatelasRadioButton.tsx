@@ -1,89 +1,105 @@
 import { ReactNode } from "react";
-import { keyframes } from "styled-components";
-import colors from "../configs/color";
+import { themeColor } from "../configs/color";
+import { theming } from "../function/style/opacity";
 import { TelasBox } from "../telas/TelasBox";
 import { OnClick } from "../types/onEvent";
+import { Ama } from "../types/property";
 import { AmatelasProps } from "./AmatelasProps";
 
-const rippleEffect1 = keyframes`
-  from {
-    width: 0;
-    height: 0;
-    margin: 0;
-  }
-  to {
-    width: 10px;
-    height: 10px;
-    margin: -5px;
-  }
-`;
-const rippleEffect2 = keyframes`
-  from {
-    scale(1)
-  }
-  to {
-    scale(0)
-  }
-`;
-
-const animation1 = {
-  keyframes: rippleEffect1,
-  duration: "0.3s",
-  count: 1,
-  fillMode: "forwards",
-};
-
 interface AmatelasRadioButtonProps extends AmatelasProps {
-  isChecked?: boolean;
+  active?: boolean;
   children?: ReactNode;
   onClick?: OnClick<HTMLDivElement>;
-  width?: number;
+  radius?: number;
+  color?: string;
 }
 
+const CENTER_BALL_RADIUS_RATE = 0.7;
+
+const generateAmatelasRadioButtonAma = (radius: number, color: string) => {
+  const ama: Ama = {
+    position: "relative",
+    width: `${radius * 2}px`,
+    height: `${radius * 2}px`,
+    padding: `${radius * 2 * 0.4}px`,
+    borderRadius: "50%",
+    transition: "0.3s",
+  };
+
+  const baseBeforeAma: Ama = {
+    content: `""`,
+    position: "absolute",
+    left: "50%",
+    top: "50%",
+    width: `${radius * 2}px`,
+    height: `${radius * 2}px`,
+    margin: `-${radius}px`,
+    boxSizing: "border-box",
+    borderRadius: "50%",
+    transition: "0.2s",
+  };
+  const baseAfterAma: Ama = {
+    content: `""`,
+    position: "absolute",
+    left: "50%",
+    top: "50%",
+    transition: "0.2s",
+    borderRadius: "50%",
+    backgroundColor: color,
+  };
+  const activeBeforeAma: Ama = {
+    ...baseBeforeAma,
+    border: `solid 1px ${color}`,
+  };
+  const inactiveBeforeAma: Ama = {
+    ...baseBeforeAma,
+    border: `1px solid ${theming(color, "secondary")}`,
+  };
+  const activeAfterAma: Ama = {
+    ...baseAfterAma,
+    width: `${radius * CENTER_BALL_RADIUS_RATE}px`,
+    height: `${radius * CENTER_BALL_RADIUS_RATE}px`,
+    margin: `-${(radius * CENTER_BALL_RADIUS_RATE) / 2}px`,
+  };
+  const inactiveAfterAma: Ama = {
+    ...baseAfterAma,
+    width: "0",
+    height: "0",
+    margin: "0",
+  };
+
+  return {
+    ama,
+    activeBeforeAma,
+    inactiveBeforeAma,
+    activeAfterAma,
+    inactiveAfterAma,
+  };
+};
+
 export const AmatelasRadioButton = (props: AmatelasRadioButtonProps) => {
-  const width = props.width || 24;
+  const radius = props.radius || 12;
+  const color = props.color || themeColor.primary;
+  const {
+    ama,
+    activeBeforeAma,
+    inactiveBeforeAma,
+    activeAfterAma,
+    inactiveAfterAma,
+  } = generateAmatelasRadioButtonAma(radius, color);
   return (
     <TelasBox
-      ama={{
-        position: "relative",
-        width: `${width}px`,
-        height: `${width}px`,
-        padding: `${width * 0.4}px`,
-        borderRadius: "50%",
-        transition: "0.3s",
-      }}
+      ama={ama}
       pseudoAma={{
         hover: {
-          backgroundColor: colors.themeColor + "10",
+          backgroundColor: props.active
+            ? "transparent"
+            : theming(color, "tertiary"),
         },
-        before: {
-          content: `""`,
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          width: `${width}px`,
-          height: `${width}px`,
-          margin: `-${width / 2}px`,
-          boxSizing: "border-box",
-          borderRadius: "50%",
-          border: props.isChecked
-            ? `solid 1px ${colors.themeColor}`
-            : `1px solid ${colors.themeColor + "52"}`,
-          transition: "0.2s",
-        },
-        after: {
-          content: `""`,
-          position: "absolute",
-          left: "50%",
-          top: "50%",
-          transform: props.isChecked ? "scale(1)" : "scale(0)",
-          transition: "0.2s",
-          borderRadius: "50%",
-          backgroundColor: colors.themeColor,
-          animation: animation1,
-        },
+        before: props.active ? activeBeforeAma : inactiveBeforeAma,
+        after: props.active ? activeAfterAma : inactiveAfterAma,
       }}
       onClick={props.onClick}
-    ></TelasBox>
+    />
   );
 };

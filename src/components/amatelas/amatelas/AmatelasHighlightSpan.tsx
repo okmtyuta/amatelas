@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 import { Ama } from "../types/property";
 import { TelasSpan } from "../telas/TelasSpan";
-import colors from "../configs/color";
-import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
+import colors, { themeColor } from "../configs/color";
+import { AmatelasProps } from "./AmatelasProps";
 
-interface AmatelasWarningBoxProps extends AmatelasFunctionalComponentProps {
+interface AmatelasWarningBoxProps extends AmatelasProps {
   children?: ReactNode;
   type?: "marker" | "underline";
 }
@@ -14,8 +14,8 @@ export const AmatelasHighlightSpan = (props: AmatelasWarningBoxProps) => {
   const ama: Ama =
     type === "marker"
       ? {
-          backgroundColor: colors.themeColor + "1F",
-          color: colors.themeColor,
+          backgroundColor: themeColor.primary + "1F",
+          color: themeColor.primary,
           padding: "0 4px",
           borderRadius: "4px",
           ...props.ama,
@@ -23,8 +23,8 @@ export const AmatelasHighlightSpan = (props: AmatelasWarningBoxProps) => {
       : type === "underline"
       ? {
           textDecoration: "underline",
-          color: colors.themeColor,
-          textDecorationColor: colors.themeColor,
+          color: themeColor.primary,
+          textDecorationColor: themeColor.primary,
           ...props.ama,
         }
       : {

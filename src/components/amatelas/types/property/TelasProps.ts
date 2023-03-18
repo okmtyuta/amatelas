@@ -1,8 +1,9 @@
 import { FontSizeType } from "../../configs/font";
-import { Ama, PseudoAma } from "./Ama";
+import { Ama, ChildAma, PseudoAma } from "./Ama";
 
 export interface TelasProps {
   fontSizeType?: FontSizeType;
   ama?: Ama;
   pseudoAma?: PseudoAma;
+  childAma?: ChildAma;
 }

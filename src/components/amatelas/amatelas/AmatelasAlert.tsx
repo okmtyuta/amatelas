@@ -1,14 +1,13 @@
 import { ReactNode } from "react";
 import { TelasBox } from "../telas/TelasBox";
 import { Ama } from "../types/property";
-import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
 import WarningAmberIcon from "@mui/icons-material/WarningAmber";
 import ErrorOutlineIcon from "@mui/icons-material/ErrorOutline";
 import CheckOutlinedIcon from "@mui/icons-material/CheckOutlined";
 import LocalFireDepartmentIcon from "@mui/icons-material/LocalFireDepartment";
-import colors from "../configs/color";
-
-type AlertType = "error" | "warning" | "info" | "success" | "danger";
+import colors, { alertColor } from "../configs/color";
+import { AlertType } from "../types/property/components/Alert";
+import { AmatelasProps } from "./AmatelasProps";
 
 type Alert = {
   [type in AlertType]: {
@@ -20,33 +19,33 @@ type Alert = {
 
 const alert: Alert = {
   error: {
-    icon: <ErrorOutlineIcon htmlColor={colors.errorIconColor} />,
-    color: colors.errorColor,
-    backgroundColor: colors.errorBackgroundColor,
+    icon: <ErrorOutlineIcon htmlColor={alertColor.error.icon} />,
+    color: alertColor.error.color,
+    backgroundColor: alertColor.error.backgroundColor,
   },
   warning: {
-    icon: <WarningAmberIcon htmlColor={colors.warningIconColor} />,
-    color: colors.warningColor,
-    backgroundColor: colors.warningBackgroundColor,
+    icon: <WarningAmberIcon htmlColor={alertColor.warning.icon} />,
+    color: alertColor.warning.color,
+    backgroundColor: alertColor.warning.backgroundColor,
   },
   info: {
-    icon: <ErrorOutlineIcon htmlColor={colors.infoIconColor} />,
-    color: colors.infoColor,
-    backgroundColor: colors.infoBackgroundColor,
+    icon: <ErrorOutlineIcon htmlColor={alertColor.info.icon} />,
+    color: alertColor.info.color,
+    backgroundColor: alertColor.info.backgroundColor,
   },
   success: {
-    icon: <CheckOutlinedIcon htmlColor={colors.successIconColor} />,
-    color: colors.successColor,
-    backgroundColor: colors.successBackgroundColor,
+    icon: <CheckOutlinedIcon htmlColor={alertColor.success.icon} />,
+    color: alertColor.info.color,
+    backgroundColor: alertColor.info.backgroundColor,
   },
   danger: {
-    icon: <LocalFireDepartmentIcon htmlColor={colors.dangerIconColor} />,
-    color: colors.dangerColor,
-    backgroundColor: colors.dangerBackgroundColor,
+    icon: <LocalFireDepartmentIcon htmlColor={alertColor.danger.icon} />,
+    color: alertColor.danger.color,
+    backgroundColor: alertColor.danger.backgroundColor,
   },
 };
 
-interface AmatelasAlertProps extends AmatelasFunctionalComponentProps {
+interface AmatelasAlertProps extends AmatelasProps {
   children?: ReactNode;
   alertType?: AlertType;
 }
@@ -71,14 +70,14 @@ export const AmatelasAlert = (props: AmatelasAlertProps) => {
         ama={{
           display: "flex",
           justifyContent: "center",
-          color: alertInfo.color,
+          color: alertColor[alertType]["color"],
         }}
       >
         {alertInfo.icon}
       </TelasBox>
       <TelasBox
         ama={{
-          color: alertInfo.color,
+          color: alertColor[alertType]["color"],
         }}
       >
         {props.children}

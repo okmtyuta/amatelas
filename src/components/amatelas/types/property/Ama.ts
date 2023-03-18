@@ -74,3 +74,7 @@ export interface Ama {
 export type PseudoAma = {
   [key in ConfigurablePseudoProperty]?: Ama;
 };
+
+export type ChildAma = {
+  [key in string]?: Ama
+};

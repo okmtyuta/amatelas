@@ -105,3 +105,22 @@ export const opacitySuffix = {
 } as const;
 export type OpacitySuffix = Valueof<typeof opacitySuffix>;
 export type OpacityRate = keyof typeof opacitySuffix;
+
+export const opacitize = (colorCode: string, opacityRate: OpacityRate) => {
+  return colorCode + opacitySuffix[opacityRate];
+};
+
+export const theming = (
+  colorCode: string,
+  series: "primary" | "secondary" | "tertiary"
+) => {
+  if (series === "primary") {
+    return opacitize(colorCode, "100");
+  }
+
+  if (series === "secondary") {
+    return opacitize(colorCode, "30");
+  }
+
+  return opacitize(colorCode, "12");
+};

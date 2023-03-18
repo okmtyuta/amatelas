@@ -43,7 +43,7 @@ export const AmatelasAccordionMenu = (props: AmatelasAccordionMenuProps) => {
       >
         <TelasBox>{props.content}</TelasBox>
         <ExpandMoreIcon
-          htmlColor={colors.themeColor}
+          htmlColor={themeColor.primary}
           sx={{
             transform: isShow ? "rotate(0eg)" : "rotate(-90deg)",
             transition: "0.3s",
@@ -65,8 +65,8 @@ export const AmatelasAccordionMenu = (props: AmatelasAccordionMenuProps) => {
                   ama={{ padding: "6px 12px", borderRadius: "4px" }}
                   pseudoAma={{
                     hover: {
-                      color: "red"
-                    }
+                      color: "red",
+                    },
                   }}
                   isActive={menuItem.isActive}
                   key={menuItem.key}

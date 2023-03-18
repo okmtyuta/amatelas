@@ -2,9 +2,9 @@ import { useEffect, useRef } from "react";
 import katex from "katex";
 import "katex/dist/katex.css";
 import "../style/math.css";
-import colors from "../configs/color";
-import { AmatelasFunctionalComponentProps } from "./functional/AmatelasFunctionalComponentProps";
+import colors, { themeColor } from "../configs/color";
 import { TelasBox } from "../telas/TelasBox";
+import { AmatelasProps } from "./AmatelasProps";
 
 const DISPLAY_ENVIRONMENTS = ["align", "equation"];
 const BEGIN_AND_END_MATCHER: RegExp = /(\\begin\{\w+\}[\s\S]*?\\end\{\w+\})/g;
@@ -88,7 +88,7 @@ export const Katex = (props: KatexProps) => {
     if (katexElement !== null) {
       katex.render(props.equation, katexElement, {
         displayMode: props.display,
-        errorColor: colors.themeColor,
+        errorColor: themeColor.primary,
         output: "html",
         strict: "warn",
         throwOnError: false,
@@ -99,7 +99,7 @@ export const Katex = (props: KatexProps) => {
   return <span ref={katexElementRef} />;
 };
 
-interface AmatelasMathBlockProps extends AmatelasFunctionalComponentProps {
+interface AmatelasMathBlockProps extends AmatelasProps {
   mathString: string; // LaTex形式の文字列 / LaTex-style string
 }
 

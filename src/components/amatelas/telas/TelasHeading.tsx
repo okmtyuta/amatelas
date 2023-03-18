@@ -6,7 +6,7 @@ import { ReactNode } from "react";
 import { Ama } from "../types/property";
 import { TelasBox } from "./TelasBox";
 import colors from "../configs/color";
-import { fontFamilies } from "../configs/font";
+import { fontFamily } from "../configs/font";
 
 type Heading = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
 
@@ -19,7 +19,7 @@ interface TelasHeadingProps extends TelasProps {
 export const TelasHeading = (props: TelasHeadingProps) => {
   const ama: Ama = {
     color: "inherit",
-    fontFamily: fontFamilies.default,
+    fontFamily: fontFamily.default,
     ...props.ama,
   };
   return (
