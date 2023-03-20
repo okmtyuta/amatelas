@@ -1,6 +1,5 @@
 import { useState } from "react";
-import { themeColor } from "../configs/color";
-import { theming } from "../function/style/opacity";
+import colors, { themeColor } from "../configs/color";
 import { TelasBox } from "../telas/TelasBox";
 import { OnClick } from "../types/onEvent";
 import { Ama } from "../types/property";
@@ -10,14 +9,18 @@ interface AmatelasSwitchProps extends AmatelasProps {
   active: boolean;
   color?: string;
   onClick?: OnClick<HTMLDivElement>;
+  width?: number;
+  height?: number;
 }
+
+const BALL_RADIUS_RATIO = 1.3
 
 const generateAmatelasSwitchAma = (
   width: number,
   height: number,
   color: string
 ) => {
-  const ballRadius = (height * 1.3) / 2;
+  const ballRadius = (height * BALL_RADIUS_RATIO) / 2;
   const baseBeforeAma: Ama = {
     position: "absolute",
     top: "50%",
@@ -55,7 +58,7 @@ const generateAmatelasSwitchAma = (
   };
   const inactiveAma: Ama = {
     ...baseAma,
-    backgroundColor: theming(color, "secondary"),
+    backgroundColor: colors.gray,
     transition: "0.5s",
   };
 
@@ -70,9 +73,11 @@ const generateAmatelasSwitchAma = (
 export const AmatelasSwitch = (props: AmatelasSwitchProps) => {
   const [active, setActive] = useState<boolean>(props.active);
   const color = props.color || themeColor.primary;
+  const width = props.width || 50;
+  const height = props.height || 20;
 
   const { activeAma, inactiveAma, activeBeforeAma, inactiveBeforeAma } =
-    generateAmatelasSwitchAma(500, 20, color);
+    generateAmatelasSwitchAma(width, height, color);
   const ama: Ama = active ? activeAma : inactiveAma;
   const beforeAma: Ama = active ? activeBeforeAma : inactiveBeforeAma;
 

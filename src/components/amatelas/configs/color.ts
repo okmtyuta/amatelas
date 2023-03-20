@@ -51,6 +51,10 @@ const colors = {
   backgroundLightGray: pallet.shironeri,
   lineGray: pallet.murasakisuisho,
 
+  error: "#D32F2F",
+
+  gray: "#cccccc",
+
   white: pallet.shiro,
   black: pallet.kuro,
 

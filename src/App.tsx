@@ -1,6 +1,4 @@
-import { useState } from "react";
 import { AmatelasAlert } from "./components/amatelas/amatelas/AmatelasAlert";
-import { AmatelasToggleMnuItem } from "./components/amatelas/amatelas/AmatelasToggleMenuItem";
 import { AmatelasGithubCard } from "./components/amatelas/amatelas/AmatelasGithubCard";
 import colors, { themeColor } from "./components/amatelas/configs/color";
 import { TelasBox } from "./components/amatelas/telas/TelasBox";
@@ -14,14 +12,17 @@ import { Footer } from "./components/parts/Footer";
 import { AmatelasRadioButtonGroup } from "./components/amatelas/amatelas/AmatelasRadioButtonGroup";
 import { fontFamily } from "./components/amatelas/configs/font";
 import { AmatelasSwitch } from "./components/amatelas/amatelas/AmatelasSwitch";
+import { AmatelasBaseTextfield } from "./components/amatelas/amatelas/base/AmatelasBaseTextfield";
+import { useState } from "react";
 
 const radioButtons = [
-  { key: "first", active: true },
-  { key: "second", active: false },
-  { key: "third", active: false },
+  { key: "primary", active: true },
+  { key: "secondary", active: false },
+  { key: "tertiary", active: false },
 ];
 
 function App() {
+  const [color, setColor] = useState<string>(themeColor.secondary);
   return (
     <TelasBox
       ama={{
@@ -37,13 +38,18 @@ function App() {
       }}
     >
       <Header />
-      <AmatelasSwitch
-        onClick={() => {
-          console.log("clidk");
-        }}
-        active={true}
-        color={themeColor.tertiary}
+      <AmatelasBaseTextfield
+        color={color}
+        placeholder="placeholder"
+        validationRules={[
+          {
+            rule: /^[\s\S]*@[\s\S]*.com$/,
+            alert: "***@***.com形式で入力してください。",
+          },
+          { rule: /utokyo/, alert: "どこかにutokyoを含めてください。" },
+        ]}
       />
+      <AmatelasSwitch active={true} color={color} />
       <TelasHeading
         ama={{
           padding: "6px 0",
@@ -55,7 +61,7 @@ function App() {
       </TelasHeading>
 
       <AmatelasRadioButtonGroup
-        color={themeColor.secondary}
+        color={color}
         multiple={false}
         radioButtons={radioButtons}
       />

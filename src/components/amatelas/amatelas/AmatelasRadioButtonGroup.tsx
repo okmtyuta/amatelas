@@ -3,6 +3,7 @@ import colors, { themeColor } from "../configs/color";
 import { TelasBox } from "../telas/TelasBox";
 import { TelasList } from "../telas/TelasList";
 import { TelasListItem } from "../telas/TelasListItem";
+import { OnClick } from "../types/onEvent";
 import { AmatelasProps } from "./AmatelasProps";
 import { AmatelasRadioButton } from "./AmatelasRadioButton";
 
@@ -60,9 +61,7 @@ export const AmatelasRadioButtonGroup = (
             ama={{
               display: "flex",
               alignItems: "center",
-              color: currentRadioButton.active
-                ? color
-                : colors.charColor,
+              color: currentRadioButton.active ? color : colors.charColor,
               gap: "4px",
               cursor: "pointer",
             }}

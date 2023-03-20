@@ -2,10 +2,11 @@ import styled from "styled-components";
 import { composeTelas } from "./factory/composeTelas";
 import { TelasProps } from "../types/property/TelasProps";
 import { fontFamily } from "../configs/font";
+import colors from "../configs/color";
 
-interface TelasBoxProps extends TelasProps {}
+interface TelasLabelProps extends TelasProps {}
 
-export const TelasBox = styled.div<TelasBoxProps>`
+export const TelasLabel = styled.label<TelasLabelProps>`
   color: inherit;
   font-family: ${fontFamily.default};
 
