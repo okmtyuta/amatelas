@@ -1,0 +1,36 @@
+{
+  "name": "@okmtyuta/amatelas-lit",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && tsc && tsc-alias",
+    "preview": "vite preview"
+  },
+  "files": [
+    "dist",
+    "dist/style.css",
+    "cdn",
+    "cdn/style.css"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/types/index.d.ts"
+    },
+    "./style.css": {
+      "import": "./dist/style.css"
+    }
+  },
+  "dependencies": {
+    "@okmtyuta/amatelas-theme": "workspace:^",
+    "clsx": "^2.0.0",
+    "lit": "^3.1.2"
+  },
+  "devDependencies": {
+    "tsc-alias": "^1.8.8",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0"
+  }
+}
