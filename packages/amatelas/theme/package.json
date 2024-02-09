@@ -5,10 +5,14 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build && tsc && tsc-alias",
+    "build:theme": "pnpm tsx ./src/build.ts",
+    "build:script": "vite build && tsc && tsc-alias",
+    "build": "pnpm build:script && pnpm build:theme",
     "preview": "vite preview"
   },
-  "files": ["dist/"],
+  "files": [
+    "dist/"
+  ],
   "exports": {
     ".": {
       "import": "./dist/index.js",

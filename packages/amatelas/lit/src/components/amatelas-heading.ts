@@ -3,9 +3,9 @@ import { property } from 'lit/decorators.js'
 import clsx from 'clsx'
 
 import styles from '@okmtyuta/amatelas-theme/styles.css?inline'
-import { headingClasses } from '@okmtyuta/amatelas-theme'
+import { heading } from '@okmtyuta/amatelas-theme'
 
-const classes = headingClasses
+const classes = heading.classes
 
 export class AmatelasHeading extends LitElement {
   @property()

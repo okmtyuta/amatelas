@@ -16,7 +16,7 @@ export default defineConfig({
       }
     },
     rollupOptions: {
-      external: ['clsx', 'lit', 'lit/decorators.js'],
+      external: [],
       output: {}
     }
   }
