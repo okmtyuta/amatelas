@@ -1,1 +1,1 @@
-export { heading } from './components/_abstract/display/heading/css'
+export { heading, paragraph, frame } from './components/_abstract/display'

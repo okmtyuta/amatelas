@@ -1,8 +1,9 @@
-import { heading } from './components/_abstract/display/heading/css'
+import { frame, heading, paragraph } from '.'
+
 import { write } from './write'
 
 const build = () => {
-  write(heading.styles)
+  write(frame.styles, heading.styles, paragraph.styles)
 }
 
 build()

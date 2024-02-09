@@ -1,5 +1,5 @@
 packages:
   - 'packages/amatelas/*'
   # - 'packages/markdown/*'
-  # - "apps/*"
+  - "apps/docs/*"
   # - "storybook"
