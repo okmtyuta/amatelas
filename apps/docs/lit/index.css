@@ -9,6 +9,8 @@
   top: 0;
   left: 0;
   right: 0;
+
+  grid-area: header;
 }
 .header-content {
   height: 100%;
@@ -17,4 +19,23 @@
   justify-content: center;
   padding-left: 24px;
   padding-right: 24px;
+}
+.footer {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: footer;
+}
+.body {
+  display: grid;
+  grid-template:
+    'header' auto
+    'main' 1fr
+    'footer' auto;
+  height: 100vh;
+}
+.main {
+  grid-area: main;
 }
