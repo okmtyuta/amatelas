@@ -6,41 +6,47 @@
     <link rel="stylesheet" href="./reset.css" />
     <link rel="stylesheet" href="./index.css" />
     <title>Amatelas | Lit Docs</title>
-    <script
+    <!-- <script
       type="module"
       src="https://cdn.jsdelivr.net/npm/@okmtyuta/amatelas-lit@latest/dist/init.js"
+    ></script> -->
+    <script
+      type="module"
+      src="../../../packages/amatelas/lit/dist/init.js"
     ></script>
   </head>
 
-  <body id="app" class="loading body">
-    <amatelas-positional position="sticky" class="header">
-      <div class="header-content">Amatelas Lit Documentation</div>
-    </amatelas-positional>
+  <body id="app" class="loading">
+    <div class="body">
+      <amatelas-positional position="sticky" class="header">
+        <div class="header-content">Amatelas Lit Documentation</div>
+      </amatelas-positional>
 
-    <main class="main">
-      <amatelas-frame>
-        <amatelas-heading element="h1">
-          Amatelas Web Components
-        </amatelas-heading>
-        <amatelas-heading element="h2"> Introduction</amatelas-heading>
+      <main class="main">
+        <amatelas-frame>
+          <amatelas-heading element="h1">
+            Amatelas Web Components
+          </amatelas-heading>
+          <amatelas-heading element="h2"> Introduction</amatelas-heading>
 
-        <amatelas-paragraph>
-          Amatelas Web Components is a UI library created with Lit / Web
-          Components. This documentation is created with Amatelas Web
-          Components.
-        </amatelas-paragraph>
+          <amatelas-paragraph>
+            Amatelas Web Components is a UI library created with Lit / Web
+            Components. This documentation is created with Amatelas Web
+            Components.
+          </amatelas-paragraph>
 
-        <amatelas-heading element="h2"> Quick Start</amatelas-heading>
-        <amatelas-paragraph>
-          You can try using Amatelas via CDN:
-          https://cdn.jsdelivr.net/npm/@okmtyuta/amatelas-lit@latest/dist/init.js
-        </amatelas-paragraph>
-        <amatelas-paragraph>
-          Also check GitHub Repo: https://github.com/okmtyuta/amatelas
-        </amatelas-paragraph>
-      </amatelas-frame>
-    </main>
+          <amatelas-heading element="h2"> Quick Start</amatelas-heading>
+          <amatelas-paragraph>
+            You can try using Amatelas via CDN:
+            https://cdn.jsdelivr.net/npm/@okmtyuta/amatelas-lit@latest/dist/init.js
+          </amatelas-paragraph>
+          <amatelas-paragraph>
+            Also check GitHub Repo: https://github.com/okmtyuta/amatelas
+          </amatelas-paragraph>
+        </amatelas-frame>
+      </main>
 
-    <footer class="footer">© 2024 amatelas.dev / yuta.app</footer>
+      <footer class="footer">© 2024 amatelas.dev / yuta.app</footer>
+    </div>
   </body>
 </html>
