@@ -8,7 +8,7 @@
     <title>Amatelas | Lit Docs</title>
     <script
       type="module"
-      src="https://cdn.jsdelivr.net/npm/@okmtyuta/amatelas-lit@latest/dist/init.js"
+      src="https://cdn.jsdelivr.net/npm/@okmtyuta/amatelas-lit@0.1.5/dist/init.js"
     ></script>
     <!-- <script
       type="module"
@@ -18,7 +18,7 @@
 
   <body id="app" class="loading">
     <div class="body">
-      <amatelas-positional position="sticky" class="header">
+      <amatelas-positional position="fixed" class="header">
         <div class="header-content">Amatelas Lit Documentation</div>
       </amatelas-positional>
 
@@ -43,6 +43,18 @@
           <amatelas-paragraph>
             Also check GitHub Repo: https://github.com/okmtyuta/amatelas
           </amatelas-paragraph>
+
+          <amatelas-heading element="h2"> Examples: Button </amatelas-heading>
+
+          <div class="examples">
+            <amatelas-button variant="filled"> BUTTON </amatelas-button>
+            <amatelas-button variant="outlined" color="alert">
+              BUTTON
+            </amatelas-button>
+            <amatelas-button variant="standard" color="blue">
+              BUTTON
+            </amatelas-button>
+          </div>
         </amatelas-frame>
       </main>
 

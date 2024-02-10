@@ -1,7 +1,9 @@
 .loading {
   display: none;
 }
-
+.header {
+  grid-area: header;
+}
 .header::part(self) {
   height: 64px;
   background-color: white;
@@ -9,8 +11,7 @@
   top: 0;
   left: 0;
   right: 0;
-
-  grid-area: header;
+  z-index: calc(infinity);
 }
 .header-content {
   height: 100%;
@@ -29,13 +30,19 @@
   grid-area: footer;
 }
 .body {
+  word-break: break-all;
   display: grid;
   grid-template:
     'header' auto
     'main' 1fr
     'footer' auto;
-  height: 100vh;
+  min-height: 100vh;
+  padding-top: 64px;
 }
 .main {
   grid-area: main;
+}
+.examples {
+  display: flex;
+  gap: 4px;
 }
