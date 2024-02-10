@@ -1,4 +1,12 @@
-import { frame, heading, nativeButton, paragraph, positional, ripple } from '.'
+import {
+  frame,
+  heading,
+  nativeButton,
+  paragraph,
+  positional,
+  ripple,
+  skeleton
+} from '.'
 
 import { write } from './write'
 
@@ -12,6 +20,9 @@ const build = () => {
     // effect
     ripple.styles,
     ripple.colorStyles,
+
+    //effect
+    skeleton.styles,
 
     // input
     nativeButton.styles,
