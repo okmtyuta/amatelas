@@ -20,3 +20,17 @@ export const color = {
   neutral: '#7f7f7f'
 }
 export const colors = Object.keys(color)
+export type PrimaryColor =
+  | 'blue'
+  | 'light-blue'
+  | 'cyan'
+  | 'green'
+  | 'lime'
+  | 'yellow'
+  | 'orange'
+  | 'red'
+  | 'magenta'
+  | 'purple'
+  | 'neutral'
+export type SemanticColor = 'alert' | 'info' | 'success' | 'warning'
+export type Color = PrimaryColor | SemanticColor

@@ -1,6 +1,7 @@
-import { LitElement, html, unsafeCSS } from 'lit'
-import styles from '@okmtyuta/amatelas-theme/styles.css?inline'
 import { positional } from '@okmtyuta/amatelas-theme'
+import { LitElement, unsafeCSS } from 'lit'
+import { html, unsafeStatic } from 'lit/static-html.js'
+import styles from '@okmtyuta/amatelas-theme/styles.css?inline'
 import { property } from 'lit/decorators.js'
 import clsx from 'clsx'
 
@@ -8,17 +9,19 @@ const classes = positional.classes
 
 export class AmatelasPositional extends LitElement {
   @property()
+  element: string = 'div'
+
+  @property()
   position: 'static' | 'relative' | 'fixed' | 'absolute' | 'sticky' = 'static'
 
   render() {
     return html`
-      <div
-        part="self"
-        class=${clsx(classes.positional, classes[this.position])}
-      >
+      <${unsafeStatic(this.element)} part="self" class=${clsx(
+      classes.positional,
+      classes[this.position]
+    )} >
         <slot></slot>
-      </div>
-    `
+      </${unsafeStatic(this.element)}>`
   }
 
   static styles = unsafeCSS(styles)

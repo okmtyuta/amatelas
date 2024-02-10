@@ -1,7 +1,7 @@
-import { NotHexStringError } from '../error/NotHexStringError'
-import { isHexString } from '../guards/isHexString'
-import { HexString } from '../types/HexString'
-import { RGBArray } from '../types/RGBArray'
+import { NotHexStringError } from './error/NotHexStringError'
+import { isHexString } from './guards/isHexString'
+import { HexString } from './types/HexString'
+import { RGBArray } from './types/RGBArray'
 import { RGB } from './RGB'
 
 export class Hex {

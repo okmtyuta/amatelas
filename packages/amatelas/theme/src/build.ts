@@ -1,9 +1,16 @@
-import { frame, heading, paragraph, positional } from '.'
+import { frame, heading, nativeButton, paragraph, positional } from '.'
 
 import { write } from './write'
 
 const build = () => {
-  write(frame.styles, heading.styles, paragraph.styles, positional.style)
+  write(
+    frame.styles,
+    heading.styles,
+    paragraph.styles,
+    positional.style,
+    nativeButton.styles,
+    nativeButton.colorStyles
+  )
 }
 
 build()

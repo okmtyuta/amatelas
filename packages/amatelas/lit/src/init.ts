@@ -3,8 +3,8 @@ import { init } from '.'
 window.onload = () => {
   const app = document.getElementById('app')
 
+  init()
   if (app) {
-    init()
     app.classList.remove('loading')
   }
 }

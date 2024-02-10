@@ -1,8 +1,8 @@
-import { CannotComplementZeroError } from '../error/CannotComplementZeroError'
-import { NotRGBArrayError } from '../error/NorRGBArrayError'
-import { isRGBArray } from '../guards/isRGBArray'
-import { HexString } from '../types/HexString'
-import { RGBArray } from '../types/RGBArray'
+import { CannotComplementZeroError } from './error/CannotComplementZeroError'
+import { NotRGBArrayError } from './error/NorRGBArrayError'
+import { isRGBArray } from './guards/isRGBArray'
+import { HexString } from './types/HexString'
+import { RGBArray } from './types/RGBArray'
 
 const complementZero = (target: string) => {
   if (target.length > 2) {
