@@ -3,18 +3,25 @@ import styles from '@okmtyuta/amatelas-theme/styles.css?inline'
 import { ripple } from '@okmtyuta/amatelas-theme'
 import clsx from 'clsx'
 import { property } from 'lit/decorators.js'
+import { Color } from '@okmtyuta/amatelas-lib'
 
 const classes = ripple.classes
 
 export class AmatelasRipple extends LitElement {
   @property() x: number = 0
   @property() y: number = 0
+  @property() color: Color = 'info'
+  @property() theme: 'dark' | 'light' = 'light'
 
   render() {
     return html`
       <span
-        style=${`top:${15 - 100}px;left:${30 - 100}px;`}
-        class=${clsx(classes.ripple)}
+        style=${`top:${this.y}px;left:${this.x}px;`}
+        class=${clsx(
+          classes.ripple,
+          classes.color(this.color),
+          classes[this.theme]
+        )}
       ></span>
     `
   }

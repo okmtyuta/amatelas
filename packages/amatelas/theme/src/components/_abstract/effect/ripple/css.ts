@@ -1,10 +1,16 @@
+import { Color, Hex, color, strictEntries } from '@okmtyuta/amatelas-lib'
 import { prefixedBy } from '@src/prefixedBy'
 
 const _prefixed = prefixedBy('ripple')
 
 const classes = {
   ripple: _prefixed(),
-  effect: _prefixed('effect')
+  effect: _prefixed('effect'),
+  light: _prefixed('light'),
+  dark: _prefixed('dark'),
+  color: (color: Color) => {
+    return _prefixed(color)
+  }
 }
 
 const styles = /* css */ `
@@ -18,16 +24,29 @@ const styles = /* css */ `
     opacity: 0;
   }
 }
-
 .${classes.ripple} {
   position: absolute;
   width: 200px;
   height: 200px;
   border-radius: 50%;
-  background-color: red;
-
   animation: ${classes.effect} 1s forwards;
 }
 `
 
-export const ripple = { classes, styles }
+const colorStyles = strictEntries(color)
+  .map(([key, code]) => {
+    const hex = new Hex(code)
+
+    const style = /* css */ `
+    .${classes.ripple}.${classes.color(key)}.${classes.light} {
+      background-color: ${hex.getLighten(0.9).getHexString()};
+    }
+    .${classes.ripple}.${classes.color(key)}.${classes.dark} {
+      background-color: ${hex.getLighten(0.5).getHexString()};
+    }
+    `
+    return style
+  })
+  .join(' ')
+
+export const ripple = { classes, styles, colorStyles }

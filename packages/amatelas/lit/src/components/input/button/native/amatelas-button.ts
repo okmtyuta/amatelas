@@ -1,4 +1,4 @@
-import { LitElement, unsafeCSS } from 'lit'
+import { LitElement, css, unsafeCSS } from 'lit'
 import { property } from 'lit/decorators.js'
 import { html, unsafeStatic } from 'lit/static-html.js'
 
@@ -34,7 +34,14 @@ export class AmatelasButton extends LitElement {
     `
   }
 
-  static styles = unsafeCSS(styles)
+  static styles = [
+    unsafeCSS(styles),
+    css`
+      :host {
+        display: inline-flex;
+      }
+    `
+  ]
 }
 
 declare global {

@@ -1,5 +1,8 @@
 *:where(
-    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+    :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *):not(
+        amatelas-button,
+        amatelas-material-button
+      )
   ) {
   all: unset;
   display: revert;

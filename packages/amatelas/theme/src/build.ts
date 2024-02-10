@@ -11,6 +11,7 @@ const build = () => {
 
     // effect
     ripple.styles,
+    ripple.colorStyles,
 
     // input
     nativeButton.styles,

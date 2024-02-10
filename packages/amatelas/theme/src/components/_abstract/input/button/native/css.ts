@@ -16,14 +16,12 @@ const classes = {
 
 const styles = /* css */ `
 .${classes.nativeButton} {
+  height: 48px;
   outline: none;
   position: relative;
   overflow: hidden;
   padding: 12px 20px;
   border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   box-sizing: border-box;
   cursor: pointer;
 }
@@ -60,7 +58,6 @@ const colorStyles = strictEntries(color)
       border: none;
       color: white;
       background-color: ${hex.getHexString()};
-      border: solid 1px ${hex.getHexString()};
     }
     .${classes.nativeButton}.${classes.filled}.${classes.color(
       key
@@ -87,7 +84,6 @@ const colorStyles = strictEntries(color)
       border: none;
       color: ${hex.getHexString()};
       background-color: transparent;
-      border: solid 1px transparent;
     }
     .${classes.nativeButton}.${classes.standard}.${classes.color(
       key
