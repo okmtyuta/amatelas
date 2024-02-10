@@ -24,7 +24,6 @@ const styles = /* css */ `
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 12px;
   box-sizing: border-box;
   cursor: pointer;
 }

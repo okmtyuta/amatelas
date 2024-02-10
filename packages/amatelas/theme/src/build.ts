@@ -1,15 +1,23 @@
-import { frame, heading, nativeButton, paragraph, positional } from '.'
+import { frame, heading, nativeButton, paragraph, positional, ripple } from '.'
 
 import { write } from './write'
 
 const build = () => {
   write(
+    // display
     frame.styles,
     heading.styles,
     paragraph.styles,
-    positional.style,
+
+    // effect
+    ripple.styles,
+
+    // input
     nativeButton.styles,
-    nativeButton.colorStyles
+    nativeButton.colorStyles,
+
+    // layout
+    positional.style
   )
 }
 

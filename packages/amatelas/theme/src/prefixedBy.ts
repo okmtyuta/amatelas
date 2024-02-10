@@ -1,9 +1,6 @@
-type PrefixType = 'component' | 'effect' | "keyframes"
-
-export const prefixedBy = (prefix: string, type?: PrefixType) => {
+export const prefixedBy = (prefix: string) => {
   const prefixed = (target?: string) => {
-    const _type = type || 'component'
-    const _prefix = `AMUI-${_type}-${prefix}_`
+    const _prefix = `AMUI-component-${prefix}_`
     if (target) {
       return `${_prefix}${target}`
     }
