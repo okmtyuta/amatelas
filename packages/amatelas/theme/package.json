@@ -19,7 +19,8 @@
     },
     "./styles.css": {
       "import": "./dist/styles.css"
-    }
+    },
+    "./components/*": "./dist/components/*"
   },
   "devDependencies": {
     "@okmtyuta/amatelas-lib": "workspace:^",

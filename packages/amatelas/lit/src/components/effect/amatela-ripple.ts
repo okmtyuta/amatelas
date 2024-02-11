@@ -1,5 +1,5 @@
 import { LitElement, html, unsafeCSS } from 'lit'
-import styles from '@okmtyuta/amatelas-theme/styles.css?inline'
+import styles from '@okmtyuta/amatelas-theme/components/ripple.css?inline'
 import { ripple } from '@okmtyuta/amatelas-theme'
 import clsx from 'clsx'
 import { property } from 'lit/decorators.js'

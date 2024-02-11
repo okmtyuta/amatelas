@@ -1,5 +1,5 @@
 import { LitElement, html, unsafeCSS } from 'lit'
-import styles from '@okmtyuta/amatelas-theme/styles.css?inline'
+import styles from '@okmtyuta/amatelas-theme/components/paragraph.css?inline'
 import { paragraph } from '@okmtyuta/amatelas-theme'
 
 const classes = paragraph.classes

@@ -20,28 +20,28 @@ import {
 
 import { write } from './write'
 
+const source = {
+  // display
+  frame: frame.styles,
+  heading: heading.styles,
+  paragraph: paragraph.styles,
+
+  // effect
+  ripple: ripple.styles,
+
+  //effect
+  skeleton: skeleton.styles,
+
+  // input
+  "native-button": nativeButton.styles,
+
+  // layout
+  flex: flex.styles,
+  positional: positional.style
+}
+
 const build = () => {
-  write(
-    // display
-    frame.styles,
-    heading.styles,
-    paragraph.styles,
-
-    // effect
-    ripple.styles,
-    ripple.colorStyles,
-
-    //effect
-    skeleton.styles,
-
-    // input
-    nativeButton.styles,
-    nativeButton.colorStyles,
-
-    // layout
-    flex.styles,
-    positional.style
-  )
+  write(source)
 }
 
 build()

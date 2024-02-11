@@ -5,7 +5,7 @@ import { html, unsafeStatic } from 'lit/static-html.js'
 import clsx from 'clsx'
 
 import { nativeButton } from '@okmtyuta/amatelas-theme'
-import styles from '@okmtyuta/amatelas-theme/styles.css?inline'
+import styles from '@okmtyuta/amatelas-theme/components/native-button.css?inline'
 import { type Color } from '@okmtyuta/amatelas-lib'
 import { repeat } from 'lit/directives/repeat.js'
 
@@ -75,7 +75,7 @@ export class AmatelasMaterialButton extends LitElement {
     unsafeCSS(styles),
     css`
       :host {
-        display: inline-flex;
+        display: inline-block;
       }
     `
   ]

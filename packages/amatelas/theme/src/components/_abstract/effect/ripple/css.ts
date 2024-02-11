@@ -49,4 +49,4 @@ const colorStyles = strictEntries(color)
   })
   .join(' ')
 
-export const ripple = { classes, styles, colorStyles }
+export const ripple = { classes, styles: [styles, colorStyles].join(' ') }

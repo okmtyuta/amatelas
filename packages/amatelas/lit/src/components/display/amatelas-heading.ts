@@ -2,7 +2,7 @@ import { LitElement, unsafeCSS } from 'lit'
 import { property } from 'lit/decorators.js'
 import clsx from 'clsx'
 
-import styles from '@okmtyuta/amatelas-theme/styles.css?inline'
+import styles from '@okmtyuta/amatelas-theme/components/heading.css?inline'
 import { heading } from '@okmtyuta/amatelas-theme'
 import { html, unsafeStatic } from 'lit/static-html.js'
 

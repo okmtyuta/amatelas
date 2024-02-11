@@ -96,4 +96,4 @@ const colorStyles = strictEntries(color)
   })
   .join(' ')
 
-export const nativeButton = { classes, styles, colorStyles }
+export const nativeButton = { classes, styles: [styles, colorStyles].join(' ') }
