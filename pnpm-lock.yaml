@@ -13,6 +13,12 @@ importers:
       '@astrojs/check':
         specifier: ^0.4.1
         version: 0.4.1(typescript@5.3.3)
+      '@okmtyuta/amatelas-lib':
+        specifier: workspace:^
+        version: link:../lib
+      '@okmtyuta/amatelas-theme':
+        specifier: workspace:^
+        version: link:../theme
       astro:
         specifier: ^4.3.5
         version: 4.3.5(typescript@5.3.3)

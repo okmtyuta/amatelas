@@ -1,0 +1,21 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { positional } from '@okmtyuta/amatelas-theme'
+
+type Props = {
+  position?: 'static' | 'relative' | 'fixed' | 'absolute' | 'sticky'
+} & HTMLAttributes<'div'>
+
+const { classes } = positional
+const { position = 'static', ...props } = Astro.props
+---
+
+<div
+  {...props}
+  class:list={[
+    classes.positional,
+    classes[position]
+  ]}
+>
+  <slot />
+</div>

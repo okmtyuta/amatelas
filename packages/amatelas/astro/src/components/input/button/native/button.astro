@@ -1,0 +1,25 @@
+---
+import type { HTMLAttributes, HTMLTag } from 'astro/types'
+import { type Color } from '@okmtyuta/amatelas-lib'
+import { nativeButton } from '@okmtyuta/amatelas-theme'
+
+type Props = {
+  element?: "button"
+  color?: Color
+  variant?: "standard" | "filled" | "outlined"
+} & HTMLAttributes<"button">
+
+const { classes } = nativeButton
+const { element = 'button', color = "info", variant = "standard", ...props } = Astro.props
+const Element = "button"
+---
+
+<Element
+  class:list={[
+    classes.nativeButton,
+    classes[variant],
+    classes.color(color)
+  ]}
+>
+  <slot />
+</Element>
