@@ -9,25 +9,22 @@ import styles from '@okmtyuta/amatelas-theme/styles.css?inline'
 import { type Color } from '@okmtyuta/amatelas-lib'
 import { repeat } from 'lit/directives/repeat.js'
 
+type Ripple = {
+  x: number
+  y: number
+  key: string
+}
 const classes = nativeButton.classes
 
 export class AmatelasMaterialButton extends LitElement {
-  @property()
-  element: string = 'button'
-
-  @property()
-  color: Color = 'info'
-
-  @property()
-  variant: 'standard' | 'filled' | 'outlined' = 'standard'
-
-  @property()
-  ripples: { x: number; y: number; key: string }[] = []
+  @property() element: string = 'button'
+  @property() color: Color = 'info'
+  @property() variant: 'standard' | 'filled' | 'outlined' = 'standard'
+  @property() ripples: Ripple[] = []
 
   rippleTheme = this.variant === 'filled' ? 'light' : 'dark'
 
   handleClick = (e: MouseEvent) => {
-    // console.log(this.ripples.length)
     const button = this.shadowRoot?.querySelector('#self')
     if (button) {
       const x = e.clientX - button.getBoundingClientRect().x - 100

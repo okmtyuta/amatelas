@@ -24,6 +24,7 @@ const styles = /* css */ `
   border-radius: 4px;
   box-sizing: border-box;
   cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .${classes.nativeButton}:disabled {
   color: ${new Hex(color.neutral).getDarken(0.95).getHexString()};
@@ -89,7 +90,6 @@ const colorStyles = strictEntries(color)
       key
     )}:not(:disabled):hover {
       background-color: ${hex.getLighten(0.95).getHexString()};
-      border: solid 1px ${hex.getLighten(0.95).getHexString()};
     }
     `
     return style

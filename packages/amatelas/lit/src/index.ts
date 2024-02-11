@@ -10,7 +10,7 @@ import { AmatelasSkeleton } from './components/feedback/skeleton/amatelas-skelet
 
 import { AmatelasButton, AmatelasMaterialButton } from './components/input'
 
-import { AmatelasPositional } from './components/layout'
+import { AmatelasFlex, AmatelasPositional } from './components/layout'
 
 export {
   // display
@@ -29,6 +29,7 @@ export {
   AmatelasMaterialButton,
 
   // layout
+  AmatelasFlex,
   AmatelasPositional
 }
 
@@ -49,5 +50,6 @@ export const init = () => {
   customElements.define('amatelas-material-button', AmatelasMaterialButton)
 
   // layout
+  customElements.define('amatelas-flex', AmatelasFlex)
   customElements.define('amatelas-positional', AmatelasPositional)
 }

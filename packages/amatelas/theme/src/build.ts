@@ -1,11 +1,21 @@
 import {
+  // display
   frame,
   heading,
-  nativeButton,
   paragraph,
-  positional,
+
+  // effect
   ripple,
-  skeleton
+
+  // feedback
+  skeleton,
+
+  // input
+  nativeButton,
+
+  // layout
+  flex,
+  positional
 } from '.'
 
 import { write } from './write'
@@ -29,6 +39,7 @@ const build = () => {
     nativeButton.colorStyles,
 
     // layout
+    flex.styles,
     positional.style
   )
 }
