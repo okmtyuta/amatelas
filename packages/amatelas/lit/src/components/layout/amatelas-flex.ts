@@ -16,18 +16,22 @@ export class AmatelasFlex extends LitElement {
   @property() justifyContent: CSSValue['justifyContent'] = 'normal'
   @property() alignItems: CSSValue['alignItems'] = 'normal'
 
+  @property() gap: number = 0
+
   render() {
     return html`
       <${unsafeStatic(this.element)}
-      part="self"
-      class=${clsx(
-        classes.flex,
-        classes.direction[this.direction],
-        classes.alignContent[this.alignContent],
-        classes.justifyContent[this.justifyContent],
-        classes.alignItems[this.alignItems],
-        { [classes.wrap]: this.wrap }
-      )} >
+        part="self"
+        style=${`gap:${this.gap}px`}
+        class=${clsx(
+          classes.flex,
+          classes.direction[this.direction],
+          classes.alignContent[this.alignContent],
+          classes.justifyContent[this.justifyContent],
+          classes.alignItems[this.alignItems],
+          { [classes.wrap]: this.wrap }
+        )}
+      >
         <slot></slot>
       </${unsafeStatic(this.element)}>`
   }

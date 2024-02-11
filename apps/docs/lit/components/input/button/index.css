@@ -1,0 +1,48 @@
+.loading {
+  display: none;
+}
+.header {
+  grid-area: header;
+}
+.header::part(self) {
+  height: 64px;
+  background-color: white;
+  border-bottom: solid 1px rgba(0, 0, 0, 0.12);
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: calc(infinity);
+}
+.header-content {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.footer {
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  grid-area: footer;
+}
+.body {
+  word-break: break-all;
+  display: grid;
+  grid-template:
+    'header' auto
+    'main' 1fr
+    'footer' auto;
+  min-height: 100vh;
+  padding-top: 64px;
+}
+.main {
+  grid-area: main;
+}
+.examples {
+  display: flex;
+  gap: 4px;
+}
