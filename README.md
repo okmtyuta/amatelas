@@ -13,17 +13,17 @@
 # 実装状況
 
 |                | Lit | React | Vue | Astro | Angular | Dioxus | REFERENCE |
-| -------------- | --- | ----- | --- | ----- | ------- | ------ | --------- |
-| Frame          | X   |       |     | X     |         |        |           |
-| Heading        | X   |       |     | X     |         |        |           |
-| Paragraph      | X   |       |     | X     |         |        |           |
-| Ripple         | X   |       |     | X     |         |        |           |
-| Skeleton       | X   |       |     |       |         |        |           |
-| Button         | X   |       |     |       |         |        |           |
-| MaterialButton | X   |       |     |       |         |        |           |
-| Flex           | X   |       |     |       |         |        |           |
-| Positional     | X   |       |     |       |         |        |           |
-| ~              | ~   | ~     | ~   | ~     | ~       | ~      |           |
+| :------------- | :-: | :---: | :-: | :---: | :-----: | :----: | :-------- |
+| Frame          |  X  |       |     |   X   |         |        |           |
+| Heading        |  X  |       |     |   X   |         |        |           |
+| Paragraph      |  X  |       |     |   X   |         |        |           |
+| Ripple         |  X  |       |     |   X   |         |        |           |
+| Skeleton       |  X  |       |     |       |         |        |           |
+| Button         |  X  |       |     |       |         |        |           |
+| MaterialButton |  X  |       |     |       |         |        |           |
+| Flex           |  X  |       |     |       |         |        |           |
+| Positional     |  X  |       |     |       |         |        |           |
+| ~              |  ~  |   ~   |  ~  |   ~   |    ~    |   ~    |           |
 | Accordion      |     |       |     |       |         |        |           |
 | Alert          |     |       |     |       |         |        |           |
 | Avatar         |     |       |     |       |         |        |           |
@@ -35,7 +35,7 @@
 | Textarea       |     |       |     |       |         |        |           |
 | Select         |     |       |     |       |         |        |           |
 | Modal          |     |       |     |       |         |        |           |
-| ~              | ~   | ~     | ~   | ~     | ~       | ~      |           |
+| ~              |  ~  |   ~   |  ~  |   ~   |    ~    |   ~    |           |
 | Badge          |     |       |     |       |         |        |           |
 | Card           |     |       |     |       |         |        |           |
 | Carousel       |     |       |     |       |         |        |           |
