@@ -1,5 +1,4 @@
-import { html, unsafeCSS } from 'lit'
-import styles from '@okmtyuta/amatelas-theme/components/frame.css?inline'
+import { html } from 'lit'
 import { AmatelasSVG } from './amatelas-svg'
 
 export class AmatelasCheckedSVG extends AmatelasSVG {
@@ -18,8 +17,6 @@ export class AmatelasCheckedSVG extends AmatelasSVG {
       </svg>
     `
   }
-
-  static styles = unsafeCSS(styles)
 }
 
 declare global {

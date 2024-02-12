@@ -2,6 +2,8 @@ import {
   // display
   frame,
   heading,
+  list,
+  listItem,
   paragraph,
 
   // effect
@@ -25,6 +27,8 @@ const source = {
   // display
   frame: frame.styles,
   heading: heading.styles,
+  list: list.styles,
+  'list-item': listItem.styles,
   paragraph: paragraph.styles,
 
   // effect

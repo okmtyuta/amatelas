@@ -1,23 +1,23 @@
 import {
   AmatelasFrame,
   AmatelasHeading,
+  AmatelasList,
+  AmatelasListItem,
   AmatelasParagraph
 } from './components/display'
-
 import { AmatelasRipple } from './components/effect'
-
 import { AmatelasSkeleton } from './components/feedback/skeleton/amatelas-skeleton'
-
 import { AmatelasButton, AmatelasMaterialButton } from './components/input'
-
 import { AmatelasFlex, AmatelasPositional } from './components/layout'
 
-import { AmatelasCheckedSVG } from './svg'
+import { AmatelasCheckedSVG, AmatelasDiscSVG } from './svg'
 
 export {
   // display
   AmatelasFrame,
   AmatelasHeading,
+  AmatelasList,
+  AmatelasListItem,
   AmatelasParagraph,
 
   // effect
@@ -35,13 +35,16 @@ export {
   AmatelasPositional,
 
   // svg
-  AmatelasCheckedSVG
+  AmatelasCheckedSVG,
+  AmatelasDiscSVG
 }
 
 export const init = () => {
   // display
   customElements.define('amatelas-frame', AmatelasFrame)
   customElements.define('amatelas-heading', AmatelasHeading)
+  customElements.define('amatelas-list', AmatelasList)
+  customElements.define('amatelas-list-item', AmatelasListItem)
   customElements.define('amatelas-paragraph', AmatelasParagraph)
 
   // effect
@@ -60,4 +63,5 @@ export const init = () => {
 
   // svg
   customElements.define('amatelas-checked-svg', AmatelasCheckedSVG)
+  customElements.define('amatelas-disc-svg', AmatelasDiscSVG)
 }

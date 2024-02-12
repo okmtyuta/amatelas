@@ -1,0 +1,19 @@
+---
+
+import type { HTMLAttributes } from 'astro/types'
+import { listItem } from  '@okmtyuta/amatelas-theme'
+import { DiscSVG } from "../../../svg"
+
+const classes = listItem.classes
+
+type DefaultParagraphProps = HTMLAttributes<'li'>
+type Props = DefaultParagraphProps
+
+---
+
+<li {...Astro.props} class={classes.listItem}>
+  <span class={classes.marker}>
+    <DiscSVG class={classes.disc} />
+  </span>
+  <slot />
+</li>

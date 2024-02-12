@@ -6,7 +6,6 @@ const classes = frame.classes
 
 export class AmatelasFrame extends LitElement {
   render() {
-    console.log(styles)
     return html`
       <div class=${classes.frame}>
         <slot></slot>

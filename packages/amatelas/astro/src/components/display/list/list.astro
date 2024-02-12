@@ -1,0 +1,14 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { list } from '@okmtyuta/amatelas-theme'
+
+type Props = HTMLAttributes<'ul'>
+
+const classes = list.classes
+
+const { ...props } = Astro.props
+---
+
+<ul {...props} class={classes.list}>
+  <slot />
+</ul>
