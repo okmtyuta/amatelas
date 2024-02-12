@@ -16,9 +16,6 @@ importers:
       '@okmtyuta/amatelas-astro':
         specifier: workspace:^
         version: link:../../../packages/amatelas/astro
-      '@okmtyuta/amatelas-lib':
-        specifier: workspace:^
-        version: link:../../../packages/amatelas/lib
       '@okmtyuta/amatelas-theme':
         specifier: workspace:^
         version: link:../../../packages/amatelas/theme

@@ -19,10 +19,10 @@
 | Paragraph      |  X  |       |     |   X   |         |        |           |
 | Ripple         |  X  |       |     |   X   |         |        |           |
 | Skeleton       |  X  |       |     |       |         |        |           |
-| Button         |  X  |       |     |       |         |        |           |
+| Button         |  X  |       |     |   X   |         |        |           |
 | MaterialButton |  X  |       |     |       |         |        |           |
 | Flex           |  X  |       |     |       |         |        |           |
-| Positional     |  X  |       |     |       |         |        |           |
+| Positional     |  X  |       |     |   X   |         |        |           |
 | ~              |  ~  |   ~   |  ~  |   ~   |    ~    |   ~    |           |
 | Accordion      |     |       |     |       |         |        |           |
 | Alert          |     |       |     |       |         |        |           |
