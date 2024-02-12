@@ -1,5 +1,8 @@
 ---
+import '@okmtyuta/amatelas-theme/reset.css'
 import '@okmtyuta/amatelas-theme/styles.css'
+import { Frame } from '@okmtyuta/amatelas-astro'
+import { Header, Footer } from '../components'
 
 interface Props {
   title: string
@@ -20,7 +23,13 @@ const { title } = Astro.props
   </head>
   <body>
     <main>
+      <Header>Amatelas Astro Documentation</Header>
+
+      <Frame>
         <slot />
+      </Frame>
+
+      <Footer>© 2024 amatelas.dev / yuta.app</Footer>
     </main>
   </body>
 </html>

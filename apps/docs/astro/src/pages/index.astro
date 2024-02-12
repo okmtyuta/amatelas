@@ -1,12 +1,31 @@
 ---
-import Layout from '../layouts/Layout.astro'
 
-import "../../reset.css"
-import { Heading, Frame } from '../components/display'
+import Layout from '../layouts/Layout.astro'
+import { Frame, Heading, Paragraph } from "@okmtyuta/amatelas-astro"
+
 ---
 
 <Layout title="About | yuta.app">
-  <Heading as="h6">Overview</Heading>
-  <Frame>ff</Frame>
+  <Frame>
+    <Heading as="h1">
+      Amatelas Web Components
+    </Heading>
+    <Heading as="h2"> Introduction</Heading>
 
+    <Paragraph>
+      Amatelas Web Components is a UI library created with Lit / Web
+      Components. This documentation is created with Amatelas Web
+      Components.
+    </Paragraph>
+
+    <Heading as="h2"> Quick Start</Heading>
+    <Paragraph>
+      You can try using Amatelas via NPM: npm i @okmtyuta/amatelas-astro
+    </Paragraph>
+    <Paragraph>
+      Also check GitHub Repo: https://github.com/okmtyuta/amatelas
+    </Paragraph>
+
+    <Heading as="h2"> Examples: Button </Heading>
+  </Frame>
 </Layout>

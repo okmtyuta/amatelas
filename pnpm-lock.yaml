@@ -8,6 +8,27 @@ importers:
 
   .: {}
 
+  apps/docs/astro:
+    dependencies:
+      '@astrojs/check':
+        specifier: ^0.4.1
+        version: 0.4.1(typescript@5.3.3)
+      '@okmtyuta/amatelas-astro':
+        specifier: workspace:^
+        version: link:../../../packages/amatelas/astro
+      '@okmtyuta/amatelas-lib':
+        specifier: workspace:^
+        version: link:../../../packages/amatelas/lib
+      '@okmtyuta/amatelas-theme':
+        specifier: workspace:^
+        version: link:../../../packages/amatelas/theme
+      astro:
+        specifier: ^4.3.5
+        version: 4.3.5(typescript@5.3.3)
+      typescript:
+        specifier: ^5.3.3
+        version: 5.3.3
+
   packages/amatelas/astro:
     dependencies:
       '@astrojs/check':

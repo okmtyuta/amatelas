@@ -1,6 +1,6 @@
 {
   "name": "@okmtyuta/amatelas-theme",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -17,9 +17,8 @@
       "import": "./dist/index.js",
       "types": "./dist/types/index.d.ts"
     },
-    "./styles.css": {
-      "import": "./dist/styles.css"
-    },
+    "./styles.css": "./dist/styles.css",
+    "./reset.css": "./dist/reset.css",
     "./components/*": "./dist/components/*"
   },
   "devDependencies": {

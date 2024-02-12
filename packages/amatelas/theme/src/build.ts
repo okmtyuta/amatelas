@@ -17,6 +17,7 @@ import {
   flex,
   positional
 } from '.'
+import { reset } from './theme'
 
 import { write } from './write'
 
@@ -33,11 +34,14 @@ const source = {
   skeleton: skeleton.styles,
 
   // input
-  "native-button": nativeButton.styles,
+  'native-button': nativeButton.styles,
 
   // layout
   flex: flex.styles,
-  positional: positional.style
+  positional: positional.style,
+
+  // reset
+  reset: reset.styles
 }
 
 const build = () => {
