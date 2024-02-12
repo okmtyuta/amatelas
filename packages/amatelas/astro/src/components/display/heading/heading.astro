@@ -1,17 +1,20 @@
 ---
-import type { HTMLAttributes, HTMLTag } from 'astro/types'
+import type { Polymorphic } from 'astro/types'
 import { heading } from '@okmtyuta/amatelas-theme'
 
-type Props = {
-  element?: "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
-} & HTMLAttributes<"h1">
+type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
+type Props<Tag extends HeadingTag> =  Polymorphic<{
+  as: Tag
+}>
 
-const { element = "h1", ...props } = Astro.props
-const Element = element
-
-const classes = heading.classes
+const { classes } = heading
+const Element = Astro.props.as as HeadingTag || "h1"
+const { as: _as, ...props } = Astro.props
 ---
 
-<Element class:list={[classes.heading, classes[element]]}>
+<Element
+  {...props}
+  class:list={[classes.heading, classes[Element]]}
+>
   <slot />
 </Element>

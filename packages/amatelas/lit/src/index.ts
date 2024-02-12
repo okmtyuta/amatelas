@@ -12,6 +12,8 @@ import { AmatelasButton, AmatelasMaterialButton } from './components/input'
 
 import { AmatelasFlex, AmatelasPositional } from './components/layout'
 
+import { AmatelasCheckedSVG } from './svg'
+
 export {
   // display
   AmatelasFrame,
@@ -30,7 +32,10 @@ export {
 
   // layout
   AmatelasFlex,
-  AmatelasPositional
+  AmatelasPositional,
+
+  // svg
+  AmatelasCheckedSVG
 }
 
 export const init = () => {
@@ -52,4 +57,7 @@ export const init = () => {
   // layout
   customElements.define('amatelas-flex', AmatelasFlex)
   customElements.define('amatelas-positional', AmatelasPositional)
+
+  // svg
+  customElements.define('amatelas-checked-svg', AmatelasCheckedSVG)
 }

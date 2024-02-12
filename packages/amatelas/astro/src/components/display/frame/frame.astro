@@ -1,12 +1,20 @@
 ---
-import type { HTMLAttributes } from 'astro/types'
+import type { HTMLTag, Polymorphic } from 'astro/types'
 import { frame } from '@okmtyuta/amatelas-theme'
 
-type Props = HTMLAttributes<'div'>
+type Props<Tag extends HTMLTag> = Polymorphic<{
+  as: Tag
+}>
 
 const { classes } = frame
+const Element = Astro.props.as as HTMLTag || "div"
+
+const { as: _as, ...props } = Astro.props
 ---
 
-<div class:list={[classes.frame]}>
+<Element
+  {...props}
+  class:list={[classes.frame]}
+>
   <slot />
-</div>
+</Element>

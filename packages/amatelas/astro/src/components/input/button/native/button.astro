@@ -1,20 +1,26 @@
 ---
-import type { HTMLAttributes, HTMLTag } from 'astro/types'
+import type { HTMLTag, Polymorphic } from 'astro/types'
 import { type Color } from '@okmtyuta/amatelas-lib'
 import { nativeButton } from '@okmtyuta/amatelas-theme'
 
-type Props = {
-  element?: "button"
+type ButtonVariant = "standard" | "filled" | "outlined"
+type Props<Tag extends HTMLTag> = Polymorphic<{
+  as: Tag
   color?: Color
   variant?: "standard" | "filled" | "outlined"
-} & HTMLAttributes<"button">
+}>
 
 const { classes } = nativeButton
-const { element = 'button', color = "info", variant = "standard", ...props } = Astro.props
-const Element = "button"
+
+const Element = Astro.props.as as HTMLTag || "button"
+const color = Astro.props.color as Color || "info"
+const variant = Astro.props.variant as ButtonVariant || "standard"
+
+const { as: _as, color: _color, variant: _variant, ...props } = Astro.props
 ---
 
 <Element
+  {...props}
   class:list={[
     classes.nativeButton,
     classes[variant],
