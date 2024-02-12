@@ -1,7 +1,7 @@
 {
   "name": "@okmtyuta/amatelas-astro",
   "type": "module",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
@@ -14,11 +14,11 @@
   ],
   "dependencies": {
     "@astrojs/check": "^0.4.1",
-    "@okmtyuta/amatelas-theme": "workspace:^",
     "astro": "^4.3.5",
     "typescript": "^5.3.3"
   },
   "devDependencies": {
+    "@okmtyuta/amatelas-theme": "workspace:^",
     "@okmtyuta/amatelas-lib": "workspace:^"
   }
 }

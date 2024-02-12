@@ -1,6 +1,6 @@
 {
   "name": "@okmtyuta/amatelas-lit",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "type": "module",
   "scripts": {
     "dev": "vite",
@@ -20,11 +20,11 @@
     }
   },
   "dependencies": {
-    "@okmtyuta/amatelas-theme": "workspace:^",
     "clsx": "^2.0.0",
     "lit": "^3.1.2"
   },
   "devDependencies": {
+    "@okmtyuta/amatelas-theme": "workspace:^",
     "@okmtyuta/amatelas-lib": "workspace:^",
     "tsc-alias": "^1.8.8",
     "typescript": "^5.2.2",
