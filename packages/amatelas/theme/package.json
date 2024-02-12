@@ -4,9 +4,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
+    "prebuild": "pnpm --filter @okmtyuta/amatelas-lib build",
     "build:theme": "pnpm tsx ./src/build.ts",
     "build:script": "vite build && tsc && tsc-alias",
-    "build": "pnpm build:script && pnpm build:theme",
+    "build": "pnpm prebuild && pnpm build:script && pnpm build:theme",
     "preview": "vite preview"
   },
   "files": [
