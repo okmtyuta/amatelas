@@ -1,110 +1,110 @@
-// sum.test.js
 import { expect, test, describe } from 'vitest'
-import { RGB } from '../../theme/color'
+
 import { RGBArray } from '../../theme/color/types/RGBArray'
 import { HexString } from '../../theme/color/types/HexString'
+import { RGB } from '../../theme/color'
 
 type Property = {
   name: string
-  rgb: RGBArray
-  hex: HexString
+  rgbArray: RGBArray
+  hexString: HexString
 
   lighten: {
     amount: number
-    rgb: RGBArray
-    hex: HexString
+    rgbArray: RGBArray
+    hexString: HexString
   }[]
 
   darken: {
     amount: number
-    rgb: RGBArray
-    hex: HexString
+    rgbArray: RGBArray
+    hexString: HexString
   }[]
 }
 
 const properties: Property[] = [
   {
     name: 'black',
-    rgb: [0, 0, 0],
-    hex: '#000000',
-    lighten: [{ amount: 0.1, rgb: [25, 25, 25], hex: '#191919' }],
-    darken: [{ amount: 0.1, rgb: [0, 0, 0], hex: '#000000' }]
+    rgbArray: [0, 0, 0],
+    hexString: '#000000',
+    lighten: [{ amount: 0.1, rgbArray: [25, 25, 25], hexString: '#191919' }],
+    darken: [{ amount: 0.1, rgbArray: [0, 0, 0], hexString: '#000000' }]
   },
   {
     name: 'white',
-    rgb: [255, 255, 255],
-    hex: '#ffffff',
-    lighten: [{ amount: 0.1, rgb: [255, 255, 255], hex: '#ffffff' }],
-    darken: [{ amount: 0.1, rgb: [229, 229, 229], hex: '#e5e5e5' }]
+    rgbArray: [255, 255, 255],
+    hexString: '#ffffff',
+    lighten: [{ amount: 0.1, rgbArray: [255, 255, 255], hexString: '#ffffff' }],
+    darken: [{ amount: 0.1, rgbArray: [229, 229, 229], hexString: '#e5e5e5' }]
   },
   {
     name: 'red',
-    rgb: [255, 0, 0],
-    hex: '#ff0000',
-    lighten: [{ amount: 0.1, rgb: [255, 25, 25], hex: '#ff1919' }],
-    darken: [{ amount: 0.1, rgb: [229, 0, 0], hex: '#e50000' }]
+    rgbArray: [255, 0, 0],
+    hexString: '#ff0000',
+    lighten: [{ amount: 0.1, rgbArray: [255, 25, 25], hexString: '#ff1919' }],
+    darken: [{ amount: 0.1, rgbArray: [229, 0, 0], hexString: '#e50000' }]
   },
   {
     name: 'green',
-    rgb: [0, 255, 0],
-    hex: '#00ff00',
-    lighten: [{ amount: 0.1, rgb: [25, 255, 25], hex: '#19ff19' }],
-    darken: [{ amount: 0.1, rgb: [0, 229, 0], hex: '#00e500' }]
+    rgbArray: [0, 255, 0],
+    hexString: '#00ff00',
+    lighten: [{ amount: 0.1, rgbArray: [25, 255, 25], hexString: '#19ff19' }],
+    darken: [{ amount: 0.1, rgbArray: [0, 229, 0], hexString: '#00e500' }]
   },
   {
     name: 'blue',
-    rgb: [0, 0, 255],
-    hex: '#0000ff',
-    lighten: [{ amount: 0.1, rgb: [25, 25, 255], hex: '#1919ff' }],
-    darken: [{ amount: 0.1, rgb: [0, 0, 229], hex: '#0000e5' }]
+    rgbArray: [0, 0, 255],
+    hexString: '#0000ff',
+    lighten: [{ amount: 0.1, rgbArray: [25, 25, 255], hexString: '#1919ff' }],
+    darken: [{ amount: 0.1, rgbArray: [0, 0, 229], hexString: '#0000e5' }]
   },
   {
     name: 'gray',
-    rgb: [127, 127, 127],
-    hex: '#7f7f7f',
-    lighten: [{ amount: 0.1, rgb: [139, 139, 139], hex: '#8b8b8b' }],
-    darken: [{ amount: 0.1, rgb: [114, 114, 114], hex: '#727272' }]
+    rgbArray: [127, 127, 127],
+    hexString: '#7f7f7f',
+    lighten: [{ amount: 0.1, rgbArray: [139, 139, 139], hexString: '#8b8b8b' }],
+    darken: [{ amount: 0.1, rgbArray: [114, 114, 114], hexString: '#727272' }]
   }
 ]
 
-describe('get hex string', () => {
-  for (const property of properties) {
-    test(`when ${property.name} rgb`, () => {
-      const rgb = new RGB(property.rgb)
-      expect(rgb.hexString).toBe(property.hex)
-    })
-  }
-})
+describe('RGB class', () => {
+  test.each(properties)(
+    '$name: RGB($hexString).hexString -> $hexString',
+    ({ rgbArray, hexString }) => {
+      const rgb = new RGB(rgbArray)
+      expect(rgb.hexString).toBe(hexString)
+    }
+  )
 
-describe('get rgb array', () => {
-  for (const property of properties) {
-    test(`when ${property.name} rgb`, () => {
-      const rgb = new RGB(property.rgb)
-      expect(rgb.rgbArray).toEqual(property.rgb)
-    })
-  }
-})
+  test.each(properties)(
+    '$name: RGB($hexString).rgbArray -> $rgbArray',
+    ({ rgbArray }) => {
+      const rgb = new RGB(rgbArray)
+      expect(rgb.rgbArray).toEqual(rgbArray)
+    }
+  )
 
-describe('lighten', () => {
-  for (const property of properties) {
-    test(`when ${property.name} rgb`, () => {
-      const rgb = new RGB(property.rgb)
-      for (const lighten of property.lighten) {
-        expect(rgb.lighten(lighten.amount).rgbArray).toEqual(lighten.rgb)
-        expect(rgb.lighten(lighten.amount).hexString).toEqual(lighten.hex)
-      }
-    })
-  }
-})
+  test.each(properties)(
+    '$name: Hex($hexString).lighten -> $lighten',
+    ({ rgbArray, lighten }) => {
+      const rgb = new RGB(rgbArray)
 
-describe('darken', () => {
-  for (const property of properties) {
-    test(`when ${property.name} rgb`, () => {
-      const rgb = new RGB(property.rgb)
-      for (const darken of property.darken) {
-        expect(rgb.darken(darken.amount).rgbArray).toEqual(darken.rgb)
-        expect(rgb.darken(darken.amount).hexString).toEqual(darken.hex)
-      }
-    })
-  }
+      lighten.forEach(({ amount, rgbArray, hexString }) => {
+        expect(rgb.lighten(amount).rgbArray).toEqual(rgbArray)
+        expect(rgb.lighten(amount).hexString).toEqual(hexString)
+      })
+    }
+  )
+
+  test.each(properties)(
+    '$name: Hex($hexString).darken -> $darken',
+    ({ rgbArray, darken }) => {
+      const rgb = new RGB(rgbArray)
+
+      darken.forEach(({ amount, rgbArray, hexString }) => {
+        expect(rgb.darken(amount).rgbArray).toEqual(rgbArray)
+        expect(rgb.darken(amount).hexString).toEqual(hexString)
+      })
+    }
+  )
 })
