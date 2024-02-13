@@ -16,4 +16,4 @@ jobs:
         run: pnpm i --frozen-lockfile
 
       - name: Test Amatelas
-        run: pnpm test:amatelas
+        run: pnpm test:amatelas:lib
