@@ -36,6 +36,13 @@ export class RGB {
     return `#${red}${green}${blue}`
   }
 
+  get hexString(): HexString {
+    return this._hexString
+  }
+  get rgbArray(): RGBArray {
+    return this._rgbArray
+  }
+
   getHexString() {
     return this._hexString
   }
