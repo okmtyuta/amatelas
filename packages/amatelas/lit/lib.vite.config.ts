@@ -8,7 +8,7 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'dist',
+    outDir: 'lib',
     lib: {
       entry: {
         init: resolve(__dirname, 'src/init.ts'),
@@ -16,7 +16,7 @@ export default defineConfig({
       }
     },
     rollupOptions: {
-      external: ['lit', 'clsx', 'lit/decorators.js', 'lit/static-html.js'],
+      external: [],
       output: {}
     }
   }

@@ -1,4 +1,4 @@
-
+import { StyleSource } from '@src/types'
 
 const styles = /* css */ `
 *,
@@ -88,4 +88,4 @@ box-sizing: border-box;
 }
 `
 
-export const reset = { styles }
+export const reset: StyleSource<{}> = { styles, classes: {} }

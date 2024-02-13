@@ -19,18 +19,10 @@ export const color = {
   purple: '#8843E1',
   neutral: '#7f7f7f'
 }
-export const colors = Object.keys(color)
-export type PrimaryColor =
-  | 'blue'
-  | 'light-blue'
-  | 'cyan'
-  | 'green'
-  | 'lime'
-  | 'yellow'
-  | 'orange'
-  | 'red'
-  | 'magenta'
-  | 'purple'
-  | 'neutral'
-export type SemanticColor = 'alert' | 'info' | 'success' | 'warning'
-export type Color = PrimaryColor | SemanticColor
+export type Color = keyof typeof color
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const strictKeys = <T extends Record<string, any>>(object: T): (keyof T)[] => {
+  return Object.keys(object)
+}
+export const colors: Color[] = strictKeys(color)

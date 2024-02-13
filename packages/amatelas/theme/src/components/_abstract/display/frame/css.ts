@@ -1,4 +1,5 @@
 import { prefixedBy } from '@src/prefixedBy'
+import { StyleSource } from '@src/types'
 
 const _prefixed = prefixedBy('frame')
 
@@ -14,4 +15,4 @@ const styles = /* css */ `
 }
 `
 
-export const frame = { classes, styles }
+export const frame: StyleSource<typeof classes> = { classes, styles }

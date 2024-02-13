@@ -4,11 +4,11 @@ import { html, unsafeStatic } from 'lit/static-html.js'
 
 import clsx from 'clsx'
 
-import { nativeButton } from '@okmtyuta/amatelas-theme'
-import styles from '@okmtyuta/amatelas-theme/components/native-button.css?inline'
+import { styleSources } from '@okmtyuta/amatelas-theme'
+import styles from '@okmtyuta/amatelas-theme/components/nativeButton.css?inline'
 import { type Color } from '@okmtyuta/amatelas-lib'
 
-const classes = nativeButton.classes
+const classes = styleSources.nativeButton.classes
 
 export class AmatelasButton extends LitElement {
   @property()
@@ -26,7 +26,7 @@ export class AmatelasButton extends LitElement {
         class=${clsx(
           classes.nativeButton,
           classes[this.variant],
-          classes.color(this.color)
+          classes[this.color]
         )}
       >
         <slot></slot>

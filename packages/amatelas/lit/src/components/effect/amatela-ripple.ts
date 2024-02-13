@@ -1,11 +1,11 @@
 import { LitElement, html, unsafeCSS } from 'lit'
 import styles from '@okmtyuta/amatelas-theme/components/ripple.css?inline'
-import { ripple } from '@okmtyuta/amatelas-theme'
+import { styleSources } from '@okmtyuta/amatelas-theme'
 import clsx from 'clsx'
 import { property } from 'lit/decorators.js'
 import { Color } from '@okmtyuta/amatelas-lib'
 
-const classes = ripple.classes
+const classes = styleSources.ripple.classes
 
 export class AmatelasRipple extends LitElement {
   @property() x: number = 0
@@ -19,7 +19,7 @@ export class AmatelasRipple extends LitElement {
         style=${`top:${this.y}px;left:${this.x}px;`}
         class=${clsx(
           classes.ripple,
-          classes.color(this.color),
+          classes[this.color],
           classes[this.theme]
         )}
       ></span>

@@ -8,7 +8,8 @@
     "build:theme": "pnpm tsx ./src/build.ts",
     "build:script": "vite build && tsc && tsc-alias",
     "build": "pnpm prebuild && pnpm build:script && pnpm build:theme",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "pnpm vitest --watch=false"
   },
   "files": [
     "dist/"

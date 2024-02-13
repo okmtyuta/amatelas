@@ -1,17 +1,27 @@
-import { color, Hex, strictEntries, type Color } from '@okmtyuta/amatelas-lib'
+import {
+  color,
+  colors,
+  Hex,
+  Recorder,
+  strictEntries
+} from '@okmtyuta/amatelas-lib'
 import { prefixedBy } from '@src/prefixedBy'
+import { StyleSource } from '@src/types'
 
 const _prefixed = prefixedBy('native-button')
 
-const classes = {
+const baseClasses = {
   nativeButton: _prefixed(),
   standard: _prefixed('standard'),
   filled: _prefixed('filled'),
-  outlined: _prefixed('outlined'),
+  outlined: _prefixed('outlined')
+} as const
 
-  color: (color: Color) => {
-    return _prefixed(color)
-  }
+const colorRecorder = new Recorder(colors, _prefixed)
+
+const classes = {
+  ...baseClasses,
+  ...colorRecorder.record
 }
 
 const styles = /* css */ `
@@ -52,43 +62,37 @@ const colorStyles = strictEntries(color)
   .map(([key, code]) => {
     const hex = new Hex(code)
 
+    const colorClass = classes[key]
+
+    if (!colorClass) {
+      return ''
+    }
+
     const style = /* css */ `
-    .${classes.nativeButton}.${classes.filled}.${classes.color(
-      key
-    )}:not(:disabled) {
+    .${classes.nativeButton}.${classes.filled}.${colorClass}:not(:disabled) {
       border: none;
       color: white;
       background-color: ${hex.hexString};
     }
-    .${classes.nativeButton}.${classes.filled}.${classes.color(
-      key
-    )}:not(:disabled):hover {
+    .${classes.nativeButton}.${classes.filled}.${colorClass}:not(:disabled):hover {
       background-color: ${hex.lighten(0.1).hexString};
     }
 
-    .${classes.nativeButton}.${classes.outlined}.${classes.color(
-      key
-    )}:not(:disabled) {
+    .${classes.nativeButton}.${classes.outlined}.${colorClass}:not(:disabled) {
       color: ${hex.hexString};
       border: ${hex.hexString} solid 1px;
       background-color: inherit;
     }
-    .${classes.nativeButton}.${classes.outlined}.${classes.color(
-      key
-    )}:not(:disabled):hover {
+    .${classes.nativeButton}.${classes.outlined}.${colorClass}:not(:disabled):hover {
       background-color: ${hex.lighten(0.95).hexString};
     }
 
-    .${classes.nativeButton}.${classes.standard}.${classes.color(
-      key
-    )}:not(:disabled) {
+    .${classes.nativeButton}.${classes.standard}.${colorClass}:not(:disabled) {
       border: none;
       color: ${hex.hexString};
       background-color: transparent;
     }
-    .${classes.nativeButton}.${classes.standard}.${classes.color(
-      key
-    )}:not(:disabled):hover {
+    .${classes.nativeButton}.${classes.standard}.${colorClass}:not(:disabled):hover {
       background-color: ${hex.lighten(0.95).hexString};
     }
     `
@@ -96,4 +100,4 @@ const colorStyles = strictEntries(color)
   })
   .join(' ')
 
-export const nativeButton = { classes, styles: [styles, colorStyles].join(' ') }
+export const nativeButton: StyleSource<typeof classes> = { classes, styles: [styles, colorStyles].join(' ') }

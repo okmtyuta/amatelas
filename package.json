@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test:amatelas:lib": "pnpm --filter @okmtyuta/amatelas-lib test"
+    "test:amatelas:lib": "pnpm --filter @okmtyuta/amatelas-lib test",
+    "test:amatelas:theme": "pnpm --filter @okmtyuta/amatelas-theme test"
   },
   "keywords": [],
   "author": "",

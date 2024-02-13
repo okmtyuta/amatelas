@@ -1,8 +1,8 @@
 import { LitElement, html, unsafeCSS } from 'lit'
 import styles from '@okmtyuta/amatelas-theme/components/paragraph.css?inline'
-import { paragraph } from '@okmtyuta/amatelas-theme'
+import { styleSources } from '@okmtyuta/amatelas-theme'
 
-const classes = paragraph.classes
+const classes = styleSources.paragraph.classes
 
 export class AmatelasParagraph extends LitElement {
   render() {

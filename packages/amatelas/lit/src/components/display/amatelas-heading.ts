@@ -1,12 +1,12 @@
 import { LitElement, unsafeCSS } from 'lit'
 import { property } from 'lit/decorators.js'
+import { html, unsafeStatic } from 'lit/static-html.js'
 import clsx from 'clsx'
 
 import styles from '@okmtyuta/amatelas-theme/components/heading.css?inline'
-import { heading } from '@okmtyuta/amatelas-theme'
-import { html, unsafeStatic } from 'lit/static-html.js'
+import { styleSources } from '@okmtyuta/amatelas-theme'
 
-const classes = heading.classes
+const classes = styleSources.heading.classes
 
 export class AmatelasHeading extends LitElement {
   @property()
