@@ -39,10 +39,10 @@ const colorStyles = strictEntries(color)
 
     const style = /* css */ `
     .${classes.ripple}.${classes.color(key)}.${classes.light} {
-      background-color: ${hex.getLighten(0.9).getHexString()};
+      background-color: ${hex.lighten(0.9).hexString};
     }
     .${classes.ripple}.${classes.color(key)}.${classes.dark} {
-      background-color: ${hex.getLighten(0.5).getHexString()};
+      background-color: ${hex.lighten(0.5).hexString};
     }
     `
     return style

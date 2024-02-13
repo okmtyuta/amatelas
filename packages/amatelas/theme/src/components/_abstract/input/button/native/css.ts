@@ -27,9 +27,9 @@ const styles = /* css */ `
   -webkit-tap-highlight-color: rgba(0,0,0,0);
 }
 .${classes.nativeButton}:disabled {
-  color: ${new Hex(color.neutral).getDarken(0.95).getHexString()};
-  background-color: ${new Hex(color.neutral).getLighten(0.9).getHexString()};
-  border: solid 1px ${new Hex(color.neutral).getLighten(0.9).getHexString()};
+  color: ${new Hex(color.neutral).darken(0.95).hexString};
+  background-color: ${new Hex(color.neutral).lighten(0.9).hexString};
+  border: solid 1px ${new Hex(color.neutral).lighten(0.9).hexString};
   cursor: not-allowed;
 }
 
@@ -58,38 +58,38 @@ const colorStyles = strictEntries(color)
     )}:not(:disabled) {
       border: none;
       color: white;
-      background-color: ${hex.getHexString()};
+      background-color: ${hex.hexString};
     }
     .${classes.nativeButton}.${classes.filled}.${classes.color(
       key
     )}:not(:disabled):hover {
-      background-color: ${hex.getLighten(0.1).getHexString()};
+      background-color: ${hex.lighten(0.1).hexString};
     }
 
     .${classes.nativeButton}.${classes.outlined}.${classes.color(
       key
     )}:not(:disabled) {
-      color: ${hex.getHexString()};
-      border: ${hex.getHexString()} solid 1px;
+      color: ${hex.hexString};
+      border: ${hex.hexString} solid 1px;
       background-color: inherit;
     }
     .${classes.nativeButton}.${classes.outlined}.${classes.color(
       key
     )}:not(:disabled):hover {
-      background-color: ${hex.getLighten(0.95).getHexString()};
+      background-color: ${hex.lighten(0.95).hexString};
     }
 
     .${classes.nativeButton}.${classes.standard}.${classes.color(
       key
     )}:not(:disabled) {
       border: none;
-      color: ${hex.getHexString()};
+      color: ${hex.hexString};
       background-color: transparent;
     }
     .${classes.nativeButton}.${classes.standard}.${classes.color(
       key
     )}:not(:disabled):hover {
-      background-color: ${hex.getLighten(0.95).getHexString()};
+      background-color: ${hex.lighten(0.95).hexString};
     }
     `
     return style

@@ -1,5 +1,10 @@
 import { RGBArray } from '../types/RGBArray'
 
+/**
+ * Check whether source is RGBArray.
+ * @param {unknown} source Target for checking
+ * @returns {boolean} Whether source is RGBArray or not.
+ */
 export const isRGBArray = (source: unknown): source is RGBArray => {
   if (!Array.isArray(source)) {
     return false

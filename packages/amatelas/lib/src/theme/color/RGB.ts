@@ -4,6 +4,9 @@ import { isRGBArray } from './guards/isRGBArray'
 import { HexString } from './types/HexString'
 import { RGBArray } from './types/RGBArray'
 
+/**
+ * Format hexadecimal color code segment
+ */
 const complementZero = (target: string) => {
   if (target.length > 2) {
     throw new CannotComplementZeroError()
@@ -14,6 +17,9 @@ const complementZero = (target: string) => {
   return `0${target}`
 }
 
+/**
+ * Class for handling rgb color code
+ */
 export class RGB {
   private _hexString: HexString
   private _rgbArray: RGBArray
@@ -27,8 +33,8 @@ export class RGB {
     this._hexString = this.toHexString()
   }
 
-  toHexString(): HexString {
-    const [_red, _green, _blue] = this.getRGBArray()
+  private toHexString(): HexString {
+    const [_red, _green, _blue] = this._rgbArray
     const red = complementZero(_red.toString(16))
     const green = complementZero(_green.toString(16))
     const blue = complementZero(_blue.toString(16))
@@ -43,15 +49,8 @@ export class RGB {
     return this._rgbArray
   }
 
-  getHexString() {
-    return this._hexString
-  }
-  getRGBArray() {
-    return this._rgbArray
-  }
-
-  getLighten(amount: number) {
-    const _lighten = (color: number) => {
+  darken(amount: number) {
+    const _darken = (color: number) => {
       const _color = Math.trunc(color * (1 - amount))
       if (_color > 255) {
         return 255
@@ -62,18 +61,18 @@ export class RGB {
       return _color
     }
 
-    const [_red, _green, _blue] = this.getRGBArray()
+    const [_red, _green, _blue] = this._rgbArray
     const rgbArray: RGBArray = [
-      _lighten(_red),
-      _lighten(_green),
-      _lighten(_blue)
+      _darken(_red),
+      _darken(_green),
+      _darken(_blue)
     ]
 
     return new RGB(rgbArray)
   }
 
-  getDarken(amount: number) {
-    const _darken = (color: number) => {
+  lighten(amount: number) {
+    const _lighten = (color: number) => {
       const _color = Math.trunc((255 - color) * amount + color)
       if (_color > 255) {
         return 255
@@ -84,22 +83,22 @@ export class RGB {
       return _color
     }
 
-    const [_red, _green, _blue] = this.getRGBArray()
-    const rgbArray: RGBArray = [_darken(_red), _darken(_green), _darken(_blue)]
+    const [_red, _green, _blue] = this._rgbArray
+    const rgbArray: RGBArray = [_lighten(_red), _lighten(_green), _lighten(_blue)]
 
     return new RGB(rgbArray)
   }
 
-  getSaturated(amount: number) {
-    const [_red, _green, _blue] = this.getRGBArray()
-    if (Math.max(...this.getRGBArray()) === _red) {
+  saturated(amount: number) {
+    const [_red, _green, _blue] = this._rgbArray
+    if (Math.max(...this._rgbArray) === _red) {
       const _rgbArray: RGBArray = [
         Math.trunc(_red),
         Math.trunc(_green * amount),
         Math.trunc(_blue * amount)
       ]
       return new RGB(_rgbArray)
-    } else if (Math.max(...this.getRGBArray()) === _green) {
+    } else if (Math.max(...this._rgbArray) === _green) {
       const _rgbArray: RGBArray = [
         Math.trunc(_red * amount),
         Math.trunc(_green),

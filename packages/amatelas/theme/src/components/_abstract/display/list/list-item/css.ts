@@ -9,7 +9,7 @@ const classes = {
   disc: _prefixed('disc')
 }
 const property = {
-  discColor: new Hex(color.neutral).getDarken(0.5).getHexString()
+  discColor: new Hex(color.neutral).darken(0.5).hexString
 }
 
 const styles = /* css */ `

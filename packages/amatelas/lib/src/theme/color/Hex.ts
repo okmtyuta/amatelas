@@ -4,6 +4,9 @@ import { HexString } from './types/HexString'
 import { RGBArray } from './types/RGBArray'
 import { RGB } from './RGB'
 
+/**
+ * Class for handling hexadecimal color code
+ */
 export class Hex {
   private _hexString: HexString
   private _rgbArray: RGBArray
@@ -31,24 +34,19 @@ export class Hex {
     return this._rgbArray
   }
 
-  getHexString() {
-    return this._hexString
+  darken(amount: number) {
+    const rgb = new RGB(this._rgbArray)
+    const hex = rgb.darken(amount)
+    return new Hex(hex.hexString)
   }
-  getRGBArray() {
-    return this._rgbArray
+  lighten(amount: number) {
+    const rgb = new RGB(this._rgbArray)
+    const hex = rgb.lighten(amount)
+    return new Hex(hex.hexString)
   }
-
-  getDarken(amount: number) {
-    return new Hex(
-      new RGB(this.getRGBArray()).getLighten(amount).getHexString()
-    )
-  }
-  getLighten(amount: number) {
-    return new Hex(new RGB(this.getRGBArray()).getDarken(amount).getHexString())
-  }
-  getSaturated(amount: number) {
-    return new Hex(
-      new RGB(this.getRGBArray()).getSaturated(amount).getHexString()
-    )
+  saturated(amount: number) {
+    const rgb = new RGB(this._rgbArray)
+    const hex = rgb.saturated(amount)
+    return new Hex(hex.hexString)
   }
 }

@@ -1,5 +1,10 @@
 import { HexString } from '../types/HexString'
 
+/**
+ * Check whether source is HexString.
+ * @param {unknown} source Target for checking
+ * @returns {boolean} Whether source is HexString or not.
+ */
 export const isHexString = (source: unknown): source is HexString => {
   if (typeof source !== 'string') {
     return false
