@@ -1,8 +1,8 @@
 import { LitElement, html, unsafeCSS } from 'lit'
 import styles from '@okmtyuta/amatelas-theme/components/listItem.css?inline'
-import { styleSources } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 
-const classes = styleSources.listItem.classes
+const classes = styleSourceRecord.listItem.classes
 
 export class AmatelasListItem extends LitElement {
   render() {

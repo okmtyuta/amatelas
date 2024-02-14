@@ -3,12 +3,12 @@ import { html, unsafeStatic } from 'lit/static-html.js'
 import { property } from 'lit/decorators.js'
 
 import { CSSValue } from '@okmtyuta/amatelas-lib'
-import { styleSources } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 import styles from '@okmtyuta/amatelas-theme/components/positional.css?inline'
 
 import clsx from 'clsx'
 
-const classes = styleSources.positional.classes
+const classes = styleSourceRecord.positional.classes
 
 export class AmatelasPositional extends LitElement {
   @property()

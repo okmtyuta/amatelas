@@ -2,11 +2,12 @@ import {
   color,
   colors,
   Hex,
+  identity,
   Recorder,
   strictEntries
 } from '@okmtyuta/amatelas-lib'
 import { prefixedBy } from '@src/prefixedBy'
-import { StyleSource } from '@src/types'
+import { composeStyleSource } from '@src/style-source'
 
 const _prefixed = prefixedBy('native-button')
 
@@ -17,14 +18,14 @@ const baseClasses = {
   outlined: _prefixed('outlined')
 } as const
 
-const colorRecorder = new Recorder(colors, _prefixed)
+const colorRecorder = new Recorder(colors, identity, _prefixed)
 
 const classes = {
   ...baseClasses,
   ...colorRecorder.record
 }
 
-const styles = /* css */ `
+const baseStyle = /* css */ `
 .${classes.nativeButton} {
   height: 48px;
   outline: none;
@@ -58,7 +59,7 @@ const styles = /* css */ `
 //   return _sizeVariations
 // }
 
-const colorStyles = strictEntries(color)
+const colorStyle = strictEntries(color)
   .map(([key, code]) => {
     const hex = new Hex(code)
 
@@ -74,7 +75,9 @@ const colorStyles = strictEntries(color)
       color: white;
       background-color: ${hex.hexString};
     }
-    .${classes.nativeButton}.${classes.filled}.${colorClass}:not(:disabled):hover {
+    .${classes.nativeButton}.${
+      classes.filled
+    }.${colorClass}:not(:disabled):hover {
       background-color: ${hex.lighten(0.1).hexString};
     }
 
@@ -83,7 +86,9 @@ const colorStyles = strictEntries(color)
       border: ${hex.hexString} solid 1px;
       background-color: inherit;
     }
-    .${classes.nativeButton}.${classes.outlined}.${colorClass}:not(:disabled):hover {
+    .${classes.nativeButton}.${
+      classes.outlined
+    }.${colorClass}:not(:disabled):hover {
       background-color: ${hex.lighten(0.95).hexString};
     }
 
@@ -92,7 +97,9 @@ const colorStyles = strictEntries(color)
       color: ${hex.hexString};
       background-color: transparent;
     }
-    .${classes.nativeButton}.${classes.standard}.${colorClass}:not(:disabled):hover {
+    .${classes.nativeButton}.${
+      classes.standard
+    }.${colorClass}:not(:disabled):hover {
       background-color: ${hex.lighten(0.95).hexString};
     }
     `
@@ -100,4 +107,5 @@ const colorStyles = strictEntries(color)
   })
   .join(' ')
 
-export const nativeButton: StyleSource<typeof classes> = { classes, styles: [styles, colorStyles].join(' ') }
+const style = [baseStyle, colorStyle].join(' ')
+export const nativeButton = composeStyleSource(classes, style)

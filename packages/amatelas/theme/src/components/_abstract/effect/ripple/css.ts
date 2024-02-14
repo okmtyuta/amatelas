@@ -1,6 +1,13 @@
-import { Hex, Recorder, color, colors, strictEntries } from '@okmtyuta/amatelas-lib'
+import {
+  Hex,
+  color,
+  strictEntries,
+  Recorder,
+  colors,
+  identity
+} from '@okmtyuta/amatelas-lib'
 import { prefixedBy } from '@src/prefixedBy'
-import { StyleSource } from '@src/types'
+import { composeStyleSource } from '@src/style-source'
 
 const _prefixed = prefixedBy('ripple')
 
@@ -11,14 +18,14 @@ const baseClasses = {
   dark: _prefixed('dark')
 } as const
 
-const colorRecorder = new Recorder(colors, _prefixed)
+const colorRecorder = new Recorder(colors, identity, _prefixed)
 
 const classes = {
   ...colorRecorder.record,
   ...baseClasses
 }
 
-const styles = /* css */ `
+const baseStyle = /* css */ `
 @keyframes ${classes.effect} {
   0% {
     transform: scale(0);
@@ -38,7 +45,7 @@ const styles = /* css */ `
 }
 `
 
-const colorStyles = strictEntries(color)
+const colorStyle = strictEntries(color)
   .map(([key, code]) => {
     const hex = new Hex(code)
     const colorClass = classes[key]
@@ -59,7 +66,5 @@ const colorStyles = strictEntries(color)
   })
   .join(' ')
 
-export const ripple: StyleSource<typeof classes> = {
-  classes,
-  styles: [styles, colorStyles].join(' ')
-}
+const style = [baseStyle, colorStyle].join(' ')
+export const ripple = composeStyleSource(classes, style)

@@ -5,7 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test:amatelas:lib": "pnpm --filter @okmtyuta/amatelas-lib test",
-    "test:amatelas:theme": "pnpm --filter @okmtyuta/amatelas-theme test"
+    "test:amatelas:theme": "pnpm --filter @okmtyuta/amatelas-theme test",
+    "build:amatelas:lib": "pnpm --filter @okmtyuta/amatelas-lib build",
+    "build:amatelas:theme": "pnpm --filter @okmtyuta/amatelas-theme build",
+    "build:amatelas:lit": "pnpm --filter @okmtyuta/amatelas-lit build",
+    "build": "pnpm build:amatelas:lib && pnpm build:amatelas:theme && pnpm build:amatelas:lit"
   },
   "keywords": [],
   "author": "",

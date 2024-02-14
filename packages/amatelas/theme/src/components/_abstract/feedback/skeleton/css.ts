@@ -1,5 +1,5 @@
 import { prefixedBy } from '@src/prefixedBy'
-import { StyleSource } from '@src/types'
+import { composeStyleSource } from '@src/style-source'
 
 const _prefixed = prefixedBy('skeleton')
 
@@ -12,7 +12,7 @@ const classes = {
   effect: _prefixed('effect')
 }
 
-const styles = /* css */ `
+const style = /* css */ `
 @keyframes ${classes.effect} {
   0% {
     opacity: 1;
@@ -47,4 +47,4 @@ const styles = /* css */ `
 }
 `
 
-export const skeleton: StyleSource<typeof classes> = { classes, styles }
+export const skeleton = composeStyleSource(classes, style)

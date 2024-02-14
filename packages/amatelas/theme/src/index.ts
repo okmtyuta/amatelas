@@ -10,7 +10,7 @@ import { skeleton } from './components/_abstract/feedback'
 import { nativeButton } from './components/_abstract/input'
 import { flex, positional } from './components/_abstract/layout'
 
-const styleSources = {
+export const styleSourceRecord = {
   // display
   frame,
   heading,
@@ -30,6 +30,4 @@ const styleSources = {
   // layout
   flex,
   positional
-}
-
-export { styleSources }
+} as const

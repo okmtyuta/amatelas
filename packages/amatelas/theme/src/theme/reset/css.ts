@@ -1,6 +1,6 @@
-import { StyleSource } from '@src/types'
+import {  composeStyleSource } from '@src/style-source'
 
-const styles = /* css */ `
+const style = /* css */ `
 *,
 *::before,
 *::after {
@@ -88,4 +88,4 @@ box-sizing: border-box;
 }
 `
 
-export const reset: StyleSource<{}> = { styles, classes: {} }
+export const reset = composeStyleSource({}, style)

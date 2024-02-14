@@ -1,5 +1,5 @@
 import { prefixedBy } from '@src/prefixedBy'
-import { StyleSource } from '@src/types'
+import { composeStyleSource } from '@src/style-source'
 
 const _prefixed = prefixedBy('frame')
 
@@ -7,7 +7,7 @@ const classes = {
   frame: _prefixed()
 }
 
-const styles = /* css */ `
+const style = /* css */ `
 .${classes.frame} {
   max-width: 860px;
   margin: 0 auto;
@@ -15,4 +15,4 @@ const styles = /* css */ `
 }
 `
 
-export const frame: StyleSource<typeof classes> = { classes, styles }
+export const frame = composeStyleSource(classes, style)

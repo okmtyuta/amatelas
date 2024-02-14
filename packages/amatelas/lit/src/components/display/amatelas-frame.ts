@@ -1,8 +1,8 @@
 import { LitElement, html, unsafeCSS } from 'lit'
 import styles from '@okmtyuta/amatelas-theme/components/frame.css?inline'
-import { styleSources } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 
-const classes = styleSources.frame.classes
+const classes = styleSourceRecord.frame.classes
 
 export class AmatelasFrame extends LitElement {
   render() {

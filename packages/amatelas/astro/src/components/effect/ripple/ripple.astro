@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 import { type Color } from '@okmtyuta/amatelas-lib'
-import { ripple } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 
 type Props = {
   x?: number
@@ -10,18 +10,14 @@ type Props = {
   theme?: 'light' | 'dark'
 } & HTMLAttributes<'span'>
 
-const { classes } = ripple
-const { x = 0, y = 0, color = "info", theme = "light", ...props } = Astro.props
+const { classes } = styleSourceRecord.ripple
+const { x = 0, y = 0, color = 'info', theme = 'light', ...props } = Astro.props
 ---
 
 <span
   {...props}
   style={`top:${y}px;left:${x}px;`}
-  class:list={[
-    classes.ripple,
-    classes.color(color),
-    classes[theme]
-  ]}
+  class:list={[classes.ripple, classes[color], classes[theme]]}
 >
   <slot />
 </span>

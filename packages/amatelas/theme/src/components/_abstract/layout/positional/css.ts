@@ -1,5 +1,5 @@
 import { prefixedBy } from '@src/prefixedBy'
-import { StyleSource } from '@src/types'
+import { composeStyleSource } from '@src/style-source'
 
 const _prefixed = prefixedBy('positional')
 
@@ -12,7 +12,7 @@ const classes = {
   sticky: _prefixed('sticky')
 }
 
-const styles = /* css */ `
+const style = /* css */ `
 .${classes.positional}.${classes.relative} {
   position: relative;
 }
@@ -27,4 +27,4 @@ const styles = /* css */ `
 }
 `
 
-export const positional: StyleSource<typeof classes> = { classes, styles }
+export const positional = composeStyleSource(classes, style)

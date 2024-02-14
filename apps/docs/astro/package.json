@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "prebuild": "pnpm --filter @okmtyuta/amatelas-theme build",
+    "prebuild": "pnpm --filter @okmtyuta/amatelas-theme build:prod",
     "build": "pnpm prebuild && astro check && astro build",
     "preview": "astro preview",
     "astro": "astro"

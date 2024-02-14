@@ -1,11 +1,11 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
-import { paragraph } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 
 type DefaultParagraphProps = HTMLAttributes<'p'>
 type Props = DefaultParagraphProps
 
-const { classes } = paragraph
+const { classes } = styleSourceRecord.paragraph
 const { ...props } = Astro.props
 ---
 

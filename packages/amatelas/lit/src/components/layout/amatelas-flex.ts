@@ -1,12 +1,12 @@
 import { type CSSValue } from '@okmtyuta/amatelas-lib'
-import { styleSources } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 import { LitElement, unsafeCSS } from 'lit'
 import { html, unsafeStatic } from 'lit/static-html.js'
 import styles from '@okmtyuta/amatelas-theme/components/flex.css?inline'
 import { property } from 'lit/decorators.js'
 import clsx from 'clsx'
 
-const classes = styleSources.flex.classes
+const classes = styleSourceRecord.flex.classes
 
 export class AmatelasFlex extends LitElement {
   @property() element: string = 'div'

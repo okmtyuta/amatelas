@@ -4,11 +4,11 @@ import { html, unsafeStatic } from 'lit/static-html.js'
 
 import clsx from 'clsx'
 
-import { styleSources } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 import styles from '@okmtyuta/amatelas-theme/components/nativeButton.css?inline'
 import { type Color } from '@okmtyuta/amatelas-lib'
 
-const classes = styleSources.nativeButton.classes
+const classes = styleSourceRecord.nativeButton.classes
 
 export class AmatelasButton extends LitElement {
   @property()

@@ -1,6 +1,6 @@
 import { Hex, color } from '@okmtyuta/amatelas-lib'
 import { prefixedBy } from '@src/prefixedBy'
-import { StyleSource } from '@src/types'
+import { composeStyleSource } from '@src/style-source'
 
 const _prefixed = prefixedBy('list-item')
 
@@ -47,4 +47,4 @@ const styles = /* css */ `
 }
 `
 
-export const listItem: StyleSource<typeof classes> = { classes, styles }
+export const listItem = composeStyleSource(classes, styles)

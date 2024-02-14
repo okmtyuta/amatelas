@@ -1,27 +1,21 @@
 ---
 import type { HTMLTag, Polymorphic } from 'astro/types'
-import { type CSSValue } from '@okmtyuta/amatelas-lib'
-import { positional } from '@okmtyuta/amatelas-theme'
+import type { CSSValue } from '@okmtyuta/amatelas-lib'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 
 type Props<Tag extends HTMLTag> = Polymorphic<{
   as: Tag
-  position?: CSSValue["position"]
+  position?: CSSValue['position']
 }>
 
-const { classes } = positional
+const { classes } = styleSourceRecord.positional
 
-const Element = Astro.props.as as HTMLTag || "div"
-const position = Astro.props.position as CSSValue["position"] || "static"
+const Element = (Astro.props.as as HTMLTag) || 'div'
+const position = (Astro.props.position as CSSValue['position']) || 'static'
 
-const { as:_as, position: _position, ...props } = Astro.props
+const { as: _as, position: _position, ...props } = Astro.props
 ---
 
-<Element
-  {...props}
-  class:list={[
-    classes.positional,
-    classes[position]
-  ]}
->
+<Element {...props} class:list={[classes.positional, classes[position]]}>
   <slot />
 </Element>

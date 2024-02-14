@@ -1,10 +1,10 @@
 import { LitElement, html, unsafeCSS } from 'lit'
 import styles from '@okmtyuta/amatelas-theme/components/skeleton.css?inline'
-import { styleSources } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 import { property } from 'lit/decorators.js'
 import clsx from 'clsx'
 
-const classes = styleSources.skeleton.classes
+const classes = styleSourceRecord.skeleton.classes
 
 export class AmatelasSkeleton extends LitElement {
   @property()

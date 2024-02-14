@@ -1,6 +1,10 @@
 export type { CSSValue } from './css'
-export { color, colors, Hex, RGB } from './theme/color'
+export type { Color } from './theme/color'
+
+export { Hex, RGB } from './theme/color'
+export { Recorder, EntryRecorder } from './recorder'
+
+export { identity } from './function'
+export { color, colors } from './theme/color'
 export { fontSize, fontWeight, responsiveFontSize } from './theme/font'
-export type {  Color } from './theme/color'
-export { Recorder } from './Recorder'
 export { strictEntries } from './strict-entries'

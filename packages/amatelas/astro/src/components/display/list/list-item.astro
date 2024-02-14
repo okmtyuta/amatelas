@@ -1,14 +1,12 @@
 ---
-
 import type { HTMLAttributes } from 'astro/types'
-import { listItem } from  '@okmtyuta/amatelas-theme'
-import { DiscSVG } from "../../../svg"
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
+import { DiscSVG } from '../../../svg'
 
-const classes = listItem.classes
+const classes = styleSourceRecord.listItem.classes
 
 type DefaultParagraphProps = HTMLAttributes<'li'>
 type Props = DefaultParagraphProps
-
 ---
 
 <li {...Astro.props} class={classes.listItem}>

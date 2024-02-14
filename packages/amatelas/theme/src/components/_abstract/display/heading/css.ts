@@ -1,6 +1,6 @@
 import { prefixedBy } from '@src/prefixedBy'
 import { responsiveFontSize, fontWeight } from '@okmtyuta/amatelas-lib'
-import { StyleSource } from '@src/types'
+import { composeStyleSource } from '@src/style-source'
 
 const _prefixed = prefixedBy('heading')
 
@@ -63,4 +63,4 @@ const styles = /* css */ `
 }
 `
 
-export const heading: StyleSource<typeof classes> = { classes, styles }
+export const heading = composeStyleSource(classes, styles)

@@ -1,20 +1,17 @@
 ---
 import type { Polymorphic } from 'astro/types'
-import { heading } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 
-type HeadingTag = "h1" | "h2" | "h3" | "h4" | "h5" | "h6"
-type Props<Tag extends HeadingTag> =  Polymorphic<{
+type HeadingTag = 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
+type Props<Tag extends HeadingTag> = Polymorphic<{
   as: Tag
 }>
 
-const { classes } = heading
-const Element = Astro.props.as as HeadingTag || "h1"
+const { classes } = styleSourceRecord.heading
+const Element = (Astro.props.as as HeadingTag) || 'h1'
 const { as: _as, ...props } = Astro.props
 ---
 
-<Element
-  {...props}
-  class:list={[classes.heading, classes[Element]]}
->
+<Element {...props} class:list={[classes.heading, classes[Element]]}>
   <slot />
 </Element>

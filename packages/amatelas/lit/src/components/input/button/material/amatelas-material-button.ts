@@ -4,7 +4,7 @@ import { html, unsafeStatic } from 'lit/static-html.js'
 
 import clsx from 'clsx'
 
-import { styleSources } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 import styles from '@okmtyuta/amatelas-theme/components/nativeButton.css?inline'
 import { type Color } from '@okmtyuta/amatelas-lib'
 import { repeat } from 'lit/directives/repeat.js'
@@ -14,7 +14,7 @@ type Ripple = {
   y: number
   key: string
 }
-const classes = styleSources.nativeButton.classes
+const classes = styleSourceRecord.nativeButton.classes
 
 export class AmatelasMaterialButton extends LitElement {
   @property() element: string = 'button'

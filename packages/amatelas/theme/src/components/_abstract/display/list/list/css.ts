@@ -1,5 +1,5 @@
 import { prefixedBy } from '@src/prefixedBy'
-import { StyleSource } from '@src/types'
+import { composeStyleSource } from '@src/style-source'
 
 const _prefixed = prefixedBy('list')
 
@@ -16,4 +16,4 @@ const styles = /* css */ `
 }
 `
 
-export const list: StyleSource<typeof classes> = { classes, styles }
+export const list = composeStyleSource(classes, styles)

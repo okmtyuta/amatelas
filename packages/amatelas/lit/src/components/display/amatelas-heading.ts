@@ -4,9 +4,9 @@ import { html, unsafeStatic } from 'lit/static-html.js'
 import clsx from 'clsx'
 
 import styles from '@okmtyuta/amatelas-theme/components/heading.css?inline'
-import { styleSources } from '@okmtyuta/amatelas-theme'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 
-const classes = styleSources.heading.classes
+const classes = styleSourceRecord.heading.classes
 
 export class AmatelasHeading extends LitElement {
   @property()

@@ -1,5 +1,5 @@
 import { prefixedBy } from '@src/prefixedBy'
-import { StyleSource } from '@src/types'
+import { composeStyleSource } from '@src/style-source'
 
 const _prefixed = prefixedBy('flex')
 
@@ -124,4 +124,4 @@ const styles = /* css */ `
 }
 `
 
-export const flex: StyleSource<typeof classes> = { classes, styles }
+export const flex = composeStyleSource(classes, styles)
