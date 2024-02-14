@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "build": "vite build && tsc && tsc-alias",
-    "test": "pnpm vitest --watch=false"
+    "test": "pnpm vitest --watch=false --typecheck"
   },
   "files": [
     "dist/"
