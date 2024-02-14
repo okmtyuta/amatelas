@@ -1,11 +1,12 @@
+version: '3.7'
+
 services:
   rust:
     image: rust:latest
+    container_name: rust
+    working_dir: /app
     volumes:
-      - .:/projects
-    working_dir: /projects
-    environment:
-      - USER=user
+      - ./:/app
+    tty: true
     ports:
-      - 3000:8080
-
+      - 8080:8080
