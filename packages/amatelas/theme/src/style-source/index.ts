@@ -1,10 +1,4 @@
-export type StyleSource<Classes> = {
-  style: string
-  classes: Classes
-}
-export const composeStyleSource = <T>(
-  classes: T,
-  style: string
-): StyleSource<T> => {
-  return { classes, style }
-}
+export type { StyleSource } from './styles-source'
+export { composeStyleSource } from './styles-source'
+export { styleSourceRecord } from './style-source-record'
+export { classesRecord } from './classes'

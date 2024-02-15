@@ -1,0 +1,913 @@
+.AMUI-component-frame_ {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.AMUI-component-heading_.AMUI-component-heading_h1 {
+  margin-top: 64px;
+  margin-bottom: 24px; /* mobile */
+  @media screen and (max-width: 767px) {
+    font-size: 30px;
+  } /* tablet */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 30px;
+  } /* pc */
+  @media screen and (min-width: 1025px) {
+    font-size: 36px;
+  }
+  font-weight: 700;
+}
+.AMUI-component-heading_.AMUI-component-heading_h2 {
+  margin-top: 64px;
+  margin-bottom: 24px; /* mobile */
+  @media screen and (max-width: 767px) {
+    font-size: 26px;
+  } /* tablet */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 26px;
+  } /* pc */
+  @media screen and (min-width: 1025px) {
+    font-size: 30px;
+  }
+  font-weight: 400;
+}
+.AMUI-component-heading_.AMUI-component-heading_h3 {
+  margin-top: 40px;
+  margin-bottom: 24px; /* mobile */
+  @media screen and (max-width: 767px) {
+    font-size: 22px;
+  } /* tablet */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 22px;
+  } /* pc */
+  @media screen and (min-width: 1025px) {
+    font-size: 26px;
+  }
+  font-weight: 700;
+}
+.AMUI-component-heading_.AMUI-component-heading_h4 {
+  margin-top: 40px;
+  margin-bottom: 16px; /* mobile */
+  @media screen and (max-width: 767px) {
+    font-size: 20px;
+  } /* tablet */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 20px;
+  } /* pc */
+  @media screen and (min-width: 1025px) {
+    font-size: 24px;
+  }
+  font-weight: 700;
+}
+.AMUI-component-heading_.AMUI-component-heading_h5 {
+  margin-top: 40px;
+  margin-bottom: 16px; /* mobile */
+  @media screen and (max-width: 767px) {
+    font-size: 18px;
+  } /* tablet */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 18px;
+  } /* pc */
+  @media screen and (min-width: 1025px) {
+    font-size: 22px;
+  }
+  font-weight: 700;
+}
+.AMUI-component-heading_.AMUI-component-heading_h6 {
+  margin-top: 24px;
+  margin-bottom: 16px; /* mobile */
+  @media screen and (max-width: 767px) {
+    font-size: 16px;
+  } /* tablet */
+  @media screen and (min-width: 768px) and (max-width: 1024px) {
+    font-size: 16px;
+  } /* pc */
+  @media screen and (min-width: 1025px) {
+    font-size: 18px;
+  }
+  font-weight: 700;
+}
+.AMUI-component-list_list {
+  list-style: none;
+  text-align: -webkit-match-parent;
+  display: flex;
+  flex-direction: column;
+}
+.AMUI-component-list-item_ {
+  text-align: -webkit-match-parent;
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  line-height: 1.7;
+}
+.AMUI-component-list-item_ .AMUI-component-list-item_marker {
+  display: inline-flex;
+  width: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 1lh;
+}
+.AMUI-component-list-item_ .AMUI-component-list-item_marker {
+  display: inline-flex;
+  width: 24px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 1lh;
+}
+.AMUI-component-list-item_ .AMUI-component-list-item_marker::part(svg) {
+  height: calc(1lh * 0.3);
+  fill: #3f3f3f;
+}
+.AMUI-component-list-item_ .AMUI-component-list-item_disc {
+  height: calc(1lh * 0.3);
+  fill: #3f3f3f;
+}
+.AMUI-component-paragraph_ {
+  line-height: 1.7;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
+@keyframes AMUI-component-ripple_effect {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+.AMUI-component-ripple_ {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  animation: AMUI-component-ripple_effect 1s forwards;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_success.AMUI-component-ripple_light {
+  background-color: #e9f6ec;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_success.AMUI-component-ripple_dark {
+  background-color: #93d3a2;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_alert.AMUI-component-ripple_light {
+  background-color: #fbeaec;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_alert.AMUI-component-ripple_dark {
+  background-color: #ed9aa2;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_warning.AMUI-component-ripple_light {
+  background-color: #fff8e6;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_warning.AMUI-component-ripple_dark {
+  background-color: #ffe083;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_info.AMUI-component-ripple_light {
+  background-color: #e7f5f7;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_info.AMUI-component-ripple_dark {
+  background-color: #8bd0db;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_light-blue.AMUI-component-ripple_light {
+  background-color: #e5f3fd;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_light-blue.AMUI-component-ripple_dark {
+  background-color: #7fc5f8;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_blue.AMUI-component-ripple_light {
+  background-color: #eaeffe;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_blue.AMUI-component-ripple_dark {
+  background-color: #99affd;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_cyan.AMUI-component-ripple_light {
+  background-color: #e5f5f8;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_cyan.AMUI-component-ripple_dark {
+  background-color: #7fd1df;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_green.AMUI-component-ripple_light {
+  background-color: #e9f5ef;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_green.AMUI-component-ripple_dark {
+  background-color: #92ceb1;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_lime.AMUI-component-ripple_light {
+  background-color: #f2f7e6;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_lime.AMUI-component-ripple_dark {
+  background-color: #bed986;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_yellow.AMUI-component-ripple_light {
+  background-color: #faf5e5;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_yellow.AMUI-component-ripple_dark {
+  background-color: #e8d17f;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_orange.AMUI-component-ripple_light {
+  background-color: #feeee5;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_orange.AMUI-component-ripple_dark {
+  background-color: #fdad80;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_red.AMUI-component-ripple_light {
+  background-color: #feebeb;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_red.AMUI-component-ripple_dark {
+  background-color: #fe9c9c;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_magenta.AMUI-component-ripple_light {
+  background-color: #fbe5fb;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_magenta.AMUI-component-ripple_dark {
+  background-color: #ed7fed;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_purple.AMUI-component-ripple_light {
+  background-color: #f3ecfc;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_purple.AMUI-component-ripple_dark {
+  background-color: #c3a1f0;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_neutral.AMUI-component-ripple_light {
+  background-color: #f2f2f2;
+}
+.AMUI-component-ripple_.AMUI-component-ripple_neutral.AMUI-component-ripple_dark {
+  background-color: #bfbfbf;
+}
+@keyframes AMUI-component-skeleton_effect {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.AMUI-component-skeleton_ {
+  background-color: rgba(0, 0, 0, 0.11);
+  animation: AMUI-component-skeleton_effect 2s ease-in-out 0.5s infinite;
+}
+.AMUI-component-skeleton_.AMUI-component-skeleton_text {
+  height: 14px;
+  margin: 4px 0;
+  border-radius: 2px;
+}
+.AMUI-component-skeleton_.AMUI-component-skeleton_circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 16px;
+}
+.AMUI-component-skeleton_.AMUI-component-skeleton_rounded {
+  border-radius: 4px;
+}
+.AMUI-component-skeleton_.AMUI-component-skeleton_rectangle {
+  border-radius: 0;
+}
+.AMUI-component-native-button_ {
+  height: 48px;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  padding: 12px 20px;
+  border-radius: 4px;
+  box-sizing: border-box;
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+.AMUI-component-native-button_:disabled {
+  color: #060606;
+  background-color: #f2f2f2;
+  border: solid 1px #f2f2f2;
+  cursor: not-allowed;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_success:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #28a745;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_success:not(
+    :disabled
+  ):hover {
+  background-color: #3daf57;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_success:not(
+    :disabled
+  ) {
+  color: #28a745;
+  border: #28a745 solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_success:not(
+    :disabled
+  ):hover {
+  background-color: #f4faf5;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_success:not(
+    :disabled
+  ) {
+  border: none;
+  color: #28a745;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_success:not(
+    :disabled
+  ):hover {
+  background-color: #f4faf5;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_alert:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #dc3545;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_alert:not(
+    :disabled
+  ):hover {
+  background-color: #df4957;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_alert:not(
+    :disabled
+  ) {
+  color: #dc3545;
+  border: #dc3545 solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_alert:not(
+    :disabled
+  ):hover {
+  background-color: #fdf4f5;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_alert:not(
+    :disabled
+  ) {
+  border: none;
+  color: #dc3545;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_alert:not(
+    :disabled
+  ):hover {
+  background-color: #fdf4f5;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_warning:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #ffc107;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_warning:not(
+    :disabled
+  ):hover {
+  background-color: #ffc71f;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_warning:not(
+    :disabled
+  ) {
+  color: #ffc107;
+  border: #ffc107 solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_warning:not(
+    :disabled
+  ):hover {
+  background-color: #fffbf2;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_warning:not(
+    :disabled
+  ) {
+  border: none;
+  color: #ffc107;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_warning:not(
+    :disabled
+  ):hover {
+  background-color: #fffbf2;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_info:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #17a2b8;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_info:not(
+    :disabled
+  ):hover {
+  background-color: #2eabbf;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_info:not(
+    :disabled
+  ) {
+  color: #17a2b8;
+  border: #17a2b8 solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_info:not(
+    :disabled
+  ):hover {
+  background-color: #f3fafb;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_info:not(
+    :disabled
+  ) {
+  border: none;
+  color: #17a2b8;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_info:not(
+    :disabled
+  ):hover {
+  background-color: #f3fafb;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_light-blue:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #008bf2;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_light-blue:not(
+    :disabled
+  ):hover {
+  background-color: #1996f3;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_light-blue:not(
+    :disabled
+  ) {
+  color: #008bf2;
+  border: #008bf2 solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_light-blue:not(
+    :disabled
+  ):hover {
+  background-color: #f2f9fe;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_light-blue:not(
+    :disabled
+  ) {
+  border: none;
+  color: #008bf2;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_light-blue:not(
+    :disabled
+  ):hover {
+  background-color: #f2f9fe;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_blue:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #3460fb;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_blue:not(
+    :disabled
+  ):hover {
+  background-color: #486ffb;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_blue:not(
+    :disabled
+  ) {
+  color: #3460fb;
+  border: #3460fb solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_blue:not(
+    :disabled
+  ):hover {
+  background-color: #f4f7fe;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_blue:not(
+    :disabled
+  ) {
+  border: none;
+  color: #3460fb;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_blue:not(
+    :disabled
+  ):hover {
+  background-color: #f4f7fe;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_cyan:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #00a3bf;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_cyan:not(
+    :disabled
+  ):hover {
+  background-color: #19acc5;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_cyan:not(
+    :disabled
+  ) {
+  color: #00a3bf;
+  border: #00a3bf solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_cyan:not(
+    :disabled
+  ):hover {
+  background-color: #f2fafb;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_cyan:not(
+    :disabled
+  ) {
+  border: none;
+  color: #00a3bf;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_cyan:not(
+    :disabled
+  ):hover {
+  background-color: #f2fafb;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_green:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #259d63;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_green:not(
+    :disabled
+  ):hover {
+  background-color: #3aa672;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_green:not(
+    :disabled
+  ) {
+  color: #259d63;
+  border: #259d63 solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_green:not(
+    :disabled
+  ):hover {
+  background-color: #f4faf7;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_green:not(
+    :disabled
+  ) {
+  border: none;
+  color: #259d63;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_green:not(
+    :disabled
+  ):hover {
+  background-color: #f4faf7;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_lime:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #7eb40d;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_lime:not(
+    :disabled
+  ):hover {
+  background-color: #8abb25;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_lime:not(
+    :disabled
+  ) {
+  color: #7eb40d;
+  border: #7eb40d solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_lime:not(
+    :disabled
+  ):hover {
+  background-color: #f8fbf2;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_lime:not(
+    :disabled
+  ) {
+  border: none;
+  color: #7eb40d;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_lime:not(
+    :disabled
+  ):hover {
+  background-color: #f8fbf2;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_yellow:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #d2a400;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_yellow:not(
+    :disabled
+  ):hover {
+  background-color: #d6ad19;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_yellow:not(
+    :disabled
+  ) {
+  color: #d2a400;
+  border: #d2a400 solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_yellow:not(
+    :disabled
+  ):hover {
+  background-color: #fcfaf2;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_yellow:not(
+    :disabled
+  ) {
+  border: none;
+  color: #d2a400;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_yellow:not(
+    :disabled
+  ):hover {
+  background-color: #fcfaf2;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_orange:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #fb5b01;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_orange:not(
+    :disabled
+  ):hover {
+  background-color: #fb6b1a;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_orange:not(
+    :disabled
+  ) {
+  color: #fb5b01;
+  border: #fb5b01 solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_orange:not(
+    :disabled
+  ):hover {
+  background-color: #fef6f2;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_orange:not(
+    :disabled
+  ) {
+  border: none;
+  color: #fb5b01;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_orange:not(
+    :disabled
+  ):hover {
+  background-color: #fef6f2;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_red:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #fe3939;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_red:not(
+    :disabled
+  ):hover {
+  background-color: #fe4c4c;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_red:not(
+    :disabled
+  ) {
+  color: #fe3939;
+  border: #fe3939 solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_red:not(
+    :disabled
+  ):hover {
+  background-color: #fef5f5;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_red:not(
+    :disabled
+  ) {
+  border: none;
+  color: #fe3939;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_red:not(
+    :disabled
+  ):hover {
+  background-color: #fef5f5;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_magenta:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #db00db;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_magenta:not(
+    :disabled
+  ):hover {
+  background-color: #de19de;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_magenta:not(
+    :disabled
+  ) {
+  color: #db00db;
+  border: #db00db solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_magenta:not(
+    :disabled
+  ):hover {
+  background-color: #fdf2fd;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_magenta:not(
+    :disabled
+  ) {
+  border: none;
+  color: #db00db;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_magenta:not(
+    :disabled
+  ):hover {
+  background-color: #fdf2fd;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_purple:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #8843e1;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_purple:not(
+    :disabled
+  ):hover {
+  background-color: #9355e4;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_purple:not(
+    :disabled
+  ) {
+  color: #8843e1;
+  border: #8843e1 solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_purple:not(
+    :disabled
+  ):hover {
+  background-color: #f9f5fd;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_purple:not(
+    :disabled
+  ) {
+  border: none;
+  color: #8843e1;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_purple:not(
+    :disabled
+  ):hover {
+  background-color: #f9f5fd;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_neutral:not(
+    :disabled
+  ) {
+  border: none;
+  color: white;
+  background-color: #7f7f7f;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_filled.AMUI-component-native-button_neutral:not(
+    :disabled
+  ):hover {
+  background-color: #8b8b8b;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_neutral:not(
+    :disabled
+  ) {
+  color: #7f7f7f;
+  border: #7f7f7f solid 1px;
+  background-color: inherit;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_outlined.AMUI-component-native-button_neutral:not(
+    :disabled
+  ):hover {
+  background-color: #f8f8f8;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_neutral:not(
+    :disabled
+  ) {
+  border: none;
+  color: #7f7f7f;
+  background-color: transparent;
+}
+.AMUI-component-native-button_.AMUI-component-native-button_standard.AMUI-component-native-button_neutral:not(
+    :disabled
+  ):hover {
+  background-color: #f8f8f8;
+}
+.AMUI-component-flex_:not(.AMUI-component-flex_inline) {
+  display: flex;
+}
+.AMUI-component-flex_.AMUI-component-flex_inline {
+  display: inline-flex;
+}
+.AMUI-component-flex_.AMUI-component-flex_row {
+  flex-direction: row;
+}
+.AMUI-component-flex_.AMUI-component-flex_column {
+  flex-direction: column;
+}
+.AMUI-component-flex_.AMUI-component-flex_row-reverse {
+  flex-direction: row-reverse;
+}
+.AMUI-component-flex_.AMUI-component-flex_column-reverse {
+  flex-direction: column-reverse;
+}
+.AMUI-component-flex_.AMUI-component-flex_wrap {
+  flex-wrap: wrap;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-content-normal {
+  align-content: normal;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-content-flex-start {
+  align-content: flex-start;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-content-flex-end {
+  align-content: flex-end;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-content-space-around {
+  align-content: space-around;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-content-space-between {
+  align-content: space-between;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-content-stretch {
+  align-content: stretch;
+}
+.AMUI-component-flex_.AMUI-component-flex_justify-content-normal {
+  justify-content: normal;
+}
+.AMUI-component-flex_.AMUI-component-flex_justify-content-flex-start {
+  justify-content: flex-start;
+}
+.AMUI-component-flex_.AMUI-component-flex_justify-content-flex-end {
+  justify-content: flex-end;
+}
+.AMUI-component-flex_.AMUI-component-flex_justify-content-space-around {
+  justify-content: space-around;
+}
+.AMUI-component-flex_.AMUI-component-flex_justify-content-space-between {
+  justify-content: space-between;
+}
+.AMUI-component-flex_.AMUI-component-flex_justify-content-space-between {
+  justify-content: space-evenly;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-items-normal {
+  align-items: normal;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-items-center {
+  align-items: center;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-items-flex-start {
+  align-items: flex-start;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-items-flex-end {
+  align-items: flex-end;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-items-stretch {
+  align-items: stretch;
+}
+.AMUI-component-flex_.AMUI-component-flex_align-items-baseline {
+  align-items: baseline;
+}
+.AMUI-component-positional_.AMUI-component-positional_relative {
+  position: relative;
+}
+.AMUI-component-positional_.AMUI-component-positional_fixed {
+  position: fixed;
+}
+.AMUI-component-positional_.AMUI-component-positional_absolute {
+  position: absolute;
+}
+.AMUI-component-positional_.AMUI-component-positional_sticky {
+  position: sticky;
+}

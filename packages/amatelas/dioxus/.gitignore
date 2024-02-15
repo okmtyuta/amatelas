@@ -1,1 +1,4 @@
 /target
+lib
+dist
+node_modules

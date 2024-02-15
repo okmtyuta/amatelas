@@ -1,9 +1,8 @@
 import fs from 'fs'
 import { join } from 'path'
 import { reset } from './theme'
-import { styleSourceRecord } from '.'
+import { styleSourceRecord } from './style-source/style-source-record'
 import { strictEntries } from '@okmtyuta/amatelas-lib'
-import { classesRecord } from './style-source/classes'
 
 const writeResetStyle = () => {
   fs.mkdirSync('dist', { recursive: true })
@@ -28,18 +27,18 @@ const writeJoinedStyle = () => {
   fs.writeSync(fd, styles.replaceAll(/\s+/g, ' '))
   fs.closeSync(fd)
 }
-const writeClassesJSON = () => {
-  const classesJSON = JSON.stringify(classesRecord)
+// const writeClassesJSON = () => {
+//   const classesJSON = JSON.stringify(classesRecord)
 
-  fs.mkdirSync('dist', { recursive: true })
-  const fd = fs.openSync(join('dist', 'classes.json'), 'w')
-  fs.writeSync(fd, classesJSON)
-  fs.closeSync(fd)
-}
+//   fs.mkdirSync('dist', { recursive: true })
+//   const fd = fs.openSync(join('dist', 'classes.json'), 'w')
+//   fs.writeSync(fd, classesJSON)
+//   fs.closeSync(fd)
+// }
 
 export const write = () => {
   writeResetStyle()
   writeComponentsStyle()
   writeJoinedStyle()
-  writeClassesJSON()
+  // writeClassesJSON()
 }

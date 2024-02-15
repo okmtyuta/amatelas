@@ -1,0 +1,21 @@
+{
+  "name": "@okmtyuta/amatelas-theme",
+  "version": "0.1.13",
+  "type": "module",
+  "main": "./lib/index.js",
+  "scripts": {},
+  "files": [
+    "lib/"
+  ],
+  "devDependencies": {
+    "@okmtyuta/amatelas-theme": "workspace:^",
+    "tsc-alias": "^1.8.8",
+    "tsx": "^4.7.0",
+    "typescript": "^5.2.2",
+    "vite": "^5.1.0",
+    "vitest": "^1.2.2"
+  },
+  "publishConfig": {
+    "access": "public"
+  }
+}

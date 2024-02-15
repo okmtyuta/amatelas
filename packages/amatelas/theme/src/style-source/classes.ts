@@ -1,5 +1,5 @@
 import { EntryRecorder } from '@okmtyuta/amatelas-lib'
-import { styleSourceRecord } from '..'
+import { styleSourceRecord } from './style-source-record'
 
 type Components = keyof typeof styleSourceRecord
 

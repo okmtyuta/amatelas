@@ -5,6 +5,8 @@
     "declarationMap": true,
     "outDir": "dist",
     "emitDeclarationOnly": true,
+    "rootDir": "./script",
+    "baseUrl": "./",
 
     "target": "ES2020",
     "useDefineForClassFields": true,
@@ -18,12 +20,8 @@
     "strict": true,
     "noUnusedLocals": true,
     "noUnusedParameters": true,
-    "noFallthroughCasesInSwitch": true,
-    "baseUrl": "./",
-    "paths": {
-      "@src/*": ["src/*"]
-    }
+    "noFallthroughCasesInSwitch": true
   },
-  "include": ["src"],
-  "exclude": ["src/build.ts", "src/write.ts"]
+  "include": ["script"],
+  "exclude": ["node_modules", "dist", "lib", "public", "target"]
 }
