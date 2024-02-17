@@ -1,11 +1,4 @@
-import {
-  Hex,
-  color,
-  strictEntries,
-  Recorder,
-  colors,
-  identity
-} from '@okmtyuta/amatelas-lib'
+import { Hex, color, colors, Color, fromEntries, toEntries } from '@okmtyuta/amatelas-lib'
 import { prefixedBy } from '@src/prefixedBy'
 import { composeStyleSource } from '@src/style-source'
 
@@ -18,11 +11,15 @@ const baseClasses = {
   dark: _prefixed('dark')
 } as const
 
-const colorRecorder = new Recorder(colors, identity, _prefixed)
+const colorEntries: [Color, string][] = colors.map((color) => [
+  color,
+  _prefixed(color)
+])
+const colorClasses = fromEntries(colorEntries)
 
 const classes = {
-  ...colorRecorder.record,
-  ...baseClasses
+  ...baseClasses,
+  ...colorClasses,
 }
 
 const baseStyle = /* css */ `
@@ -45,7 +42,7 @@ const baseStyle = /* css */ `
 }
 `
 
-const colorStyle = strictEntries(color)
+const colorStyle = toEntries(color)
   .map(([key, code]) => {
     const hex = new Hex(code)
     const colorClass = classes[key]
