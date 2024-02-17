@@ -1,6 +1,13 @@
 import {  composeStyleSource } from '@src/style-source'
 
 const style = /* css */ `
+*:where(
+  :not(html, iframe, canvas, img, svg, video, audio):not(svg *, symbol *)
+) {
+all: unset;
+display: revert;
+}
+
 *,
 *::before,
 *::after {

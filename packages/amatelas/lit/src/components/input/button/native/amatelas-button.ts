@@ -34,14 +34,7 @@ export class AmatelasButton extends LitElement {
     `
   }
 
-  static styles = [
-    unsafeCSS(styles),
-    css`
-      :host {
-        display: inline-block;
-      }
-    `
-  ]
+  static styles = unsafeCSS(styles)
 }
 
 declare global {

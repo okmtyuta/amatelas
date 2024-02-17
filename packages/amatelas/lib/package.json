@@ -1,6 +1,6 @@
 {
   "name": "@okmtyuta/amatelas-lib",
-  "version": "0.1.13",
+  "version": "0.1.15",
   "type": "module",
   "scripts": {
     "build": "vite build && tsc && tsc-alias",
