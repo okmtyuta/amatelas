@@ -1,7 +1,7 @@
 ---
 import type { HTMLAttributes } from 'astro/types'
 
-import { discSVGSource } from "@okmtyuta/amatelas-theme"
+import { githubSVGSource } from "@okmtyuta/amatelas-theme"
 
 type Props = HTMLAttributes<'svg'>
 
@@ -10,9 +10,9 @@ const { ...props } = Astro.props
 
 <svg
   {...props}
-  {...discSVGSource.props}
+  {...githubSVGSource.props}
 >
   <path
-    {...discSVGSource.path}
+    {...githubSVGSource.path}
   ></path>
 </svg>
