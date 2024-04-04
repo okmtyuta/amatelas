@@ -14,15 +14,15 @@
 
 |                | Lit | React | Vue | Astro | Angular | Dioxus | REFERENCE |
 | :------------- | :-: | :---: | :-: | :---: | :-----: | :----: | :-------- |
-| Frame          |  X  |       |     |   X   |         |        |           |
-| Heading        |  X  |       |     |   X   |         |        |           |
-| Paragraph      |  X  |       |     |   X   |         |        |           |
+| Frame          |  X  |   X   |     |   X   |         |        |           |
+| Heading        |  X  |   X   |     |   X   |         |        |           |
+| Paragraph      |  X  |   X   |     |   X   |         |        |           |
 | Ripple         |  X  |       |     |   X   |         |        |           |
 | Skeleton       |  X  |       |     |       |         |        |           |
 | Button         |  X  |       |     |   X   |         |        |           |
 | MaterialButton |  X  |       |     |       |         |        |           |
 | Flex           |  X  |       |     |       |         |        |           |
-| Positional     |  X  |       |     |   X   |         |        |           |
+| Positional     |  X  |   X   |     |   X   |         |        |           |
 | ~              |  ~  |   ~   |  ~  |   ~   |    ~    |   ~    |           |
 | Accordion      |     |       |     |       |         |        |           |
 | Alert          |     |       |     |       |         |        |           |
@@ -30,7 +30,7 @@
 | Blockquote     |     |       |     |       |         |        |           |
 | Checkbox       |     |       |     |       |         |        |           |
 | Chip           |     |       |     |       |         |        |           |
-| List           |     |       |     |       |         |        |           |
+| List           |  X  |   X   |     |       |         |        |           |
 | Textfield      |     |       |     |       |         |        |           |
 | Textarea       |     |       |     |       |         |        |           |
 | Select         |     |       |     |       |         |        |           |
@@ -52,3 +52,5 @@
 | Tag            |     |       |     |       |         |        |           |
 | Toast          |     |       |     |       |         |        |           |
 | Tooltip        |     |       |     |       |         |        |           |
+| ~              |  ~  |   ~   |  ~  |   ~   |    ~    |   ~    |           |
+| Typography     |  X  |   X   |     |       |         |        |           |
