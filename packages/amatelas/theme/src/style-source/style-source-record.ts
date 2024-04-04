@@ -3,7 +3,8 @@ import {
   heading,
   list,
   listItem,
-  paragraph
+  paragraph,
+  typography
 } from '../components/_abstract/display'
 import { ripple } from '../components/_abstract/effect/ripple'
 import { skeleton } from '../components/_abstract/feedback'
@@ -17,6 +18,7 @@ export const styleSourceRecord = {
   list,
   listItem,
   paragraph,
+  typography,
 
   // effect
   ripple,
@@ -31,4 +33,3 @@ export const styleSourceRecord = {
   flex,
   positional
 } as const
-

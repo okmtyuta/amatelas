@@ -1,0 +1,17 @@
+---
+import type { HTMLAttributes } from 'astro/types'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
+import type { Color } from '@okmtyuta/amatelas-lib'
+
+type DefaultSpanProps = HTMLAttributes<'span'>
+type Props = DefaultSpanProps
+
+const { classes } = styleSourceRecord.typography
+const color = (Astro.props.color as Color) || 'info'
+
+const { color: _color, ...props } = Astro.props
+---
+
+<span {...props} class:list={[classes.typography, classes[color]]}
+  ><slot /></span
+>

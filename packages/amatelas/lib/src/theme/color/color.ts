@@ -1,3 +1,5 @@
+import { toKeys } from '../../object'
+
 export const color = {
   // success: '#259D63',
   success: '#28a745',
@@ -17,12 +19,10 @@ export const color = {
   red: '#FE3939',
   magenta: '#DB00DB',
   purple: '#8843E1',
-  neutral: '#7f7f7f'
+  neutral: '#7f7f7f',
+
+  character: '#3c3c3c'
 }
 export type Color = keyof typeof color
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-const strictKeys = <T extends Record<string, any>>(object: T): (keyof T)[] => {
-  return Object.keys(object)
-}
-export const colors: Color[] = strictKeys(color)
+export const colors: Color[] = toKeys(color)
