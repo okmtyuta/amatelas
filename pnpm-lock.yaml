@@ -120,6 +120,9 @@ importers:
 
   packages/amatelas/react:
     dependencies:
+      '@okmtyuta/amatelas-lib':
+        specifier: workspace:^
+        version: link:../lib
       '@okmtyuta/amatelas-theme':
         specifier: workspace:^
         version: link:../theme

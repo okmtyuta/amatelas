@@ -1,1 +1,9 @@
-export { Frame } from './components/display/frame/frame'
+export {
+  Frame,
+  Heading,
+  List,
+  ListItem,
+  Paragraph,
+  Typography
+} from './components/display'
+export { Positional } from './components/layout'

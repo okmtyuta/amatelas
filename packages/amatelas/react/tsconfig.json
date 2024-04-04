@@ -22,8 +22,7 @@
     "noFallthroughCasesInSwitch": true,
     "allowSyntheticDefaultImports": true,
     "paths": {
-      "@src/*": ["src/*"],
-      "@theme/*": ["src/theme/*"]
+      "@src/*": ["src/*"]
     }
     // "types": ["vitest/globals"]
   },

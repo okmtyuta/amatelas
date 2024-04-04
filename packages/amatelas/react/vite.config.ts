@@ -3,7 +3,9 @@ import react from '@vitejs/plugin-react-swc'
 import { resolve } from 'path'
 
 export default defineConfig({
-  resolve: {},
+  resolve: {
+    alias: { '@src': resolve(__dirname, 'src') }
+  },
   build: {
     outDir: 'dist',
     lib: {
