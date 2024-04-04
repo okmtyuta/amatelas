@@ -2,11 +2,17 @@ import {
   color,
   Color,
   colors,
+  responsiveFontSize,
+  fontSizeTypes,
   fromEntries,
-  toEntries
+  toEntries,
+  FontWeightType,
+  fontWeightTypes,
+  fontWeight
 } from '@okmtyuta/amatelas-lib'
 import { prefixedBy } from '@src/prefixedBy'
 import { composeStyleSource } from '@src/style-source'
+import { FontSizeType } from 'node_modules/@okmtyuta/amatelas-lib/dist/types/theme/font/font-size'
 
 const _prefixed = prefixedBy('typography')
 
@@ -20,9 +26,25 @@ const colorEntries: [Color, string][] = colors.map((color) => [
 ])
 const colorClasses = fromEntries(colorEntries)
 
+const fontSizeEntries: [FontSizeType, string][] = fontSizeTypes.map(
+  (fontSizeType) => {
+    return [fontSizeType, _prefixed('font-size', fontSizeType)]
+  }
+)
+const fontSizeClasses = fromEntries(fontSizeEntries)
+
+const fontWeightEntries: [FontWeightType, string][] = fontWeightTypes.map(
+  (fontWeightType) => {
+    return [fontWeightType, _prefixed('font-weight', fontWeightType)]
+  }
+)
+const fontWeightClasses = fromEntries(fontWeightEntries)
+
 const classes = {
   ...baseClasses,
-  ...colorClasses
+  ...colorClasses,
+  size: fontSizeClasses,
+  weight: fontWeightClasses
 }
 
 const baseStyle = /* css */ ``
@@ -37,12 +59,36 @@ const colorStyle = toEntries(color)
 
     const style = /* css */ `
     .${classes.typography}.${colorClass} {
-      color: ${code}
+      color: ${code};
     }
     `
     return style
   })
   .join(' ')
 
-const style = [baseStyle, colorStyle].join(' ')
+const fontSizeStyle = fontSizeTypes
+  .map((fontSizeType) => {
+    const style = /* css */ `
+    .${classes.typography}.${classes.size[fontSizeType]} {
+      ${responsiveFontSize(fontSizeType)}
+    }
+  `
+
+    return style
+  })
+  .join(' ')
+
+const fontWeightStyle = fontWeightTypes
+  .map((fontWeightType) => {
+    const style = /* css */ `
+    .${classes.typography}.${classes.weight[fontWeightType]} {
+      font-weight: ${fontWeight[fontWeightType]};
+    }
+  `
+
+    return style
+  })
+  .join(' ')
+
+const style = [baseStyle, colorStyle, fontSizeStyle, fontWeightStyle].join(' ')
 export const typography = composeStyleSource(classes, style)

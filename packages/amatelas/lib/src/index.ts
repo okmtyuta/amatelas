@@ -5,4 +5,12 @@ export { Hex, RGB } from './theme/color'
 
 export { fromEntries, toEntries, toKeys } from './object'
 export { color, colors } from './theme/color'
-export { fontSize, fontWeight, responsiveFontSize } from './theme/font'
+export {
+  fontSize,
+  fontSizeTypes,
+  fontWeight,
+  fontWeightTypes,
+  responsiveFontSize,
+  type FontSizeType,
+  type FontWeightType
+} from './theme/font'

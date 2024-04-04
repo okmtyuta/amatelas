@@ -1,3 +1,5 @@
+import { toKeys } from "../../object"
+
 export const fontWeight = {
   title: 700,
   h1: 700,
@@ -16,3 +18,4 @@ export const fontWeight = {
 }
 
 export type FontWeightType = keyof typeof fontWeight
+export const fontWeightTypes = toKeys(fontWeight)

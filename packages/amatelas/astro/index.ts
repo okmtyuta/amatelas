@@ -3,7 +3,8 @@ export {
   Heading,
   List,
   ListItem,
-  Paragraph
+  Paragraph,
+  Typography
 } from './src/components/display'
 export { Ripple } from './src/components/effect'
 export { Button } from './src/components/input'

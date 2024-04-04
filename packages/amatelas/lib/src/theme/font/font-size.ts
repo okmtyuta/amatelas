@@ -1,3 +1,5 @@
+import { toKeys } from "../../object"
+
 export const fontSize = {
   title: { pc: 48, tab: 45, sp: 42 },
   h1: { pc: 36, tab: 30, sp: 30 },
@@ -16,3 +18,4 @@ export const fontSize = {
 } as const
 
 export type FontSizeType = keyof typeof fontSize
+export const fontSizeTypes = toKeys(fontSize)
