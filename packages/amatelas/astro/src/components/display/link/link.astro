@@ -1,0 +1,18 @@
+---
+import type { HTMLAttributes, HTMLTag, Polymorphic } from 'astro/types'
+import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
+
+type Props = {
+  underline?: 'always' | 'hover'
+} & HTMLAttributes<'a'>
+
+const { classes } = styleSourceRecord.link
+
+
+const { underline: underline, ...props } = Astro.props
+const underlineClass = underline ? classes.underline[underline] : ''
+---
+
+<a {...props} class:list={[classes.link, underlineClass]}>
+  <slot />
+</a>

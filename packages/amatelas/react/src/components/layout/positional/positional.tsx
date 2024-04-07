@@ -13,6 +13,7 @@ const { classes } = styleSourceRecord.positional
 export const Positional = <T extends ElementType = 'div'>({
   as,
   position,
+  className,
   ...props
 }: PositionalProps<T>) => {
   const _Positional = as ?? 'div'
@@ -21,7 +22,7 @@ export const Positional = <T extends ElementType = 'div'>({
   return (
     <_Positional
       {...props}
-      className={clsx(classes.positional, positionClass)}
+      className={clsx(classes.positional, positionClass, className)}
     />
   )
 }

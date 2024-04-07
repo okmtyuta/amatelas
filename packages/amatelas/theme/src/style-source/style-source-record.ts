@@ -1,6 +1,7 @@
 import {
   frame,
   heading,
+  link,
   list,
   listItem,
   paragraph,
@@ -15,6 +16,7 @@ export const styleSourceRecord = {
   // display
   frame,
   heading,
+  link,
   list,
   listItem,
   paragraph,

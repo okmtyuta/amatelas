@@ -1,6 +1,7 @@
 export {
   Frame,
   Heading,
+  Link,
   List,
   ListItem,
   Paragraph,

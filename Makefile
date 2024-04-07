@@ -32,5 +32,5 @@ publish-amatelas-vue:
 	cd packages/amatelas/vue; npm publish
 
 # publish: publish-amatelas-lib publish-amatelas-theme publish-amatelas-angular publish-amatelas-astro publish-amatelas-lit publish-amatelas-react publish-amatelas-vue
-publish: publish-amatelas-lib publish-amatelas-theme publish-amatelas-astro publish-amatelas-lit
+publish: publish-amatelas-lib publish-amatelas-theme publish-amatelas-astro publish-amatelas-lit publish-amatelas-react
 patch-publish: patch publish
