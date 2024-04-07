@@ -7,4 +7,4 @@ export {
   Paragraph,
   Typography
 } from './components/display'
-export { Positional } from './components/layout'
+export { Positional, Flex } from './components/layout'
