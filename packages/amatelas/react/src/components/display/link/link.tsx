@@ -1,16 +1,26 @@
 import { styleSourceRecord } from '@okmtyuta/amatelas-theme'
 import clsx from 'clsx'
-import { ComponentProps } from 'react'
+import { ComponentProps, ElementType } from 'react'
 
-type LinkProps = {
+type LinkProps<T extends ElementType> = {
+  as?: T
   underline?: 'always' | 'hover'
-} & ComponentProps<'a'>
+} & Omit<ComponentProps<T>, 'tag'>
 
 const { classes } = styleSourceRecord.link
 
-export const Link = ({ underline, className, ...props }: LinkProps) => {
+export const Link = <T extends ElementType = 'a'>({
+  as,
+  underline,
+  className,
+  ...props
+}: LinkProps<T>) => {
+  const _Link = as ?? 'a'
   const underlineClass = underline ? classes.underline[underline] : ''
   return (
-    <a {...props} className={clsx(classes.link, underlineClass, className)} />
+    <_Link
+      {...props}
+      className={clsx(classes.link, underlineClass, className)}
+    />
   )
 }

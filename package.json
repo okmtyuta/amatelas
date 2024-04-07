@@ -9,7 +9,8 @@
     "build:amatelas:lib": "pnpm --filter @okmtyuta/amatelas-lib build",
     "build:amatelas:theme": "pnpm --filter @okmtyuta/amatelas-theme build",
     "build:amatelas:lit": "pnpm --filter @okmtyuta/amatelas-lit build",
-    "build": "pnpm build:amatelas:lib && pnpm build:amatelas:theme && pnpm build:amatelas:lit"
+    "build:amatelas:react": "pnpm --filter @okmtyuta/amatelas-react build",
+    "build": "pnpm build:amatelas:lib && pnpm build:amatelas:theme && pnpm build:amatelas:lit && pnpm build:amatelas:react"
   },
   "keywords": [],
   "author": "",
