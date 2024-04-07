@@ -1,7 +1,7 @@
 import '@okmtyuta/amatelas-theme/styles.css'
 import '@okmtyuta/amatelas-theme/reset.css'
 import { Link } from './components/display/link/link'
-import { Button } from './components/input'
+
 import { MaterialButton } from './components/input/button/material/material-button'
 
 export const App = () => {
