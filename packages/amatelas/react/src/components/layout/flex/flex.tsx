@@ -20,23 +20,32 @@ export const Flex = <T extends ElementType = 'div'>({
   className,
   wrap,
   inline,
-  direction = 'row',
-  alignContent = 'normal',
-  justifyContent = 'normal',
-  alignItems = 'normal',
+  direction,
+  alignContent,
+  justifyContent,
+  alignItems,
   ...props
 }: FlexProps<T>) => {
   const _Flex = as ?? 'div'
+
+  const directionClass = direction ? classes.direction[direction] : null
+  const alignContentClass = alignContent
+    ? classes.alignContent[alignContent]
+    : null
+  const justifyContentClass = justifyContent
+    ? classes.justifyContent[justifyContent]
+    : null
+  const alignItemsClass = alignItems ? classes.alignItems[alignItems] : null
 
   return (
     <_Flex
       {...props}
       className={clsx(
         classes.flex,
-        classes.direction[direction],
-        classes.alignContent[alignContent],
-        classes.justifyContent[justifyContent],
-        classes.alignItems[alignItems],
+        directionClass,
+        alignContentClass,
+        justifyContentClass,
+        alignItemsClass,
         { [classes.inline]: inline, [classes.wrap]: wrap },
         className
       )}

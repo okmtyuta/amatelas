@@ -80,6 +80,9 @@ importers:
       astro:
         specifier: ^4.3.5
         version: 4.3.5(typescript@5.3.3)
+      katex:
+        specifier: ^0.16.10
+        version: 0.16.10
       typescript:
         specifier: ^5.3.3
         version: 5.3.3
@@ -90,6 +93,9 @@ importers:
       '@okmtyuta/amatelas-theme':
         specifier: workspace:^
         version: link:../theme
+      '@types/katex':
+        specifier: ^0.16.7
+        version: 0.16.7
       prettier:
         specifier: ^3.2.4
         version: 3.2.5
@@ -169,6 +175,9 @@ importers:
       clsx:
         specifier: ^2.0.0
         version: 2.1.0
+      katex:
+        specifier: ^0.16.10
+        version: 0.16.10
       react:
         specifier: ^18.2.0
         version: 18.2.0
@@ -182,6 +191,9 @@ importers:
       '@okmtyuta/amatelas-theme':
         specifier: workspace:^
         version: link:../theme
+      '@types/katex':
+        specifier: ^0.16.7
+        version: 0.16.7
       '@types/react':
         specifier: ^18.2.37
         version: 18.2.55
@@ -1539,6 +1551,10 @@ packages:
     resolution: {integrity: sha512-5+fP8P8MFNC+AyZCDxrB2pkZFPGzqQWUzpSeuuVLvm8VMcorNYavBqoFcxK8bQz4Qsbn4oUEEem4wDLfcysGHA==}
     dev: true
 
+  /@types/katex@0.16.7:
+    resolution: {integrity: sha512-HMwFiRujE5PjrgwHQ25+bsLJgowjGjm5Z8FVSf0N6PwgJrwxH0QxzHYDcKsTfV3wva0vzrpqMTJS2jXPr5BMEQ==}
+    dev: true
+
   /@types/mdast@4.0.3:
     resolution: {integrity: sha512-LsjtqsyF+d2/yFOYaN22dHZI1Cpwkrj+g06G8+qtUKlhovPW89YhqSnfKtMbkgmEtYpH2gydRNULd6y8mciAFg==}
     dependencies:
@@ -2575,6 +2591,11 @@ packages:
 
   /comma-separated-tokens@2.0.3:
     resolution: {integrity: sha512-Fu4hJdvzeylCfQPp9SGWidpzrMs7tTrlu6Vb8XGaRGck8QSNZJJp538Wrb60Lax4fPwR64ViY468OIUTbRlGZg==}
+    dev: false
+
+  /commander@8.3.0:
+    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
+    engines: {node: '>= 12'}
     dev: false
 
   /commander@9.5.0:
@@ -3636,6 +3657,13 @@ packages:
   /jsonc-parser@3.2.1:
     resolution: {integrity: sha512-AilxAyFOAcK5wA1+LeaySVBrHsGQvUFCDWXKpZjzaL0PqW+xfBOttn8GNtWKFWqneyMZj41MWF9Kl6iPWLwgOA==}
     dev: true
+
+  /katex@0.16.10:
+    resolution: {integrity: sha512-ZiqaC04tp2O5utMsl2TEZTXxa6WSC4yo0fv5ML++D3QZv/vx2Mct0mTlRx3O+uUkjfuAgOkzsCmq5MiUEsDDdA==}
+    hasBin: true
+    dependencies:
+      commander: 8.3.0
+    dev: false
 
   /keyv@4.5.4:
     resolution: {integrity: sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==}

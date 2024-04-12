@@ -1,0 +1,18 @@
+---
+import katex from 'katex'
+
+type Props = {
+  display?: boolean
+  children?: string
+  throwOnError?: boolean
+}
+
+const { children = '', throwOnError = false, display = false } = Astro.props
+
+const html = katex.renderToString(children, {
+    throwOnError,
+    displayMode: display
+  })
+---
+
+<span set:html={html} />

@@ -4,10 +4,17 @@ import { Paragraph, Heading, List, ListItem } from '../..'
 
 import Typography from '../components/display/typography/typography.astro'
 import Link from '../components/display/link/link.astro'
+import { Math } from '../components/math'
+
+import 'katex/dist/katex.min.css'
 ---
 
 <Layout title="About | yuta.app">
   <Heading>Overview</Heading>
+
+  境界準同型<Math children='\\partial_*'/>に対して，ホモロジー群は
+      <Math display children='H = \\ker \\partial_* / \\im \\partial_*' />
+      で与えられる。
 
   <Link href='#'>aaa</Link>
   <Link underline='always' href='#'>bbb</Link>

@@ -20,10 +20,14 @@
   },
   "dependencies": {
     "clsx": "^2.0.0",
+    "katex": "^0.16.10",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@okmtyuta/amatelas-lib": "workspace:^",
+    "@okmtyuta/amatelas-theme": "workspace:^",
+    "@types/katex": "^0.16.7",
     "@types/react": "^18.2.37",
     "@types/react-dom": "^18.2.15",
     "@typescript-eslint/eslint-plugin": "^6.10.0",
@@ -34,9 +38,7 @@
     "eslint-plugin-react-refresh": "^0.4.4",
     "tsc-alias": "^1.8.8",
     "typescript": "^5.2.2",
-    "vite": "^5.0.0",
-    "@okmtyuta/amatelas-lib": "workspace:^",
-    "@okmtyuta/amatelas-theme": "workspace:^"
+    "vite": "^5.0.0"
   },
   "publishConfig": {
     "access": "public"

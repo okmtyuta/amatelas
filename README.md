@@ -53,4 +53,5 @@
 | Toast          |     |       |     |       |         |        |           |
 | Tooltip        |     |       |     |       |         |        |           |
 | ~              |  ~  |   ~   |  ~  |   ~   |    ~    |   ~    |           |
-| Typography     |  X  |   X   |     |       |         |        |           |
+| Typography     |     |   X   |     |   X   |         |        |           |
+| Math           |     |   X   |     |   X   |         |        |           |
