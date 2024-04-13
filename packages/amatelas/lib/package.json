@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "build": "vite build && tsc && tsc-alias",
-    "test": "pnpm vitest --watch=false --typecheck"
+    "test": "pnpm vitest --watch=false --typecheck",
+    "fmt": "prettier --write ."
   },
   "files": [
     "dist/"

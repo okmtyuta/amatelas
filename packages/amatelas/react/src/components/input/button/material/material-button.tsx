@@ -93,7 +93,13 @@ export const MaterialButton = <T extends ElementType = 'button'>({
       }}
     >
       {ripples.map((ripple) => (
-        <Ripple x={ripple.x} y={ripple.y} key={ripple.key} color={color} theme={rippleTheme} />
+        <Ripple
+          x={ripple.x}
+          y={ripple.y}
+          key={ripple.key}
+          color={color}
+          theme={rippleTheme}
+        />
       ))}
       {props.children}
     </_Button>

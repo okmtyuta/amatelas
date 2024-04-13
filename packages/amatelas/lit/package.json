@@ -7,7 +7,8 @@
     "build:dist": "vite build && tsc && tsc-alias",
     "build:lib": "vite --config lib.vite.config.ts build && tsc --project lib.tsconfig.json",
     "build": "pnpm build:lib && pnpm build:dist",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "fmt": "prettier --write ."
   },
   "files": [
     "dist",

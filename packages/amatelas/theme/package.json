@@ -11,7 +11,8 @@
     "build": "pnpm build:script && pnpm build:theme",
     "build:prod": "pnpm prebuild && pnpm build:script && pnpm build:theme",
     "preview": "vite preview",
-    "test": "pnpm vitest --watch=false"
+    "test": "pnpm vitest --watch=false",
+    "fmt": "prettier --write ."
   },
   "files": [
     "dist/"

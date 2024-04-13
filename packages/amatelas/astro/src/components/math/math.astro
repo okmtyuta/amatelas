@@ -10,9 +10,9 @@ type Props = {
 const { children = '', throwOnError = false, display = false } = Astro.props
 
 const html = katex.renderToString(children, {
-    throwOnError,
-    displayMode: display
-  })
+  throwOnError,
+  displayMode: display
+})
 ---
 
 <span set:html={html} />

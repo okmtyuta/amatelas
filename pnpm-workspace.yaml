@@ -1,6 +1,6 @@
 packages:
   - 'packages/amatelas/*'
   # - 'packages/markdown/*'
-  - "apps/docs/*"
-  - "apps/storybook/*"
+  - 'apps/docs/*'
+  - 'apps/storybook/*'
   # - "storybook"

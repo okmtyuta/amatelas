@@ -1,4 +1,11 @@
-import { Color, color, colors, fromEntries, Hex, toEntries } from '@okmtyuta/amatelas-lib'
+import {
+  Color,
+  color,
+  colors,
+  fromEntries,
+  Hex,
+  toEntries
+} from '@okmtyuta/amatelas-lib'
 import { prefixedBy } from '@src/prefixedBy'
 import { composeStyleSource } from '@src/style-source'
 

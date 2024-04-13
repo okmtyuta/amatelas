@@ -1,4 +1,4 @@
-import { LitElement,  unsafeCSS } from 'lit'
+import { LitElement, unsafeCSS } from 'lit'
 import { property } from 'lit/decorators.js'
 import { html, unsafeStatic } from 'lit/static-html.js'
 

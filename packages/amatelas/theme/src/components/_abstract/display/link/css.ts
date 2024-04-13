@@ -7,7 +7,7 @@ const classes = {
   link: _prefixed(),
   underline: {
     always: _prefixed('always'),
-    hover: _prefixed('hover'),
+    hover: _prefixed('hover')
   }
 }
 

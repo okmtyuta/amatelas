@@ -6,9 +6,9 @@ import type { FontSizeType } from '@okmtyuta/amatelas-lib'
 
 type DefaultSpanProps = HTMLAttributes<'span'>
 type Props = DefaultSpanProps & {
-  color: Color,
-  size?: FontSizeType,
-  weight? :FontWeightType
+  color: Color
+  size?: FontSizeType
+  weight?: FontWeightType
 }
 
 const { classes } = styleSourceRecord.typography
@@ -19,6 +19,12 @@ const weight = (Astro.props.weight as FontWeightType) || 'body1'
 const { color: _color, size: _size, weight: _weight, ...props } = Astro.props
 ---
 
-<span {...props} class:list={[classes.typography, classes[color], classes.size[size], classes.weight[weight]]}
-  ><slot /></span
+<span
+  {...props}
+  class:list={[
+    classes.typography,
+    classes[color],
+    classes.size[size],
+    classes.weight[weight]
+  ]}><slot /></span
 >

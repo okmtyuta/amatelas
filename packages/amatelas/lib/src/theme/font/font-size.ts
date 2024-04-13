@@ -1,4 +1,4 @@
-import { toKeys } from "../../object"
+import { toKeys } from '../../object'
 
 export const fontSize = {
   title: { pc: 48, tab: 45, sp: 42 },

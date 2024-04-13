@@ -20,9 +20,9 @@ export class AmatelasPositional extends LitElement {
   render() {
     return html`
       <${unsafeStatic(this.element)} part="self" class=${clsx(
-      classes.positional,
-      classes[this.position]
-    )} >
+        classes.positional,
+        classes[this.position]
+      )} >
         <slot></slot>
       </${unsafeStatic(this.element)}>`
   }

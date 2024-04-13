@@ -62,11 +62,7 @@ export class RGB {
     }
 
     const [_red, _green, _blue] = this._rgbArray
-    const rgbArray: RGBArray = [
-      _darken(_red),
-      _darken(_green),
-      _darken(_blue)
-    ]
+    const rgbArray: RGBArray = [_darken(_red), _darken(_green), _darken(_blue)]
 
     return new RGB(rgbArray)
   }
@@ -84,7 +80,11 @@ export class RGB {
     }
 
     const [_red, _green, _blue] = this._rgbArray
-    const rgbArray: RGBArray = [_lighten(_red), _lighten(_green), _lighten(_blue)]
+    const rgbArray: RGBArray = [
+      _lighten(_red),
+      _lighten(_green),
+      _lighten(_blue)
+    ]
 
     return new RGB(rgbArray)
   }

@@ -1,4 +1,11 @@
-import { Hex, color, colors, Color, fromEntries, toEntries } from '@okmtyuta/amatelas-lib'
+import {
+  Hex,
+  color,
+  colors,
+  Color,
+  fromEntries,
+  toEntries
+} from '@okmtyuta/amatelas-lib'
 import { prefixedBy } from '@src/prefixedBy'
 import { composeStyleSource } from '@src/style-source'
 
@@ -19,7 +26,7 @@ const colorClasses = fromEntries(colorEntries)
 
 const classes = {
   ...baseClasses,
-  ...colorClasses,
+  ...colorClasses
 }
 
 const baseStyle = /* css */ `

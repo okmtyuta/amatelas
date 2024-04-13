@@ -15,9 +15,9 @@ export class AmatelasHeading extends LitElement {
   render() {
     return html`
       <${unsafeStatic(this.element)} class=${clsx(
-      classes.heading,
-      classes[this.element]
-    )}>
+        classes.heading,
+        classes[this.element]
+      )}>
         <slot></slot>
       </${unsafeStatic(this.element)}>
     `
